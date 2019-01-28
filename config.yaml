@@ -7,7 +7,7 @@ enableEmoji: true
 baseURL: https://kadantiscam.netlify.com/
 
 params:
-  use_sass: true
+  use_sass: false
   show_downloads: false
   description: Filtr blokujący strony typu przekręt i phishing.
   gh_repo_owner: PolishFiltersTeam
