@@ -1,0 +1,6 @@
+{{ $bs := resources.Get "/js/bootstrap.min.js" }}
+{{ $ss := resources.Get "/js/SmoothScroll.js" }}
+{{ $jarallax := resources.Get "/js/jarallax.js" }}
+{{ $mobirise := resources.Get "/js/mobirise/script.js" }}
+{{ $js := slice $bs $ss $jarallax $mobirise | resources.Concat "/js/main_scripts.js" | minify | fingerprint}}
+<script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>

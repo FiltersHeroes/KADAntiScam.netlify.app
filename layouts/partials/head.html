@@ -1,0 +1,15 @@
+<meta charset='utf-8'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="azet12">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="/images/stop-128x128.png" type="image/x-icon">
+<meta name="description" content="Filtr blokujący strony typu przekręt i phishing.">
+
+
+{{ if eq .Site.Params.use_sass true }}
+{{ $style := resources.Get "sass/style.scss" | toCSS | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ else }}
+{{ $style := resources.Get "css/style.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ end }}

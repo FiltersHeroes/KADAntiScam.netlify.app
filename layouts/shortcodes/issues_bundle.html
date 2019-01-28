@@ -1,0 +1,6 @@
+{{ $sweets := resources.Get "/js/sweet-surprise.js" }}
+{{ $autosize := resources.Get "/js/autosize.min.js" }}
+{{ $ready := resources.Get "/js/ready.js" }}
+{{ $swal := resources.Get "/js/sweetalert.min.js" }}
+{{ $js := slice $sweets $autosize $ready $swal | resources.Concat "/js/issues_bundle.js" | minify | fingerprint}}
+<script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>

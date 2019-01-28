@@ -1,0 +1,16 @@
+title: KAD - stop przekrętom
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+LanguageCode: pl-PL
+DefaultContentLanguage: pl
+enableEmoji: true
+#baseURL: https://polishannoyancefilters.netlify.com/
+
+params:
+  use_sass: true
+  show_downloads: false
+  description: Filtr blokujący strony typu przekręt i phishing.
+  gh_repo_owner: PolishFiltersTeam
+  gh_repo_name: KAD
+  footer_text: 'Paczka ikon systemów operacyjnych i kategorii została stworzona przez <a href="https://icons8.com">Icons8</a>. Czcionka Architects Daughter jest na licencji <a href="/fonts/SIL_OFL.txt">SIL OFL</a>.'
+  author: Polish Filters Team
