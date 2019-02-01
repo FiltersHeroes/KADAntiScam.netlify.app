@@ -58,13 +58,13 @@ author = "PolishFiltersTeam"
 
         # social Icons
         [[params.footer.socialIcon]]
-        icon = "tf-ion-social-facebook"
+        icon = "facebook"
         url = "https://www.facebook.com/filtrkad/"
 
         [[params.footer.socialIcon]]
-        icon = "tf-ion-social-github"
+        icon = "github"
         url = "https://github.com/PolishFiltersTeam/KAD"
 
         [[params.footer.socialIcon]]
-        icon = "tf-ion-social-rss"
+        icon = "rss"
         url = "/index.xml"
