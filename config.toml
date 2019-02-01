@@ -1,0 +1,70 @@
+baseURL = "https://kadantiscam.netlify.com/"
+languageCode = "pl-PL"
+DefaultContentLanguage = "pl"
+title = "KAD - stop przekrętom | Filtr blokujący strony typu przekręt i phishing"
+theme = "meghna-hugo"
+enableEmoji = true
+
+[permalinks]
+    blog ="/blog/:year/:month/::day/:filename/"
+
+# Menu
+[menu]
+    [[menu.nav]]
+    name = "Instrukcje"
+    URL = "instructions"
+    weight = 2
+
+    [[menu.nav]]
+    name = "Inne polecane listy filtrów"
+    URL = "recommended"
+    weight = 3
+
+    [[menu.nav]]
+    name = "Blog"
+    URL = "blog"
+    weight = 4
+
+    [[menu.nav]]
+    name = "Informacje i kontakt"
+    URL = "contact"
+    weight = 5
+
+# Site params
+[params]
+shortTitle = "KAD - stop przekrętom"
+
+home= "Start"
+logo = "images/logo.png"
+# Meta data
+description = "Filtr blokujący strony typu przekręt i phishing"
+author = "PolishFiltersTeam"
+
+    # Banner Section
+    [params.banner]
+    enable = true
+    bgImage = "images/slider/hero-area.jpg"
+    icon = "tf-ion-play"
+    heading = "Zablokuj strony, które wyłudzają pieniądze i dane"
+    content= 'KAD jest filtrem do rozszerzenia uBlock Origin. Blokuje on strony typu przekręt i phishing.<br>Instalacja ogranicza się do dwóch prostych kroków.<br><br><strong>Krok 1.</strong> Zainstaluj rozszerzenie uBlock Origin.<br>Kliknij nazwę swojej przeglądarki poniżej i pobierz rozszerzenie.<br><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="noopener" class="text-info">Google Chrome</a> | <a href="https://addons.mozilla.org/addon/ublock-origin/" target="_blank" rel="noopener" class="text-info">Mozilla Firefox</a> | <a href="https://addons.opera.com/extensions/details/ublock/" target="_blank" rel="noopener" class="text-info">Opera</a> | <a href="#instructions" class="text-warning">Inna</a><br><br><strong>Krok 2.</strong>&nbsp;Kliknij poniższy przycisk, aby subskrybować filtr KAD.'
+    btn = true
+    btnText="Subskrybuj KAD"
+    btnURL='abp:subscribe?location=https://raw.githubusercontent.com/PolishFiltersTeam/KAD/master/KAD.txt'
+
+    # footer
+    [params.footer]
+        copyright = "Themefisher Team"
+        copyrightURL = "http://www.themefisher.com"
+
+        # social Icons
+        [[params.footer.socialIcon]]
+        icon = "tf-ion-social-facebook"
+        url = "https://www.facebook.com/filtrkad/"
+
+        [[params.footer.socialIcon]]
+        icon = "tf-ion-social-github"
+        url = "https://github.com/PolishFiltersTeam/KAD"
+
+        [[params.footer.socialIcon]]
+        icon = "tf-ion-social-rss"
+        url = "/index.xml"

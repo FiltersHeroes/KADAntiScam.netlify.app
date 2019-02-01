@@ -1,0 +1,16 @@
+{{ if .Site.Params.banner.enable }}
+{{"<!-- Welcome Slider-->" | safeHTML}}
+<section class="hero-area" style='background-image: url("{{ .Site.Params.banner.bgImage | absURL }}");'>
+    <div class="block">
+        <div class="video-button">
+           {{with .Site.Params.banner.icon}} <i class="{{ . }}"></i> {{ end }}
+        </div>
+       {{with .Site.Params.banner.heading}} <h1>{{ . }}</h1>{{ end }}
+       {{with .Site.Params.banner.content}} <p>{{ . | markdownify}}</p> {{ end }}
+       {{ if .Site.Params.banner.btn}}
+        <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKAD.txt&title=KAD%20-%20Przekręty" class="btn btn-transparent">{{ .Site.Params.banner.btnText}}</a>
+        {{ end }}
+    </div>
+</section>
+{{"<!-- /Welcome Slider-->" | safeHTML}}
+{{end}}

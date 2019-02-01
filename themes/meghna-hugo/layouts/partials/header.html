@@ -1,0 +1,35 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+
+    {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ .Hugo.Generator }}
+
+    <title> {{ .Title }} </title>
+
+    {{"<!-- Favicon -->" |safeHTML}}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | absURL }}"/>
+
+    {{"<!-- CSS -->"|safeHTML}}
+    {{"<!-- Fontawesome Icon font -->"|safeHTML}}
+    {{"<!-- bootstrap.min css -->"|safeHTML}}
+    {{"<!-- Animate.css -->"|safeHTML}}
+    {{"<!-- Magnific popup css -->"|safeHTML}}
+    {{"<!-- Slick Carousel -->"|safeHTML}}
+    {{ $fonts := resources.Get "css/fonts.css" }}
+    {{ $fisher := resources.Get "/css/themefisher-font.css"  }}
+    {{ $bootstrap := resources.Get "/css/bootstrap.min.css" }}
+    {{ $animate := resources.Get "/css/bootstrap.min.css"  }}
+    {{ $mainstyle := resources.Get "css/style.css" }}
+    {{ $custom := resources.Get "css/custom.css" }}
+    {{ $styles := slice $fonts $fisher $bootstrap $mainstyle $custom | resources.Concat "/css/styles.css" | minify | fingerprint}}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    {{ with .OutputFormats.Get "rss" -}}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+</head>
+

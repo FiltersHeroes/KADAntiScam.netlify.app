@@ -1,0 +1,9 @@
+enable : true
+heading : Inne polecane
+headingSpan : listy filtrów
+title : Polskie Filtry Elementów Irytujących
+content : Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe są już w nich zawarte). Więcej informacji na [polishannoyancefilters.netlify.com](https://polishannoyancefilters.netlify.com/).
+btnText: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishAnnoyanceFilters%2Fmaster%2FPPB.txt&amp;title=Polskie%20Filtry%20Element%C3%B3w%20Irytuj%C4%85cych" class="btn btn-transparent">Subskrybuj Polskie Filtry Elementów Irytujących</a>
+title2: Polskie Filtry RSS
+content2: Filtry blokujące i ukrywające sekcje RSS na polskich stronach. Więcej informacji na [github.com/PolishFiltersTeam/PolishRSSFilters](https://github.com/PolishFiltersTeam/PolishRSSFilters).
+btnText2: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishRSSFilters%2Fmaster%2Fpolish_rss_filters.txt&amp;title=Polskie%20Filtry%20RSS" class="btn btn-transparent">Subskrybuj Polskie Filtry RSS</a>

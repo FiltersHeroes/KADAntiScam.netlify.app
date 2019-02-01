@@ -1,0 +1,83 @@
+{{ if .Site.Data.contact.enable }}
+{{"<!-- Start Contact -->" | safeHTML}}
+<section id="contact" class="parallax-section section section-bg">
+    <div class="container">
+        <div class="row">
+
+            {{"<!-- section title -->" | safeHTML}}
+            <div class="title text-center wow fadeIn" data-wow-duration="500ms">
+                <h2>{{ with .Site.Data.contact.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.contact.headingSpan }} {{ . }} {{ end }}</span></h2>
+                <div class="border"></div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML}}
+
+            {{"<!-- Contact Details -->" | safeHTML}}
+            <div class="contact-info col-md-6 wow fadeInUp" data-wow-duration="500ms">
+                {{ with .Site.Data.contact.title }}<h3>{{ . }}</h3> {{ end }}
+                {{ with .Site.Data.contact.content }} <p> {{ . | markdownify }} </p> {{ end }}
+                <div class="contact-details">
+                    {{ range .Site.Data.contact.contactDetails }}
+                    <div class="con-info clearfix">
+                        <i class="{{ .icon }}"></i>
+                        <span>{{ .info | markdownify }}
+                            {{if .mail}}<a data-secret="{{.mail | base64Encode}}" href="" onmouseover="this.href = 'mailto:' + atob(this.dataset.secret); this.innerHTML=atob(this.dataset.secret);">email</a>{{end}}
+                        </span>
+                    </div>
+                    {{ end }}
+                    {{ with .Site.Data.contact.content2 }} <p> {{ . | markdownify}} </p> {{ end }}
+                </div>
+            </div>
+
+            {{"<!-- Contact Form -->" | safeHTML}}
+            <script>var submitted=false;</script>
+            <iframe name="hidden_iframe" id="hidden_iframe"
+            style="display:none;" onload='if(submitted)
+            {swal("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
+            <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <h3>Zgłoś niebezpieczną stronę</h3>
+                    <p>Twoje zgłoszenie zostanie przekazane do Google (<a href="https://policies.google.com/privacy?gl=US&amp;hl=pl">polityka prywatności Google</a>), a następnie opublikowane na GitHubie (<a href="https://help.github.com/articles/github-privacy-statement/">polityka prywatności GitHuba</a>).</p>
+            </br>
+                <form class="form" id="usrform" method="post" role="form" target="hidden_iframe" onsubmit="submitted=true;">
+
+                    <div class="form-group">
+                        <!--Tytuł zgłoszenia-->
+                        <label for="title" class="font-weight-bold">Tytuł zgłoszenia</label>
+                        <input pattern=".{5,}" class="form-control form-control-lg" id="title" name="entry.1249625661" type="text" placeholder="Np. URL strony wprowadzającej w błąd" required="required"/>
+                    </div>
+
+                    <!--Dodatkowe informacje mogące mieć znaczenie-->
+                    <div class="form-group">
+                        <label for="entry.1564927089" class="font-weight-bold">Dodatkowe informacje mogące mieć znaczenie (opcjonalne)</label>
+                        <textarea id="entry.1564927089" name="entry.1564927089" minlength="5" rows="3" data-min-rows="3" class="form-control" placeholder="Coś co nie da się opisać wizualnie, etapy odtworzenia problemu (co doprowadziło do błędu) albo twoja metoda rozwiązania problemu."></textarea>
+                    </div>
+
+                    <!--Adres e-mail-->
+                    <div class="form-group">
+                        <label for="mail" class="font-weight-bold">Adres e-mail</label>
+                        <input class="form-control" id="mail" name="emailAddress" type="text" placeholder="jan@gmail.com" aria-describedby="mailHelp" required="required" autocomplete="email">
+                        <small id="mailHelp" class="form-text text-muted">Twój adres e-mail zostanie udostępniony jedynie dla właścicieli repozytorium.</small>
+                    </div>
+                    <input name="email" type="text" id="email" />
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Powiadomienie na e-maila</label>
+                        <div class="checkbox">
+                            <label for="tak">
+                              <input name="entry.1459225481" type="checkbox" id="tak" value="Tak"> Chcę otrzymać powiadomienie o wysłanym formularzu wraz z linkiem do statusu zgłoszenia
+                            </label>
+                          </div>
+                    </div>
+
+                    <div id="cf-submit">
+                        <input type="submit" class="btn btn-info" value="Zgłoś">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+{{"<!-- /contact -->" | safeHTML}}
+{{ end }}

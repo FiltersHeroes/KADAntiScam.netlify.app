@@ -1,0 +1,37 @@
+{{ if .Site.Data.recommended.enable }}
+{{"<!-- recommendeds -->" | safeHTML }}
+<section id="recommended" class="parallax-section section section-bg">
+    <div class="container">
+        <div class="row">
+            {{"<!-- section title -->" | safeHTML }}
+            <div class="col-md-12">
+                <div class="title text-center">
+                    <h2>{{ with .Site.Data.recommended.heading}} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.recommended.headingSpan }} {{ . }} {{ end }}</span></h2>
+                    <div class="border"></div>
+                </div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML }}
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{ with .Site.Data.recommended.title }} <h2> {{ . }} </h2> {{ end }}
+                {{ with .Site.Data.recommended.content }} <p> {{ . | markdownify}} </p> {{ end }}
+                {{ with .Site.Data.recommended.btnText }} {{ . | markdownify}} {{ end }}
+            </div>
+            <div class="col-md-6">
+                    {{ with .Site.Data.recommended.title2 }} <h2> {{ . }} </h2> {{ end }}
+                    {{ with .Site.Data.recommended.content2 }} <p> {{ . | markdownify}} </p> {{ end }}
+                    {{ with .Site.Data.recommended.btnText2 }} {{ . | markdownify}} {{ end }}
+            </div>
+        </div>
+        </br>
+    </br>
+        <div class="col-md-offset-3">
+           <p>Więcej list filtrów znajdziesz na <a href="https://polishannoyancefilters.netlify.com/otherfiltersforadblockers/" target="_blank" rel=”noopener” class="text-primary">polishannoyancefilters.netlify.com/otherfiltersforadblockers</a>.</p>
+        </div>
+
+    </div>
+
+</section>
+{{"<!-- /recommended -->" | safeHTML }}
+{{ end }}
