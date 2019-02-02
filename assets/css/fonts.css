@@ -4,54 +4,43 @@
     font-style: normal;
     font-weight: 400;
     src: local('Anaheim'), local('Anaheim-Regular'),
-    url('/fonts/Anaheim/anaheim-v6-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/fonts/Anaheim/anaheim-v6-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('/fonts/anaheim/anaheim-v6-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/fonts/anaheim/anaheim-v6-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-
-/* montserrat-regular - latin-ext_latin */
+/* jura-regular - latin-ext_latin */
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Jura';
     font-style: normal;
     font-weight: 400;
-    src: local('Montserrat Regular'), local('Montserrat-Regular'),
-    url('/fonts/Montserrat/montserrat-v12-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/fonts/Montserrat/montserrat-v12-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-700 - latin-ext_latin */
-@font-face {
-    font-family: 'Montserrat';
+    src: local('Jura Regular'), local('Jura-Regular'),
+         url('/fonts/jura/jura-v10-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('/fonts/jura/jura-v10-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* jura-500 - latin-ext_latin */
+  @font-face {
+    font-family: 'Jura';
     font-style: normal;
-    font-weight: 700;
-    src: local('Montserrat Bold'), local('Montserrat-Bold'),
-    url('/fonts/Montserrat/montserrat-v12-latin-ext_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/fonts/Montserrat/montserrat-v12-latin-ext_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-300 - latin-ext_latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Open Sans Light'), local('OpenSans-Light'),
-    url('/fonts/OpenSans/open-sans-v15-latin-ext_latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/fonts/OpenSans/open-sans-v15-latin-ext_latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* open-sans-regular - latin-ext_latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans Regular'), local('OpenSans-Regular'),
-    url('/fonts/OpenSans/open-sans-v15-latin-ext_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/fonts/OpenSans/open-sans-v15-latin-ext_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* open-sans-600 - latin-ext_latin */
-@font-face {
-    font-family: 'Open Sans';
+    font-weight: 500;
+    src: local('Jura Medium'), local('Jura-Medium'),
+         url('/fonts/jura/jura-v10-latin-ext_latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('/fonts/jura/jura-v10-latin-ext_latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* jura-600 - latin-ext_latin */
+  @font-face {
+    font-family: 'Jura';
     font-style: normal;
     font-weight: 600;
-    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
-    url('/fonts/OpenSans/open-sans-v15-latin-ext_latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/fonts/OpenSans/open-sans-v15-latin-ext_latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+    src: local('Jura SemiBold'), local('Jura-SemiBold'),
+         url('/fonts/jura/jura-v10-latin-ext_latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('/fonts/jura/jura-v10-latin-ext_latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* jura-700 - latin-ext_latin */
+  @font-face {
+    font-family: 'Jura';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Jura Bold'), local('Jura-Bold'),
+         url('/fonts/jura/jura-v10-latin-ext_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('/fonts/jura/jura-v10-latin-ext_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }

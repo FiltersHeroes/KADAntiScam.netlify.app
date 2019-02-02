@@ -38,16 +38,16 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: serif
+    font-family: 'Jura', sans-serif;
 }
 
 p {
-    font-family: serif
+    font-family: 'Jura', sans-serif;
 }
 
 .header-bradcrumb a,
 .header-bradcrumb .active {
-  font-family: serif
+  font-family: 'Jura', sans-serif;
 }
 
 a.navbar-brand.logo {
@@ -102,7 +102,7 @@ ul {
   border-radius: 5px;
   transition: 25ms ease-out;
   padding: 0.5em 0.75em;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+  font-family: Helvetica Neue,Helvetica,Arial,sans-'Jura', sans-serif;
 }
 
 .resp-sharing-button__icon svg {
