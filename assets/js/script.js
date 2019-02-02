@@ -16,7 +16,8 @@ jQuery(function ($) {
 
 
 	$("#navigation").sticky({
-		topSpacing: 0
+		topSpacing: 0,
+		zIndex: ''
 	});
 
 });
