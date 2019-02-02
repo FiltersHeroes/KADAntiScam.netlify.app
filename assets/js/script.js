@@ -6,9 +6,9 @@ jQuery(function ($) {
 	/* ========================================================================= */
 
 	// Preloader js
-	$(window).on('load', function () {
-		$('#preloader').fadeOut(700);
-	});
+	// $(window).on("load", function () {
+	// 	$('#preloader').fadeOut(700);
+	// });
 
 	/* ========================================================================= */
 	/*	Menu item highlighting
