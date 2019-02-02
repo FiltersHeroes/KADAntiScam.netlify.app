@@ -38,16 +38,16 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Quattrocento Sans", serif;
+    font-family: serif
 }
 
 p {
-    font-family: "Quattrocento Sans", serif;
+    font-family: serif
 }
 
 .header-bradcrumb a,
 .header-bradcrumb .active {
-  font-family: "Quattrocento Sans", serif;
+  font-family: serif
 }
 
 a.navbar-brand.logo {
