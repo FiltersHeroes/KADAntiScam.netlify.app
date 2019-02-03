@@ -1,0 +1,50 @@
+<section class="contact-form post-comments">
+    <h3>Komentarze</h3>
+    {{ $comments := readDir "data/comments" }}
+    {{ $.Scratch.Add "hasComments" 0 }}
+    {{ $entryId := .UniqueID }}
+    {{ range $comments }}
+    {{ if eq .Name $entryId }}
+    {{ $.Scratch.Add "hasComments" 1 }}
+    {{ range $index, $comments := (index $.Site.Data.comments $entryId ) }}
+    <div class="post-comment">
+        <div class="post-comment-header">
+            <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100">
+            <p class="post-comment-info"><strong>{{ .name }}</strong><br>{{ dateFormat "02/01/2006" .date }}</p>
+        </div>
+        {{ .body | markdownify }}
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{ if eq ($.Scratch.Get "hasComments") 0 }}
+    <p>Na razie brak komentarzy. Twój może być pierwszy.</p>
+    {{ end }}
+
+    <h3>Powiedz coś</h3>
+    <script>var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe"
+    style="display:none;" onload='if(submitted)
+    {swal("Dziękujemy!", "Twój komentarz został przesłany i zostanie opublikowany po zatwierdzeniu 😊", "success");}'></iframe>
+    <form class="form" method="POST" action="https://dev.staticman.net/v3/entry/github/PolishFiltersTeam/KAD/master" target="hidden_iframe" onsubmit="submitted=true;">
+        <input name="options[slug]" type="hidden" value="{{ .File.BaseFileName }}">
+        <div class="form-group">
+            <label for="nick" class="font-weight-bold">Nick</label>
+            <input class="form-control" id="nick" name="fields[name]" type="text" required="required"/>
+        </div>
+
+        <div class="form-group">
+            <label for="mail" class="font-weight-bold">E-mail</label>
+            <input type="email" class="form-control" id="mail" name="fields[email]" type="text" required="required"/>
+        </div>
+
+        <div class="form-group">
+            <label for="message" class="font-weight-bold">Komentarz</label>
+            <textarea id="message" name="fields[message]" minlength="5" rows="3" data-min-rows="3" class="form-control" required="required" placeholder="Nie krępuj się używać markdown."></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-info" value="Dodaj komentarz">
+    </form>
+</section>
+
