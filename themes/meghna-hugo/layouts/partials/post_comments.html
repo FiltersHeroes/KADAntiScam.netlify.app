@@ -13,8 +13,8 @@
             <p class="post-comment-info">
                 <span class="post-comment-name">{{ .name }}</span>
                 <br>
-                <a href="#commentid-{{ ._id }}" title="Permalink to this comment">
-                    <time class="post-time">{{ dateFormat "02.01.2006" .date }}</time>
+                <a href="#commentid-{{ ._id }}" title="Link do tego komentarza">
+                    <time class="post-time">{{ dateFormat "02.01.2006, 15:04" .date }}</time>
                 </a>
             </p>
         </div>
