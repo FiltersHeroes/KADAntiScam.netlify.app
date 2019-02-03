@@ -313,7 +313,7 @@ input#email {
 
 
 .post-comment {
-  background-color: #eee;
+  background-color: #292f36;;
   padding: 20px;
   margin-top: 20px;
 }
@@ -342,4 +342,14 @@ input#email {
   margin-top: 20px;
   outline-color: #F76C5E;
   width: 100%;
+}
+
+.post-comment-name {
+  color: #afbac4;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.post-time {
+  color: #737f8a;
 }
