@@ -3,7 +3,6 @@ title: "Fałszywe konkursy na Facebooku"
 date: 2017-05-28
 author: azet12
 image: images/blog/fkonkurs.png
-draft: true
 ---
 
 Facebook okazał się świetnym narzędziem dla oszustów. Powstają konkursy, które niewątpliwie kuszą, ale okazuje się, że można na nich tylko stracić pieniądze!

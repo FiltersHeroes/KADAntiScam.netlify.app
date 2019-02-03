@@ -3,8 +3,6 @@ title: "Przekręty SMS. Jak nie zostać oszukanym w Internecie?"
 date: 2017-01-26T14:51:12+06:00
 author: azet12
 image: images/blog/woman-typing-writing-windows-1.jpg
-description :
-draft: true
 ---
 
 Nie jest żadnym wyczynem w dzisiejszych czasach napotkać na strony, które chętnie rozdają _darmowe_ rzeczy. Jest tam do wyboru wiele fantastycznych opcji: doładowania do telefonów, klucze do gier, karty upominkowe, bony i wiele innych przedmiotów i usług, za które zwykło się płacić. Pomimo dużego wachlarza wyboru, witryny te łączy jedna, dość istotna cecha – **nie działają**. A przynajmniej nie w ten sposób, jaki chciałby jej klient.

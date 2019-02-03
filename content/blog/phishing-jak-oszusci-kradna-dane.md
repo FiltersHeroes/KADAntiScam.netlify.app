@@ -3,8 +3,6 @@ title: "Phishing. Jak oszuści kradną nasze dane?"
 date: 2017-02-24T14:51:12+06:00
 author: azet12
 image: images/blog/working-macbook-computer-keyboard.jpg
-description:
-draft: true
 ---
 
 Phishing jest bardzo poważnym niebezpieczeństwem. Polega on na podszywaniu się pod firmy, instytucje lub osoby reprezentujące je w celu zdobycia poufnych danych użytkowników. Zwykle celem phishingu jest uzyskanie dostępu do kont lub karty płatniczej ofiary, aby potem móc wykonywać **nieautoryzowane płatności** lub zażądać **okupu**.
