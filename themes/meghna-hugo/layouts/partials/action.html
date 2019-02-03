@@ -1,0 +1,17 @@
+{{ if .Site.Data.action.enable}}
+{{"<!-- Start action Section -->" | safeHTML}}
+<section class="bg-one action section section-bg" id="action">
+    <div class="container">
+        <div class="row">
+            {{"<!-- section title -->" | safeHTML}}
+            <div class="title text-center wow fadeIn" data-wow-duration="1500ms">
+                <h2>{{ .Site.Data.action.heading}} <span class="color">{{ .Site.Data.action.headingSpan}}</span> </h2>
+                <div class="border"></div>
+            </div>
+            {{"<!-- /section title -->" | safeHTML}}
+            <div class="content text-center">
+                    {{with .Site.Data.action.content}} <p>{{ . | markdownify}}</p> {{ end }}
+        </div>
+    </section>
+{{"<!-- /action -->" | safeHTML}}
+{{ end }}
