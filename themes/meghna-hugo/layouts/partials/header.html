@@ -1,14 +1,16 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}">
     {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
     {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ .Hugo.Generator }}
 
-    <title> {{ .Title }} </title>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{" | "}}{{ .Site.Params.Description }}{{ else if .IsPage}}{{ .Title }}{{" | "}}{{ .CurrentSection.Title }}{{else}}{{ .Title }}{{" | "}}{{ .Params.Description }}{{ end }}</title>
+
+    {{ partial "seo.html" . }}
 
     {{"<!-- Favicon -->" |safeHTML}}
     <link rel="shortcut icon" type="image/x-icon" href="{{ "images/favicon.ico" | absURL }}"/>

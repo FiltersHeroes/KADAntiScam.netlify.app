@@ -1,3 +1,4 @@
 ---
-title: "Blog polskiego filtra blokującego strony typu przekręt | KAD - stop przekrętom"
+title: "KADBlog"
+description: "Blog polskiego filtra blokującego strony typu przekręt i phishing"
 ---

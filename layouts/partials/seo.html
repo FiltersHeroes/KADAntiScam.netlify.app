@@ -1,12 +1,8 @@
-<title>{{ if .IsHome }}{{ .Site.Title }}{{" | "}}{{ .Site.Params.Description }}{{ else }}{{ .Title }}{{" | "}}{{ .Site.Title }}{{ end }}</title>
-
-{{ .Hugo.Generator }}
-<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}"/>
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <meta property ="og:title" content='{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}'/>
 <meta property="og:locale" content='{{ .Site.LanguageCode | default "en-US" }}' />
-<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}"/>
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{else if .IsPage}}{{ .Summary | plainify}}{{ else }}{{.Site.Params.description}}{{ end }}"/>
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
@@ -50,10 +46,9 @@
     "description": "{{ .Site.Params.description }}",
   }
 </script>
-{{ end }}
-{{ if .IsPage }}
+{{ else if .IsPage }}
 <script type="application/ld+json">
-  {{ if eq .Section "post" }}
+  {{ if eq .Section "blog" }}
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -61,7 +56,7 @@
     "genre": "{{ range .Params.categories }}{{ . }}{{ end }}",
     "url": "{{ .Permalink }}",
     "datePublished": "{{ time .Date }}",
-    "description": "{{ .Description }}",
+    "description": "{{ .Summary | plainify }}",
     "author": {
       "@type": "Person",
       "name": "{{ .Site.Params.author }}"
@@ -80,5 +75,19 @@
     "description": "{{ .Site.Params.description }}",
   }
   {{ end }}
+</script>
+{{else}}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "{{ .Permalink }}",
+  "name": "{{ .Title }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "description": "{{ .Description }}",
+}
 </script>
 {{ end }}
