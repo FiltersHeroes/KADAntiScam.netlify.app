@@ -1,6 +1,6 @@
 ---
 title: "Fałszywe konkursy na Facebooku"
-date: 2017-05-28
+date: 2017-05-28T13:46:50+00:00
 author: azet12
 image: images/blog/fkonkurs.png
 ---

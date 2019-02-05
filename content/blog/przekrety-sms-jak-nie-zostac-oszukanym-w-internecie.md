@@ -1,6 +1,6 @@
 ---
 title: "Przekręty SMS. Jak nie zostać oszukanym w Internecie?"
-date: 2017-01-26T14:51:12+06:00
+date: 2017-01-26T20:49:03+00:00
 author: azet12
 image: images/blog/woman-typing-writing-windows-1.jpg
 ---
