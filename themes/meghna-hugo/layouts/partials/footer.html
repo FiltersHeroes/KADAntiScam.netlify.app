@@ -43,4 +43,4 @@
 {{ $swal := resources.Get "/js/sweetalert.min.js" }}
 {{ $main_js := slice $jquery $bs $sc $wow $script $sweets $autosize $ready $swal | resources.Concat "/js/main.js" | minify }}
 
-<script defer type="text/javascript" src="{{ $main_js.Permalink | absURL }}"></script>
+<script defer type="text/javascript" src="{{ $main_js.Permalink | absURL }}" integrity="{{ $main_js.Data.Integrity }}"></script>
