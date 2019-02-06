@@ -24,10 +24,10 @@
     {{ $fonts := resources.Get "css/fonts.css" }}
     {{ $fisher := resources.Get "/css/themefisher-font.css"  }}
     {{ $bootstrap := resources.Get "/css/bootstrap.min.css" }}
-    {{ $animate := resources.Get "/css/bootstrap.min.css"  }}
+    {{ $animate := resources.Get "/css/animate.css"  }}
     {{ $mainstyle := resources.Get "css/style.css" }}
     {{ $custom := resources.Get "css/custom.css" }}
-    {{ $styles := slice $fonts $fisher $bootstrap $mainstyle $custom | resources.Concat "/css/styles.css" | minify | fingerprint}}
+    {{ $styles := slice $fonts $fisher $bootstrap $animate $mainstyle $custom | resources.Concat "/css/styles.css" | minify | fingerprint}}
 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     {{ with .OutputFormats.Get "rss" -}}

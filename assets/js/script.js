@@ -2,15 +2,6 @@ jQuery(function ($) {
 	"use strict";
 
 	/* ========================================================================= */
-	/*	Page Preloader
-	/* ========================================================================= */
-
-	// Preloader js
-	// $(window).on("load", function () {
-	// 	$('#preloader').fadeOut(700);
-	// });
-
-	/* ========================================================================= */
 	/*	Menu item highlighting
 	/* ========================================================================= */
 
@@ -32,8 +23,15 @@ var wow = new WOW({
 	offset: 100, // distance to the element when triggering the animation (default is 0)
 	mobile: false // trigger animations on mobile devices (default is true)
 });
-wow.init();
 
+//https://github.com/matthieua/WOW/issues/196#issuecomment-348734401
+var scrolled = false;
+$(window).on('scroll', function() {
+	if (!scrolled) {
+		scrolled = true;
+		wow.init();
+	}
+})
 
 /* ========================================================================= */
 /*	Smooth Scroll
@@ -46,7 +44,7 @@ var scroll = new SmoothScroll('a[href*="#"]');
 function init() {
 	var imgDefer = document.getElementsByTagName('img');
 	for (var i=0; i<imgDefer.length; i++) {
-	if(imgDefer[i].getAttribute('data-src')) {
-	imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
-	} } }
-	window.onload = init;
+		if(imgDefer[i].getAttribute('data-src')) {
+			imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+		} } }
+		window.onload = init;
