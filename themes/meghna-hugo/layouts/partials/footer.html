@@ -34,14 +34,13 @@
 
 {{ $jquery:= resources.Get "/js/jquery.min.js" }}
 {{ $bs := resources.Get "/js/bootstrap.js" }}
-{{ $ss := resources.Get "/js/smooth-scroll.js" }}
-{{ $sticky := resources.Get "/js/jquery.sticky.js" }}
+{{ $sc := resources.Get "/js/scroll-behavior-polyfill.js" }}
 {{ $wow := resources.Get "/js/wow.js" }}
 {{ $script := resources.Get "js/script.js" }}
 {{ $sweets := resources.Get "/js/sweet-surprise.js" }}
 {{ $autosize := resources.Get "/js/autosize.min.js" }}
 {{ $ready := resources.Get "/js/ready.js" }}
 {{ $swal := resources.Get "/js/sweetalert.min.js" }}
-{{ $main_js := slice $jquery $bs $ss $sticky $wow $script $sweets $autosize $ready $swal | resources.Concat "/js/main.js" | minify | fingerprint}}
+{{ $main_js := slice $jquery $bs $sc $wow $script $sweets $autosize $ready $swal | resources.Concat "/js/main.js" | minify | fingerprint}}
 
 <script defer type="text/javascript" src="{{ $main_js.Permalink | absURL }}"></script>

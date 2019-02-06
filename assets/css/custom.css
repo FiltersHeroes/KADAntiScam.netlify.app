@@ -353,3 +353,7 @@ input#email {
 .post-time {
   color: #737f8a;
 }
+
+html {
+  scroll-behavior: smooth;
+}
