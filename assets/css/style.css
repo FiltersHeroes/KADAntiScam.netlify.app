@@ -542,6 +542,10 @@ a:hover {
   }
 }
 
+.navbar-toggler:focus {
+  outline-color:  #57cbcc;
+}
+
 .bg-1 {
   background-repeat: no-repeat;
   background-size: cover;
