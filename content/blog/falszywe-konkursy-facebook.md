@@ -47,7 +47,7 @@ Jeśli widzisz post od podszywającej się strony, ważnym jest, aby:
 *   **nie dodawać żadnej reakcji na wpis,**
 *   **nie udostępniać go.**
 
-    Kiedy komentujesz, reagujesz lub udostępniasz post, **jego** **zasięg wzrasta**. Przez to **więcej osób** może paść ofiarą przekrętu.
+Kiedy komentujesz, reagujesz lub udostępniasz post, **jego** **zasięg wzrasta**. Przez to **więcej osób** może paść ofiarą przekrętu.
 
 Jeśli masz czas, [zgłoś stronę i post](https://pl-pl.facebook.com/help/181495968648557) (oznacz go także jako spam).
 

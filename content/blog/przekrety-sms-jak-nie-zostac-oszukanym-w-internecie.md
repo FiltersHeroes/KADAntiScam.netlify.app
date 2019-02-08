@@ -16,9 +16,8 @@ Jest to dość obszerne pojęcie, jednak w tym wpisie pod lupę bierzemy subskry
 
 Tak właśnie tracimy pieniądze z naszego konta i dopóki nie wyłączymy tego ręcznie, SMSy będą ciągle przychodzić. Oczywistym raczej jest, że **nie otrzymamy tego, co strona w pewien sposób nam obiecała**.
 
-![przyklad1](/images/blog/przyklad1.png)
+{{< figure src="/images/blog/przyklad1.png" caption="Przykład strony zachęcającej użytkownika do płatnej subskrypcji. Na dole można wyczytać, że koszt w tym przypadku to maksymalnie 73,80 zł (brutto) miesięcznie." >}}
 
-Przykład strony zachęcającej użytkownika do płatnej subskrypcji. Na dole można wyczytać, że koszt w tym przypadku to maksymalnie 73,80 zł (brutto) miesięcznie
 
 Inne typy przekrętów SMS
 ------------------------
