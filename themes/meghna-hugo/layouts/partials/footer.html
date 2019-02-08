@@ -8,7 +8,7 @@
 				<div class="social-icon">
 					<ul class="list-inline">
 						{{ range .Site.Params.footer.socialIcon }}
-						<li class="{{ .icon }}"><a href="{{ .url }}"><i class="tf-ion-social-{{ .icon }}"></i></a></li>
+						<li class="{{ .icon }} list-inline-item"><a href="{{ .url }}"><i class="tf-ion-social-{{ .icon }}"></i></a></li>
 						{{ end }}
 					</ul>
 				</div>
@@ -33,14 +33,15 @@
 {{"<!-- Essential Scripts -->" | safeHTML}}
 
 {{ $jquery:= resources.Get "/js/jquery.min.js" }}
-{{ $bs := resources.Get "/js/bootstrap.js" }}
 {{ $sc := resources.Get "/js/scroll-behavior-polyfill.js" }}
+{{ $util := resources.Get "/js/bootstrap/util.js" }}
+{{ $ss := resources.Get "/js//bootstrap/scrollspy.js" }}
 {{ $wow := resources.Get "/js/wow.js" }}
 {{ $script := resources.Get "js/script.js" }}
 {{ $sweets := resources.Get "/js/sweet-surprise.js" }}
 {{ $autosize := resources.Get "/js/autosize.min.js" }}
 {{ $ready := resources.Get "/js/ready.js" }}
 {{ $swal := resources.Get "/js/sweetalert.min.js" }}
-{{ $main_js := slice $jquery $bs $sc $wow $script $sweets $autosize $ready $swal | resources.Concat "/js/main.js" | minify }}
+{{ $main_js := slice $jquery $sc $util $ss $wow $script $sweets $autosize $ready $swal | resources.Concat "/js/main.js" | minify }}
 
 <script defer type="text/javascript" src="{{ $main_js.Permalink | absURL }}" integrity="{{ $main_js.Data.Integrity }}"></script>

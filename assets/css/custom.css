@@ -311,11 +311,11 @@ input#email {
 
 /* Staticman Comments */
 
-
 .post-comment {
   background-color: #292f36;;
   padding: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .post-comment-header {
@@ -354,6 +354,14 @@ input#email {
   color: #737f8a;
 }
 
-html {
+/* Smooth scroll */
+
+[scroll-behavior="smooth"] {
   scroll-behavior: smooth;
+}
+
+/* Horizontal line */
+
+hr {
+  border-top: 1px solid rgba(255,255,255,.1);
 }

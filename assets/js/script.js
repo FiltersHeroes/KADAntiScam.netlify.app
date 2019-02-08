@@ -17,7 +17,6 @@ $(window).on('scroll', function() {
 })
 
 
-
 // https://varvy.com/pagespeed/defer-images.html
 
 function init() {

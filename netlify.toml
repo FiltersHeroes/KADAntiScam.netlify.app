@@ -1,8 +1,8 @@
 [build]
-  command = "gulp sass && hugo --minify"
+  command = "hugo --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.53"
+  HUGO_VERSION = "0.54"
 
 [context.deploy-preview]
-  command = "gulp sass && hugo -b $DEPLOY_PRIME_URL"
+  command = "hugo -b $DEPLOY_PRIME_URL"
