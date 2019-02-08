@@ -5,7 +5,7 @@
         <div class="row">
 
             {{"<!-- section title -->" | safeHTML}}
-            <div class="col-md-12">
+            <div class="col-lg-12">
                 <div class="title text-center wow fadeIn" data-wow-duration="500ms">
                     <h2>{{ with .Site.Data.contact.heading }} {{ . }} {{ end }} <span class="color">{{ with .Site.Data.contact.headingSpan }} {{ . }} {{ end }}</span></h2>
                     <div class="border-meghna"></div>
@@ -14,7 +14,7 @@
             {{"<!-- /section title -->" | safeHTML}}
 
             {{"<!-- Contact Details -->" | safeHTML}}
-            <div class="contact-info col-md-6 wow fadeInUp" data-wow-duration="500ms">
+            <div class="contact-info col-lg-6 wow fadeInUp" data-wow-duration="500ms">
                 {{ with .Site.Data.contact.title }}<h3>{{ . }}</h3> {{ end }}
                 {{ with .Site.Data.contact.content }} <p> {{ . | markdownify }} </p> {{ end }}
                 <div class="contact-details">
@@ -35,7 +35,7 @@
             <iframe name="hidden_iframe" id="hidden_iframe"
             style="display:none;" onload='if(submitted)
             {swal("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
-            <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+            <div class="contact-form col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                 <h3>Zgłoś niebezpieczną stronę</h3>
                 <p>Twoje zgłoszenie zostanie przekazane do Google (<a href="https://policies.google.com/privacy?gl=US&amp;hl=pl">polityka prywatności Google</a>), a następnie opublikowane na GitHubie (<a href="https://help.github.com/articles/github-privacy-statement/">polityka prywatności GitHuba</a>).</p>
             </br>
