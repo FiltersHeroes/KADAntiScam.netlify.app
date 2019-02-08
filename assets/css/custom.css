@@ -11,10 +11,8 @@
 }
 
 p img {
-    height: auto;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto 1em;
+  max-width: 100%;
+  height: auto;
 }
 
 .figcaption {
@@ -55,19 +53,6 @@ a.navbar-brand.logo {
     align-items:center;
 }
 
-.pl-9 {
-    padding-left: 9px;
-}
-
-.font-weight-bold {
-    font-weight: bold;
-}
-
-.video-button {
-    display: none !important;
-    visibility: hidden !important;
-}
-
 .hero-area {
     height: auto;
     padding-top: 300px;
@@ -77,10 +62,6 @@ a.navbar-brand.logo {
 .content {
     padding-left: 10px;
     padding-right: 10px
-}
-
-.img-fluid {
-    max-width: 100%;
 }
 
 ul {
