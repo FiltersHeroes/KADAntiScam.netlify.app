@@ -347,7 +347,7 @@ hr {
   display: none;
 }
 
-.form-group .CodeMirror {
+/* .form-group .CodeMirror {
   background: transparent;
   border: 1px solid rgba(236,239,241,.07);
   color: #ddd;
@@ -394,7 +394,7 @@ hr {
 .form-group .editor-toolbar button:hover {
     background: #57cacc05;
     border-color: #57cbcc;
-}
+} */
 
 .mb--50 {
   margin-bottom: -50px;
