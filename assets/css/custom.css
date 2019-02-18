@@ -399,3 +399,21 @@ hr {
 .mb--50 {
   margin-bottom: -50px;
 }
+
+#staticman-form:before {
+  display: block;
+  height: 90px;
+  margin-top: -90px;
+  visibility: hidden;
+  content: "";
+}
+
+@media (max-width: 768px) {
+  #staticman-form:before {
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+    content: "";
+  }
+}
