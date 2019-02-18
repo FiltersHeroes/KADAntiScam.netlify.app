@@ -22,12 +22,15 @@
     {{"<!-- Magnific popup css -->"|safeHTML}}
     {{"<!-- Slick Carousel -->"|safeHTML}}
     {{ $fonts := resources.Get "css/fonts.css" }}
-    {{ $fisher := resources.Get "/css/themefisher-font.css"  }}
-    {{ $animate := resources.Get "/css/animate.css"  }}
+    {{ $fisher := resources.Get "css/themefisher-font.css"  }}
+    {{ $animate := resources.Get "css/animate.css"  }}
     {{ $mainstyle := resources.Get "css/style.css" }}
     {{ $custom := resources.Get "css/custom.css" }}
     {{ $bs := resources.Get "css/bootstrap.css" }}
-    {{ $styles := slice $fonts $fisher $bs $animate $mainstyle $custom | resources.Concat "/css/styles.css" | minify }}
+    {{ $fa := resources.Get "css/fontawesome.css" }}
+    {{ $fas := resources.Get "css/fontawesome_solid.css" }}
+    {{ $easymde := resources.Get "css/easymde.min.css" }}
+    {{ $styles := slice $fonts $fisher $bs $animate $mainstyle $fa $fas $easymde $custom | resources.Concat "/css/styles.css" | minify | fingerprint }}
 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     {{ with .OutputFormats.Get "rss" -}}

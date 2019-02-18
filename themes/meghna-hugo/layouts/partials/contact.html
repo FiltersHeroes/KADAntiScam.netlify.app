@@ -32,14 +32,12 @@
 
             {{"<!-- Contact Form -->" | safeHTML}}
             <script>var submitted=false;</script>
-            <iframe name="hidden_iframe" id="hidden_iframe"
-            style="display:none;" onload='if(submitted)
-            {swal("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
+            <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){swal("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
             <div class="contact-form col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                 <h3>Zgłoś niebezpieczną stronę</h3>
                 <p>Twoje zgłoszenie zostanie przekazane do Google (<a href="https://policies.google.com/privacy?gl=US&amp;hl=pl">polityka prywatności Google</a>), a następnie opublikowane na GitHubie (<a href="https://help.github.com/articles/github-privacy-statement/">polityka prywatności GitHuba</a>).</p>
             </br>
-            <form class="form" id="usrform" method="post" role="form" target="hidden_iframe" onsubmit="submitted=true;">
+            <form class="form-control-meghna" id="usrform" method="post" role="form" target="hidden_iframe" onsubmit="submitted=true;">
 
                 <div class="form-group">
                     <!--Tytuł zgłoszenia-->
@@ -59,7 +57,7 @@
                     <input class="form-control" id="mail" name="emailAddress" type="text" placeholder="example@gmail.com" aria-describedby="mailHelp" required="required" autocomplete="email">
                     <small id="mailHelp" class="form-text text-muted">Twój adres e-mail zostanie udostępniony jedynie dla właścicieli repozytorium.</small>
                 </div>
-                <input name="email" type="text" id="email" />
+                <input name="e-mail" type="text" id="e-mail" />
 
                 <div class="form-group">
                     <label class="font-weight-bold">Powiadomienie na e-maila</label>

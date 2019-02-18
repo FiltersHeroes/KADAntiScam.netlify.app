@@ -1,3 +1,7 @@
 enable : true
 heading : Najnowsze
 headingSpan : wpisy
+staticmanComments:
+  enable: true
+  notifications: false
+  api: https://dev.staticman.net/v3/entry/github/PolishFiltersTeam/KADAntiScam.netlify.com/master/comments

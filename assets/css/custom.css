@@ -278,15 +278,11 @@ background-color: #FF6600
 .resp-sharing-button--telegram:hover {
   background-color: #4B97D1;}
 
-.social-share {
-    padding-top: 20px;
-}
-
 div {
   overflow-wrap: break-word;
 }
 
-input#email {
+input#e-mail {
   display: none;
 }
 
@@ -345,4 +341,61 @@ input#email {
 
 hr {
   border-top: 1px solid rgba(255,255,255,.1);
+}
+
+#hidden_iframe {
+  display: none;
+}
+
+.form-group .CodeMirror {
+  background: transparent;
+  border: 1px solid rgba(236,239,241,.07);
+  color: #ddd;
+}
+
+.form-group .editor-preview-active{
+  background: #292f36;
+}
+.form-group .editor-toolbar button {
+  color: #737f8a;
+}
+.form-group .editor-toolbar {
+  border-color: rgba(236,239,241,.07);
+}
+
+.form-group .editor-toolbar i.separator {
+  border-color: #737f8a;
+}
+
+.form-group .CodeMirror-selected {
+  background: #35aaac;
+}
+
+.form-group .CodeMirror div.CodeMirror-cursor {
+ border-left: 1px solid white;
+}
+
+.form-control-meghna .CodeMirror-focused {
+  border-color: #57cbcc;
+  box-shadow: 0 0 0 0.2rem rgba(0,174,255,.432);
+  outline: 0;
+  border-radius: .25rem;
+}
+
+.form-meghna .CodeMirror:hover {
+  border-color: #57cbcc;
+}
+
+.form-group .editor-preview pre {
+  background: transparent;
+}
+
+.form-group .editor-toolbar button.active,
+.form-group .editor-toolbar button:hover {
+    background: #57cacc05;
+    border-color: #57cbcc;
+}
+
+.mb--50 {
+  margin-bottom: -50px;
 }

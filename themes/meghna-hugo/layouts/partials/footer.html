@@ -2,7 +2,7 @@
 <footer id="footer" class="bg-one">
 	<div class="container">
 		<div class="row wow fadeInUp" data-wow-duration="500ms">
-			<div class="col-lg-12">
+			<div class="col-xl-12">
 
 				{{"<!-- Footer Social Links -->" | safeHTML}}
 				<div class="social-icon">
@@ -40,9 +40,9 @@
 {{ $wow := resources.Get "/js/wow.js" }}
 {{ $script := resources.Get "js/script.js" }}
 {{ $sweets := resources.Get "/js/sweet-surprise.js" }}
-{{ $autosize := resources.Get "/js/autosize.min.js" }}
 {{ $ready := resources.Get "/js/ready.js" }}
 {{ $swal := resources.Get "/js/sweetalert.min.js" }}
-{{ $main_js := slice $jquery $sc $util $ss $cp $wow $script $sweets $autosize $ready $swal | resources.Concat "/js/main.js" | minify }}
+{{ $easymde := resources.Get "/js/easymde.min.js" }}
+{{ $main_js := slice $jquery $sc $util $ss $cp $wow $sweets $ready $swal $easymde $script | resources.Concat "/js/main.js" | minify | fingerprint }}
 
 <script defer type="text/javascript" src="{{ $main_js.Permalink | absURL }}" integrity="{{ $main_js.Data.Integrity }}"></script>
