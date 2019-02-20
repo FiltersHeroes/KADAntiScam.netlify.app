@@ -9,7 +9,9 @@ contactDetails :
     info : 'Email:'
     mail: polishjarvis@gmail.com
   - icon: tf-ion-social-github-outline
-    info: 'GitHub: <a href="https://github.com/PolishFiltersTeam/KAD/issues">github.com/PolishFiltersTeam/KAD/issues</a>'
+    info: 'GitHub: [github.com/PolishFiltersTeam/KAD/issues](https://github.com/PolishFiltersTeam/KAD/issues)'
+  - icon: tf-ion-social-reddit-outline
+    info: 'Reddit: [reddit.com/r/PolishFiltersTeam](https://www.reddit.com/r/PolishFiltersTeam/)'
 content2: 'albo możesz poprostu wypełnić formularz dostępny obok.
 <p>Jeśli sądzisz, że Twoja strona została dodana do tej listy bezpodstawnie, lub zmieniła swojego właściciela i/lub jej cel, to skontaktuj się bezpośrednio na e-mail.</p>
 <p>Proszę wziąć pod uwagę, iż emaile z próbami przekupienia będą ignorowane.</p>
