@@ -8,7 +8,7 @@
             <div class="col-lg-8 offset-lg-2 text-center">
                 <h1>{{ .Title }}</h1>
                 <ul class="list-inline mb-50">
-                    <li class="list-inline-item"><a href="https://github.com/{{ .Params.author }}">{{ .Params.author }}</a></li>
+                    <li class="list-inline-item"><a href="/author/{{ urlize .Params.author}}">{{ .Params.author }}</a></li>
                     <li class="list-inline-item">{{ index $.Site.Data.calendar.weekdays .Date.Weekday }}, {{ .Date.Day }} {{ index $.Site.Data.calendar.months .Date.Month }}, {{ .Date.Year }} </li>
                 </ul>
                 <img class="img-fluid mb-50" src="{{ .Params.image | absURL }}" alt="blog-image">

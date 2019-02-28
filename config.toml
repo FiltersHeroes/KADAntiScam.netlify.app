@@ -5,6 +5,11 @@ title = "KAD - stop przekrętom"
 theme = "meghna-hugo"
 enableEmoji = true
 
+[taxonomies]
+  author = "author"
+  category = "categories"
+  tag = "tags"
+
 [permalinks]
     blog ="/blog/:year/:month/::day/:filename/"
 
