@@ -1,4 +1,0 @@
-{{- range $index, $element := .Params.author }}
-  {{ if gt $index 0 }} & {{ end }}
-  <a href="/author/{{ urlize . }}">{{ . }}</a>
-{{ end }}
