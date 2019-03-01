@@ -439,3 +439,7 @@ hr {
 .swal2-popup .swal2-styled:focus {
   box-shadow: none !important;
 }
+
+.swal2-container.swal2-shown {
+  background-color: rgba(150,150,150,.1);
+}
