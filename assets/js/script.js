@@ -80,6 +80,11 @@ function checkAdblocker(){
 	}
 	else
 	{
-		Swal.fire("Bardzo źle!", "Nie masz aktywnej listy KAD 😞", "error");
+		Swal.fire({
+			title: 'Bardzo źle!',
+			type: 'error',
+			text: 'Nie masz aktywnej listy KAD 😞',
+			confirmButtonText: '<a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKAD.txt&amp;title=KAD%20-%20Przekr%C4%99ty">Subskrybuj KAD</a>',
+		  })
 	}
 }
