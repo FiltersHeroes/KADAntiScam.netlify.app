@@ -29,7 +29,8 @@
     {{ $fa := resources.Get "css/fontawesome.css" }}
     {{ $fas := resources.Get "css/fontawesome_solid.css" }}
     {{ $easymde := resources.Get "css/easymde.min.css" }}
-    {{ $styles := slice $fonts $fisher $bs $animate $mainstyle $custom | resources.Concat "/css/styles.css" | minify | fingerprint }}
+    {{ $swal := resources.Get "css/sweetalert2.css" }}
+    {{ $styles := slice $fonts $fisher $bs $animate $swal $mainstyle $custom | resources.Concat "/css/styles.css" | minify | fingerprint }}
 
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
     {{ with .OutputFormats.Get "rss" -}}

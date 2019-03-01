@@ -417,3 +417,25 @@ hr {
     content: "";
   }
 }
+
+#kadetect, #kadguard {
+  height: 1px;
+  position: absolute;
+  left: -3000px;
+}
+
+#swal2-content {
+  color: #737f8a;
+}
+
+.swal2-popup .swal2-title {
+  color: #afbac4;
+}
+
+.swal2-popup {
+  background: #1d2024;
+}
+
+.swal2-popup .swal2-styled:focus {
+  box-shadow: none !important;
+}

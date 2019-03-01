@@ -32,9 +32,10 @@
 
             {{"<!-- Contact Form -->" | safeHTML}}
             <script>var submitted=false;</script>
-            <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){swal("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
+            <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){Swal.fire("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
             <div class="contact-form col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                 <h3>Zgłoś niebezpieczną stronę</h3>
+                <p>Przed zgłoszeniem <a href="javascript:checkAdblocker()">sprawdź</a>, czy na pewno KAD jest aktywny.</p>
                 <p>Twoje zgłoszenie zostanie przekazane do Google (<a href="https://policies.google.com/privacy?gl=US&amp;hl=pl">polityka prywatności Google</a>), a następnie opublikowane na GitHubie (<a href="https://help.github.com/articles/github-privacy-statement/">polityka prywatności GitHuba</a>).</p>
             </br>
             <form class="form-control-meghna" id="usrform" method="post" role="form" target="hidden_iframe" onsubmit="submitted=true;">
@@ -76,7 +77,8 @@
 
     </div>
 </div>
-
+<div id="kadetect"></div>
+<div id="kadguard"></div>
 </section>
 {{"<!-- /contact -->" | safeHTML}}
 {{ end }}

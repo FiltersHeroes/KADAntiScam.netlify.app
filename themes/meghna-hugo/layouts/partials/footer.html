@@ -41,7 +41,7 @@
 {{ $script := resources.Get "js/script.js" }}
 {{ $sweets := resources.Get "/js/sweet-surprise.js" }}
 {{ $ready := resources.Get "/js/ready.js" }}
-{{ $swal := resources.Get "/js/sweetalert.min.js" }}
+{{ $swal := resources.Get "/js/sweetalert2.min.js" }}
 {{ $easymde := resources.Get "/js/easymde.min.js" }}
 {{ $autosize := resources.Get "/js/autosize.min.js" }}
 {{ $main_js := slice $jquery $sc $util $ss $cp $wow $sweets $ready $swal $autosize $script | resources.Concat "/js/main.js" | minify | fingerprint }}

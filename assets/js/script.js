@@ -59,3 +59,27 @@ function init() {
 // 	}
 // }
 
+function checkAdblocker(){
+	var kad = document.querySelector("#kadetect");
+	var kadguard = document.querySelector('#kadguard');
+	if((typeof(kadetect) != 'undefined') && kadetect === true)
+	{
+		Swal.fire("Bardzo dobrze!", "Masz aktywny uBlock Origin lub Nano Adblocker z listą KAD 😊", "success");
+	}
+	else if(kadguard.offsetHeight == 0)
+	{
+		Swal.fire("Bardzo dobrze!", "Masz aktywny AdGuard z listą KAD 😊", "success");
+	}
+	else if(kad.offsetHeight == 0)
+	{
+		Swal.fire({
+			title: 'Dobrze, choć mogłoby być lepiej!',
+			type: 'warning',
+			html: 'Prawdopodobnie masz aktywny AdBlock/AdBlock Plus z listą KAD. Zalecamy zamienić go na <a href="https://github.com/gorhill/uBlock#installation" target="_blank" rel="noopener">uBlock Origin</a>, by mieć lepszą ochronę przed przekrętami.'
+		  })
+	}
+	else
+	{
+		Swal.fire("Bardzo źle!", "Nie masz aktywnej listy KAD 😞", "error");
+	}
+}
