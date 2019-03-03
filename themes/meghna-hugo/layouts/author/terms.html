@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="title text-center">
-                    <h2> {{ with i18n "authorsOfPostsOnBlog" }} {{ index (split . " ") 0 }} {{ end }}<span class="color"> {{ with i18n "authorsOfPostsOnBlog" }} {{ index (split . " ") 1 }} {{ end }} </span></h2>
+                    <h2> {{ with i18n "authorsOfPosts" }} {{ index (split . " ") 0 }} <span class="color"> {{ index (split . " ") 1 }} {{ index (split . " ") 2 }} {{ end }} </span></h2>
                     <div class="border-meghna"></div>
                 </div>
             </div>
@@ -14,6 +14,7 @@
             <article class="col-lg-4 col-md-6 col-12 clearfix wow fadeInUp" data-wow-duration="500ms">
                 <div class="post-block">
                     <div class="media-wrapper">
+                        <div class="content">
                         <figure>
                             {{ if .Params.photo }}
                             <img class="rounded-circle img-fluid pt-2" src="{{.Params.Photo}}">
@@ -24,12 +25,11 @@
                                 <h5 class="font-weight-bold">
                                     {{ .Params.name }}
                                 </h5>
-                                <div class="pb-3">
                                     <p>{{ .Summary }}</p>
                                     <a class="btn btn-transparent" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
-                                </div>
                             </figcaption>
                         </figure>
+                    </div>
                     </div>
                 </div>
             </article>

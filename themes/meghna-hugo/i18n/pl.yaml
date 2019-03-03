@@ -42,5 +42,9 @@
   translation: Wpisy autora
 - id: authorOfPostsOnBlog
   translation: Autor wpisów na blogu
+- id: authorsOfPosts
+  translation: Autorzy wpisów
 - id: authorsOfPostsOnBlog
   translation: Autorzy wpisów na blogu
+- id: blogs
+  translation: Blog

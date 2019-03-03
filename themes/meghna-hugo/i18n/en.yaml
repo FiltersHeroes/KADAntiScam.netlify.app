@@ -40,7 +40,11 @@
   translation: Contact
 - id: authorsPosts
   translation: Author's posts
+- id: authorsOfPosts
+  translation: Authors of posts
 - id: authorOfPostsOnBlog
   translation: Author of posts on the blog
 - id: authorsOfPostsOnBlog
   translation: Authors of posts on the blog
+- id: blogs
+  translation: Blogs
