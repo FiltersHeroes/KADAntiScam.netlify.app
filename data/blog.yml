@@ -4,4 +4,4 @@ headingSpan : wpisy
 staticmanComments:
   enable: true
   notifications: false
-  api: https://dev.staticman.net/v3/entry/github/PolishFiltersTeam/KADAntiScam.netlify.com/master/comments
+  api: https://api.staticman.net/v3/entry/github/PolishFiltersTeam/KADAntiScam.netlify.com/master/comments
