@@ -47,7 +47,7 @@ shortTitle = "KAD - stop przekrętom"
 home= "Start"
 logo = "images/logo.png"
 # Meta data
-description = "Filtr blokujący strony typu przekręt i phishing"
+description = "Filtry blokujące strony typu przekręt i phishing"
 author = "PolishFiltersTeam"
 google_site_verification = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"
 
@@ -57,7 +57,7 @@ google_site_verification = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"
     bgImage = "images/slider/hero-area.jpg"
     icon = "tf-ion-play"
     heading = "Zablokuj strony, które wyłudzają pieniądze i dane"
-    content= 'KAD jest filtrem do uBlocka Origin. Blokuje on strony typu przekręt i phishing.<br>Instalacja ogranicza się do dwóch prostych kroków.<br><br>**Krok 1.** Zainstaluj rozszerzenie uBlock Origin.<br>Kliknij nazwę swojej przeglądarki poniżej i pobierz uBlock Origin (zalecane).<br><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="noopener" class="text-info">Google Chrome</a> | <a href="https://addons.mozilla.org/addon/ublock-origin/" target="_blank" rel="noopener" class="text-info">Mozilla Firefox</a> | <a href="https://addons.opera.com/extensions/details/ublock/" target="_blank" rel="noopener" class="text-info">Opera</a> | <a href="#instructions" class="text-warning">Inna</a><br><br>**Krok 2.** Kliknij poniższy przycisk, aby subskrybować filtr KAD. <br>Jeżeli nie działa, to [**kliknij tutaj**]( https://github.com/PolishFiltersTeam/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.'
+    content= 'KAD to polskie filtry do uBlocka Origin, blokujące strony typu przekręt i phishing.<br>Instalacja ogranicza się do dwóch prostych kroków.<br><br>**Krok 1.** Zainstaluj rozszerzenie uBlock Origin.<br>Kliknij nazwę swojej przeglądarki poniżej i pobierz uBlock Origin (zalecane).<br><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="noopener" class="text-info">Google Chrome</a> | <a href="https://addons.mozilla.org/addon/ublock-origin/" target="_blank" rel="noopener" class="text-info">Mozilla Firefox</a> | <a href="https://addons.opera.com/extensions/details/ublock/" target="_blank" rel="noopener" class="text-info">Opera</a> | <a href="#instructions" class="text-warning">Inna</a><br><br>**Krok 2.** Kliknij poniższy przycisk, aby subskrybować filtry KAD. <br>Jeżeli nie działa, to [**kliknij tutaj**]( https://github.com/PolishFiltersTeam/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.'
     btn = true
     btnText="Subskrybuj KAD"
     btnURL='abp:subscribe?location=https://raw.githubusercontent.com/PolishFiltersTeam/KAD/master/KAD.txt'

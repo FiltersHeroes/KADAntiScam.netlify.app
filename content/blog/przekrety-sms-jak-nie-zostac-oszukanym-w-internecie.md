@@ -27,7 +27,7 @@ Istnieje także inny, mniej popularny sposób zabrania od kogoś pieniędzy z ko
 Jak żyć w takim razie?
 ----------------------
 
-Jednym ze sposobów na ochronę przed tego typu oszustwami jest {{< right_img "/images/stop-128x128.png" "logo_KAD" >}} subskrypcja filtra KAD do wtyczki uBlock Origin. Cały proces instalacji i dodatkowe informacje znajdują się [tutaj](https://kadantiscam.netlify.com). Jednak należy pamiętać, iż **nie zastąpi** on zdrowego rozsądku i powinno się go stosować jako dodatek, a nie zamiennik rozumu.
+Jednym ze sposobów na ochronę przed tego typu oszustwami jest {{< right_img "/images/stop-128x128.png" "logo_KAD" >}} subskrypcja filtrów KAD do rozszerzenia uBlock Origin. Cały proces instalacji i dodatkowe informacje znajdują się [tutaj](https://kadantiscam.netlify.com). Jednak należy pamiętać, iż **nie zastąpi** on zdrowego rozsądku i powinno się go stosować jako dodatek, a nie zamiennik rozumu.
 
 Jeśli jesteś rodzicem, wiadome jest, że dziecko nie ma tak rozwiniętego krytycznego myślenia jak dorośli. W takim wypadku warto przemyśleć zablokowanie na poziomie operatora dostęp do SMS Premium na numerze twojego dziecka. Albo lepiej! **Wyłączyć SMS Premium dla całej rodziny**.
 

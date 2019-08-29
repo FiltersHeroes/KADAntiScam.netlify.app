@@ -3,4 +3,4 @@ name: azet12
 github: azet12
 email: kadrep@outlook.com
 ---
-Twórca KADa - polskiego filtra do uBlocka Origin i AdGuarda, blokującego strony typu przekręt.
+Twórca KADa - polskich filtrów do uBlocka Origin, blokujących strony typu przekręt.

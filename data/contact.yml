@@ -2,7 +2,7 @@ enable : true
 heading : Informacje i
 headingSpan : kontakt
 title : Zgłoszenia
-content : "Pomóż ulepszać filtr KAD oraz bazy innych organizacji i firm zajmujących się niebezpiecznymi stronami. Zgłoś je do KADRep.<br><br>Strony phishing są przesyłane do: Netcraft, Google Safebrowsing, Phishtank, ESET, Symantec i Bitdefender.<br>Niektóre witryny mogą być zgłaszane bezpośrednio do administratora hostingu na którym znajduje się przekręt w celu ich kompletnego usunięcia.<br> <br>Jeśli chcesz pomóc z usprawnianiem listy, to możesz zgłaszać strony na:"
+content : "Pomóż ulepszać polskie filtry KAD oraz bazy innych organizacji i firm zajmujących się niebezpiecznymi stronami. Zgłoś je do KADRep.<br><br>Strony phishing są przesyłane do: Netcraft, Google Safebrowsing, Phishtank, ESET, Symantec i Bitdefender.<br>Niektóre witryny mogą być zgłaszane bezpośrednio do administratora hostingu na którym znajduje się przekręt w celu ich kompletnego usunięcia.<br> <br>Jeśli chcesz pomóc z usprawnianiem listy, to możesz zgłaszać strony na:"
 enable_maps : false
 contactDetails :
   - icon : tf-ion-ios-email-outline
