@@ -1,6 +1,6 @@
 // https://www.jsdelivr.com/package/npm/scroll-behavior-polyfill?path=dist
 /*!
-	scroll-behavior-polyfill 2.0.7
+	scroll-behavior-polyfill 2.0.11
     license: MIT (https://github.com/wessberg/scroll-behavior-polyfill/blob/master/LICENSE.md)
     Copyright © 2019 Frederik Wessberg <frederikwessberg@hotmail.com>
 */
@@ -8,11 +8,13 @@
 (function () {
     'use strict';
 
+    var UNSUPPORTED_ENVIRONMENT = typeof window === "undefined";
+
     /**
      * Is true if the browser natively supports the 'scroll-behavior' CSS-property.
      * @type {boolean}
      */
-    var SUPPORTS_SCROLL_BEHAVIOR = "scrollBehavior" in document.documentElement.style;
+    var SUPPORTS_SCROLL_BEHAVIOR = UNSUPPORTED_ENVIRONMENT ? false : "scrollBehavior" in document.documentElement.style;
 
 
 
@@ -59,9 +61,63 @@
         return ar;
     }
 
+    function getScrollingElement() {
+        if (document.scrollingElement != null) {
+            return document.scrollingElement;
+        }
+        else {
+            return document.documentElement;
+        }
+    }
+
+    var STYLE_ATTRIBUTE_PROPERTY_NAME = "scroll-behavior";
+    var STYLE_ATTRIBUTE_PROPERTY_REGEXP = new RegExp(STYLE_ATTRIBUTE_PROPERTY_NAME + ":\\s*([^;]*)");
+    /**
+     * Given an Element, this function appends the given ScrollBehavior CSS property value to the elements' 'style' attribute.
+     * If it doesnt already have one, it will add it.
+     * @param {Element} element
+     * @param {ScrollBehavior} behavior
+     */
+    function appendScrollBehaviorToStyleAttribute(element, behavior) {
+        var addition = STYLE_ATTRIBUTE_PROPERTY_NAME + ":" + behavior;
+        var attributeValue = element.getAttribute("style");
+        if (attributeValue == null || attributeValue === "") {
+            element.setAttribute("style", addition);
+            return;
+        }
+        // The style attribute may already include a 'scroll-behavior:<something>' in which case that should be replaced
+        var existingValueForProperty = parseScrollBehaviorFromStyleAttribute(element);
+        if (existingValueForProperty != null) {
+            var replacementProperty = STYLE_ATTRIBUTE_PROPERTY_NAME + ":" + existingValueForProperty;
+            // Replace the variant that ends with a semi-colon which it may
+            attributeValue = attributeValue.replace(replacementProperty + ";", "");
+            // Replace the variant that *doesn't* end with a semi-colon
+            attributeValue = attributeValue.replace(replacementProperty, "");
+        }
+        // Now, append the behavior to the string.
+        element.setAttribute("style", attributeValue.endsWith(";") ? "" + attributeValue + addition : ";" + attributeValue + addition);
+    }
+    /**
+     * Given an Element, this function attempts to parse its 'style' attribute (if it has one)' to extract
+     * a value for the 'scroll-behavior' CSS property (if it is given within that style attribute)
+     * @param {Element} element
+     * @returns {ScrollBehavior?}
+     */
+    function parseScrollBehaviorFromStyleAttribute(element) {
+        var styleAttributeValue = element.getAttribute("style");
+        if (styleAttributeValue != null && styleAttributeValue.includes(STYLE_ATTRIBUTE_PROPERTY_NAME)) {
+            var match = styleAttributeValue.match(STYLE_ATTRIBUTE_PROPERTY_REGEXP);
+            if (match != null) {
+                var _a = __read(match, 2), behavior = _a[1];
+                if (behavior != null && behavior !== "") {
+                    return behavior;
+                }
+            }
+        }
+        return undefined;
+    }
+
     var styleDeclarationPropertyName = "scrollBehavior";
-    var styleAttributePropertyName = "scroll-behavior";
-    var styleAttributePropertyNameRegex = new RegExp(styleAttributePropertyName + ":\\s*([^;]*)");
     /**
      * Determines the scroll behavior to use, depending on the given ScrollOptions and the position of the Element
      * within the DOM
@@ -73,7 +129,7 @@
         // If the given 'behavior' is 'smooth', apply smooth scrolling no matter what
         if (options != null && options.behavior === "smooth")
             return "smooth";
-        var target = "style" in inputTarget ? inputTarget : document.scrollingElement != null ? document.scrollingElement : document.documentElement;
+        var target = "style" in inputTarget ? inputTarget : getScrollingElement();
         var value;
         if ("style" in target) {
             // Check if scroll-behavior is set as a property on the CSSStyleDeclaration
@@ -91,16 +147,7 @@
         }
         if (value == null) {
             // Otherwise, check if it is set as an inline style
-            var styleAttributeValue = target.getAttribute("style");
-            if (styleAttributeValue != null && styleAttributeValue.includes(styleAttributePropertyName)) {
-                var match = styleAttributeValue.match(styleAttributePropertyNameRegex);
-                if (match != null) {
-                    var _a = __read(match, 2), behavior = _a[1];
-                    if (behavior != null && behavior !== "") {
-                        value = behavior;
-                    }
-                }
-            }
+            value = parseScrollBehaviorFromStyleAttribute(target);
         }
         if (value == null) {
             // Take the computed style for the element and see if it contains a specific 'scroll-behavior' value
@@ -116,6 +163,8 @@
 
 
 
+
+
     var HALF = 0.5;
     /**
      * The easing function to use when applying the smooth scrolling
@@ -124,6 +173,97 @@
      */
     function ease(k) {
         return HALF * (1 - Math.cos(Math.PI * k));
+    }
+
+    var NOOP = {
+        reset: function () { }
+    };
+    var map = typeof WeakMap === "undefined" ? undefined : new WeakMap();
+    function disableScrollSnap(scroller) {
+        // If scroll-behavior is natively supported, or if there is no native WeakMap support, there's no need for this fix
+        if (SUPPORTS_SCROLL_BEHAVIOR || map == null) {
+            return NOOP;
+        }
+        var scrollingElement = getScrollingElement();
+        var cachedScrollSnapValue;
+        var cachedScrollBehaviorStyleAttributeValue;
+        var secondaryScroller;
+        var secondaryScrollerCachedScrollSnapValue;
+        var secondaryScrollerCachedScrollBehaviorStyleAttributeValue;
+        var existingResult = map.get(scroller);
+        if (existingResult != null) {
+            cachedScrollSnapValue = existingResult.cachedScrollSnapValue;
+            cachedScrollBehaviorStyleAttributeValue = existingResult.cachedScrollBehaviorStyleAttributeValue;
+            secondaryScroller = existingResult.secondaryScroller;
+            secondaryScrollerCachedScrollSnapValue = existingResult.secondaryScrollerCachedScrollSnapValue;
+            secondaryScrollerCachedScrollBehaviorStyleAttributeValue = existingResult.secondaryScrollerCachedScrollBehaviorStyleAttributeValue;
+            existingResult.release();
+        }
+        else {
+            cachedScrollSnapValue = scroller.style.scrollSnapType === "" ? null : scroller.style.scrollSnapType;
+            cachedScrollBehaviorStyleAttributeValue = parseScrollBehaviorFromStyleAttribute(scroller);
+            secondaryScroller = scroller === scrollingElement && scrollingElement !== document.body ? document.body : undefined;
+            secondaryScrollerCachedScrollSnapValue =
+                secondaryScroller == null ? undefined : secondaryScroller.style.scrollSnapType === "" ? null : secondaryScroller.style.scrollSnapType;
+            secondaryScrollerCachedScrollBehaviorStyleAttributeValue =
+                secondaryScroller == null ? undefined : parseScrollBehaviorFromStyleAttribute(secondaryScroller);
+            var cachedComputedScrollSnapValue = getComputedStyle(scroller).getPropertyValue("scroll-snap-type");
+            var secondaryScrollerCachedComputedScrollSnapValue = secondaryScroller == null ? undefined : getComputedStyle(secondaryScroller).getPropertyValue("scroll-snap-type");
+            // If it just so happens that there actually isn't any scroll snapping going on, there's no point in performing any additional work here.
+            if (cachedComputedScrollSnapValue === "none" && secondaryScrollerCachedComputedScrollSnapValue === "none") {
+                return NOOP;
+            }
+        }
+        scroller.style.scrollSnapType = "none";
+        if (secondaryScroller !== undefined) {
+            secondaryScroller.style.scrollSnapType = "none";
+        }
+        if (cachedScrollBehaviorStyleAttributeValue !== undefined) {
+            appendScrollBehaviorToStyleAttribute(scroller, cachedScrollBehaviorStyleAttributeValue);
+        }
+        if (secondaryScroller !== undefined && secondaryScrollerCachedScrollBehaviorStyleAttributeValue !== undefined) {
+            appendScrollBehaviorToStyleAttribute(secondaryScroller, secondaryScrollerCachedScrollBehaviorStyleAttributeValue);
+        }
+        var hasReleased = false;
+        var eventTarget = scroller === scrollingElement ? window : scroller;
+        function release() {
+            eventTarget.removeEventListener("scroll", resetHandler);
+            if (map != null) {
+                map["delete"](scroller);
+            }
+            hasReleased = true;
+        }
+        function resetHandler() {
+            scroller.style.scrollSnapType = cachedScrollSnapValue;
+            if (secondaryScroller != null && secondaryScrollerCachedScrollSnapValue !== undefined) {
+                secondaryScroller.style.scrollSnapType = secondaryScrollerCachedScrollSnapValue;
+            }
+            if (cachedScrollBehaviorStyleAttributeValue !== undefined) {
+                appendScrollBehaviorToStyleAttribute(scroller, cachedScrollBehaviorStyleAttributeValue);
+            }
+            if (secondaryScroller !== undefined && secondaryScrollerCachedScrollBehaviorStyleAttributeValue !== undefined) {
+                appendScrollBehaviorToStyleAttribute(secondaryScroller, secondaryScrollerCachedScrollBehaviorStyleAttributeValue);
+            }
+            release();
+        }
+        function reset() {
+            setTimeout(function () {
+                if (hasReleased)
+                    return;
+                eventTarget.addEventListener("scroll", resetHandler);
+            });
+        }
+        map.set(scroller, {
+            release: release,
+            cachedScrollSnapValue: cachedScrollSnapValue,
+            cachedScrollBehaviorStyleAttributeValue: cachedScrollBehaviorStyleAttributeValue,
+            secondaryScroller: secondaryScroller,
+            secondaryScrollerCachedScrollSnapValue: secondaryScrollerCachedScrollSnapValue,
+            secondaryScrollerCachedScrollBehaviorStyleAttributeValue: secondaryScrollerCachedScrollBehaviorStyleAttributeValue
+        });
+        return {
+            reset: reset
+        };
     }
 
     /**
@@ -136,11 +276,13 @@
      * @param {ISmoothScrollOptions} options
      */
     function smoothScroll(options) {
-        var startTime = options.startTime, startX = options.startX, startY = options.startY, endX = options.endX, endY = options.endY, method = options.method;
+        var startTime = options.startTime, startX = options.startX, startY = options.startY, endX = options.endX, endY = options.endY, method = options.method, scroller = options.scroller;
         var timeLapsed = 0;
         var distanceX = endX - startX;
         var distanceY = endY - startY;
         var speed = Math.max(Math.abs((distanceX / 1000) * SCROLL_TIME), Math.abs((distanceY / 1000) * SCROLL_TIME));
+        // Temporarily disables any scroll snapping that may be active since it fights for control over the scroller with this polyfill
+        var scrollSnapFix = disableScrollSnap(scroller);
         requestAnimationFrame(function animate(timestamp) {
             timeLapsed += timestamp - startTime;
             var percentage = Math.max(0, Math.min(1, speed === 0 ? 0 : timeLapsed / speed));
@@ -149,6 +291,12 @@
             method(positionX, positionY);
             if (positionX !== endX || positionY !== endY) {
                 requestAnimationFrame(animate);
+            }
+            else {
+                if (scrollSnapFix != null) {
+                    scrollSnapFix.reset();
+                    scrollSnapFix = undefined;
+                }
             }
         });
     }
@@ -165,17 +313,17 @@
 
 
 
-    var ELEMENT_ORIGINAL_SCROLL = Element.prototype.scroll;
+    var ELEMENT_ORIGINAL_SCROLL = UNSUPPORTED_ENVIRONMENT ? undefined : Element.prototype.scroll;
 
-    var WINDOW_ORIGINAL_SCROLL = window.scroll;
+    var WINDOW_ORIGINAL_SCROLL = UNSUPPORTED_ENVIRONMENT ? undefined : window.scroll;
 
-    var ELEMENT_ORIGINAL_SCROLL_BY = Element.prototype.scrollBy;
+    var ELEMENT_ORIGINAL_SCROLL_BY = UNSUPPORTED_ENVIRONMENT ? undefined : Element.prototype.scrollBy;
 
-    var WINDOW_ORIGINAL_SCROLL_BY = window.scrollBy;
+    var WINDOW_ORIGINAL_SCROLL_BY = UNSUPPORTED_ENVIRONMENT ? undefined : window.scrollBy;
 
-    var ELEMENT_ORIGINAL_SCROLL_TO = Element.prototype.scrollTo;
+    var ELEMENT_ORIGINAL_SCROLL_TO = UNSUPPORTED_ENVIRONMENT ? undefined : Element.prototype.scrollTo;
 
-    var WINDOW_ORIGINAL_SCROLL_TO = window.scrollTo;
+    var WINDOW_ORIGINAL_SCROLL_TO = UNSUPPORTED_ENVIRONMENT ? undefined : window.scrollTo;
 
     /**
      * A fallback if Element.prototype.scroll is not defined
@@ -275,7 +423,8 @@
                 startY: startY,
                 endX: Math.floor(kind === "scrollBy" ? startX + x : x),
                 endY: Math.floor(kind === "scrollBy" ? startY + y : y),
-                method: getOriginalScrollMethodForKind("scrollTo", window).bind(window)
+                method: getOriginalScrollMethodForKind("scrollTo", window).bind(window),
+                scroller: getScrollingElement()
             };
         }
         else {
@@ -288,7 +437,8 @@
                 startY: startY,
                 endX: Math.floor(kind === "scrollBy" ? startX + x : x),
                 endY: Math.floor(kind === "scrollBy" ? startY + y : y),
-                method: getOriginalScrollMethodForKind("scrollTo", element).bind(element)
+                method: getOriginalScrollMethodForKind("scrollTo", element).bind(element),
+                scroller: element
             };
         }
     }
@@ -455,7 +605,6 @@
         return null;
     }
 
-    var scrollingElement = document.scrollingElement != null ? document.scrollingElement : document.documentElement;
     /**
      * Returns true if the given overflow property represents a scrollable overflow value
      * @param {string | null} overflow
@@ -483,6 +632,7 @@
      */
     function findNearestAncestorsWithScrollBehavior(target) {
         var currentElement = target;
+        var scrollingElement = getScrollingElement();
         while (currentElement != null) {
             var behavior = getScrollBehavior(currentElement);
             if (behavior != null && (currentElement === scrollingElement || isScrollable(currentElement))) {
@@ -567,7 +717,7 @@
         });
     }
 
-    var ELEMENT_ORIGINAL_SCROLL_INTO_VIEW = Element.prototype.scrollIntoView;
+    var ELEMENT_ORIGINAL_SCROLL_INTO_VIEW = UNSUPPORTED_ENVIRONMENT ? undefined : Element.prototype.scrollIntoView;
 
     /**
      * The majority of this file is based on https://github.com/stipsan/compute-scroll-into-view (MIT license),
@@ -602,7 +752,8 @@
          *   └───────────┘
          *    ┗ ━ ━ ━ ━ ┛
          */
-        if ((elementEdgeStart < scrollingEdgeStart && elementEdgeEnd > scrollingEdgeEnd) || (elementEdgeStart > scrollingEdgeStart && elementEdgeEnd < scrollingEdgeEnd)) {
+        if ((elementEdgeStart < scrollingEdgeStart && elementEdgeEnd > scrollingEdgeEnd) ||
+            (elementEdgeStart > scrollingEdgeStart && elementEdgeEnd < scrollingEdgeEnd)) {
             return 0;
         }
         /**
@@ -644,7 +795,8 @@
          *        └───────────┘   └───────────┘
          *    ┗ ━ ━ ━ ━ ┛         ┗ ━ ━ ━ ━ ┛
          */
-        if ((elementEdgeStart <= scrollingEdgeStart && elementSize <= scrollingSize) || (elementEdgeEnd >= scrollingEdgeEnd && elementSize >= scrollingSize)) {
+        if ((elementEdgeStart <= scrollingEdgeStart && elementSize <= scrollingSize) ||
+            (elementEdgeEnd >= scrollingEdgeEnd && elementSize >= scrollingSize)) {
             return elementEdgeStart - scrollingEdgeStart - scrollingBorderStart;
         }
         /**
@@ -695,7 +847,7 @@
     function computeScrollIntoView(target, scroller, options) {
         var block = options.block, inline = options.inline;
         // Used to handle the top most element that can be scrolled
-        var scrollingElement = document.scrollingElement || document.documentElement;
+        var scrollingElement = getScrollingElement();
         // Support pinch-zooming properly, making sure elements scroll into the visual viewport
         // Browsers that don't support visualViewport will report the layout viewport dimensions on document.documentElement.clientWidth/Height
         // and viewport dimensions on window.innerWidth/Height
@@ -829,7 +981,9 @@
         };
     }
 
-    var ELEMENT_ORIGINAL_SCROLL_TOP_SET_DESCRIPTOR = Object.getOwnPropertyDescriptor(Element.prototype, "scrollTop").set;
+    var ELEMENT_ORIGINAL_SCROLL_TOP_SET_DESCRIPTOR = UNSUPPORTED_ENVIRONMENT
+        ? undefined
+        : Object.getOwnPropertyDescriptor(Element.prototype, "scrollTop").set;
 
     /**
      * Patches the 'scrollTop' property descriptor on the Element prototype
@@ -846,7 +1000,9 @@
         });
     }
 
-    var ELEMENT_ORIGINAL_SCROLL_LEFT_SET_DESCRIPTOR = Object.getOwnPropertyDescriptor(Element.prototype, "scrollLeft").set;
+    var ELEMENT_ORIGINAL_SCROLL_LEFT_SET_DESCRIPTOR = UNSUPPORTED_ENVIRONMENT
+        ? undefined
+        : Object.getOwnPropertyDescriptor(Element.prototype, "scrollLeft").set;
 
     /**
      * Patches the 'scrollLeft' property descriptor on the Element prototype
@@ -887,9 +1043,11 @@
      * Is true if the browser natively supports the Element.prototype.[scroll|scrollTo|scrollBy|scrollIntoView] methods
      * @type {boolean}
      */
-    var SUPPORTS_ELEMENT_PROTOTYPE_SCROLL_METHODS = "scroll" in Element.prototype && "scrollTo" in Element.prototype && "scrollBy" in Element.prototype && "scrollIntoView" in Element.prototype;
+    var SUPPORTS_ELEMENT_PROTOTYPE_SCROLL_METHODS = UNSUPPORTED_ENVIRONMENT
+        ? false
+        : "scroll" in Element.prototype && "scrollTo" in Element.prototype && "scrollBy" in Element.prototype && "scrollIntoView" in Element.prototype;
 
-    if (!SUPPORTS_SCROLL_BEHAVIOR || !SUPPORTS_ELEMENT_PROTOTYPE_SCROLL_METHODS) {
+    if (!UNSUPPORTED_ENVIRONMENT && (!SUPPORTS_SCROLL_BEHAVIOR || !SUPPORTS_ELEMENT_PROTOTYPE_SCROLL_METHODS)) {
         patch();
     }
 
