@@ -64,7 +64,7 @@ google_site_verification = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"
 
     # footer
     [params.footer]
-        copyright = "Themefisher Team"
+        copyright = "Themefisher"
         copyrightURL = "http://www.themefisher.com"
 
         # social Icons
