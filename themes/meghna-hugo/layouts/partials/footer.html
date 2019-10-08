@@ -44,6 +44,7 @@
 {{ $swal := resources.Get "/js/sweetalert2.min.js" }}
 {{ $easymde := resources.Get "/js/easymde.min.js" }}
 {{ $autosize := resources.Get "/js/autosize.min.js" }}
-{{ $main_js := slice $jquery $sc $util $ss $cp $wow $sweets $ready $swal $autosize $script | resources.Concat "/js/main.js" | minify | fingerprint }}
+{{ $trim := resources.Get "/js/trim.js" }}
+{{ $main_js := slice $jquery $sc $util $ss $cp $wow $sweets $ready $swal $autosize $script $trim | resources.Concat "/js/main.js" | minify | fingerprint }}
 
 <script defer type="text/javascript" src="{{ $main_js.Permalink | absURL }}" integrity="{{ $main_js.Data.Integrity }}"></script>
