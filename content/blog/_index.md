@@ -1,4 +1,4 @@
 ---
 title: "KADBlog"
-description: "Blog polskiego filtra blokującego strony typu przekręt i phishing"
+description: "Blog polskich filtrów blokujących strony typu przekręt i phishing"
 ---
