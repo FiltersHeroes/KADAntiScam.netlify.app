@@ -3,7 +3,8 @@ $(function() {
         var value = $(this).val();
         var reg = /^(^\w+:|^)\/\//;
         if (reg.test(value)) {
-            $(this).val(value.replace(reg, "").replace(/\/$/, ""));
+            value = new URL(value).hostname;
+            $(this).val(value.replace(reg, value));
         }
     })
 });
