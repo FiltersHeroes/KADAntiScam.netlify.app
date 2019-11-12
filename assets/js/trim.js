@@ -13,7 +13,11 @@ $(function() {
         if (tareg.test(tavalue)) {
             document.querySelector("#direct-link").value = document.querySelector("#additional-info").value;
             $(this).val(tavalue.replace(tareg, ""));
-            alert("Nie tak szybko kowboju, sam link nie wystarczy, musisz jeszcze podać opis oszustwa!");
+            Swal.fire(
+                'Nie tak szybko kowboju!',
+                'Sam link nie wystarczy, musisz jeszcze podać opis oszustwa.',
+                'error'
+              );
         }
     })
 });
