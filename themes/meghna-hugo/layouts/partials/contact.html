@@ -32,7 +32,7 @@
 
             {{"<!-- Contact Form -->" | safeHTML}}
             <script>var submitted=false;</script>
-            <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){Swal.fire("Zgłoszenie zostało wysłane na GitHuba!", "Dziękujemy za wypełnienie formularza 😊", "success");}'></iframe>
+            <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){localStorage.setItem("submittedTime", new Date());}'></iframe>
             <div class="contact-form col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
                 <h3>Zgłoś niebezpieczną stronę</h3>
                 <p>Przed zgłoszeniem <a href="javascript:checkAdblocker()">sprawdź</a>, czy na pewno KAD jest aktywny.</p>
@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <!--Tytuł zgłoszenia-->
                     <label for="title" class="font-weight-bold">Tytuł zgłoszenia</label>
-                    <input pattern=".{5,}" class="form-control form-control-lg" id="title" name="entry.1249625661" type="text" placeholder="example.com" required="required"/>
+                    <input pattern=".{5,}" class="form-control form-control-lg" id="title" name="entry.1249625661" type="text" placeholder="example.com/Grupa Example" required="required"/>
                 </div>
 
                 <!--Link bezpośredni do strony zawierającej oszustwo-->
