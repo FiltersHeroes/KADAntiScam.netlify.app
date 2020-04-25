@@ -1,6 +1,6 @@
 ---
-name: azet12
-github: azet12
-email: kadrep@outlook.com
+name: MajsterMechazod
+github: MajsterMechazod
+email:
 ---
-Twórca KADa - polskich filtrów do uBlocka Origin, blokujących strony typu przekręt.
+Użytkownik KADa - polskich filtrów do uBlocka Origin, blokujących strony typu przekręt.
