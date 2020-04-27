@@ -1,6 +1,6 @@
 ---
 name: MajsterMechazod
 github: MajsterMechazod
-email: majstermechazod@users.noreply.github.com
+image: https://avatars0.githubusercontent.com/u/60334861?s=128
 ---
 Użytkownik KADa - polskich filtrów do uBlocka Origin i AdGuadra, blokujących strony typu przekręt.

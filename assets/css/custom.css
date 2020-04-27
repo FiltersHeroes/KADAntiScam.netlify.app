@@ -145,3 +145,11 @@ div {
 .swal2-container.swal2-shown {
   background-color: rgba(150,150,150,.1);
 }
+
+.navbar-brand:hover {
+  color: #57cbcc !important;
+}
+
+.navbar-toggler[aria-expanded="true"]+.navbar-collapse {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+}

@@ -48,3 +48,9 @@
   translation: Autorzy wpisów na blogu
 - id: blogs
   translation: Blog
+- id: share
+  translation: Podziel się
+- id: copyright
+  translation: Motyw tej strony został zaprojektowany i opracowany przez [Themefisher](https://themefisher.com/).
+- id: blogTitle
+  translation: Najnowsze wpisy

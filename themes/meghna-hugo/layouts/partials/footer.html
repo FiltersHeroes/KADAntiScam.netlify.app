@@ -8,7 +8,7 @@
 				<div class="social-icon">
 					<ul class="list-inline">
 						{{ range .Site.Params.footer.socialIcon }}
-						<li class="{{ .icon }} list-inline-item"><a href="{{ .url }}"><i class="tf-ion-social-{{ .icon }}"></i></a></li>
+						<li class="list-inline-item {{.icon}}"><a href="{{ .url | safeURL }}"><i class="ti-{{ .icon }}"></i></a></li>
 						{{ end }}
 					</ul>
 				</div>
@@ -20,9 +20,7 @@
 					</a>
 					<br>
 
-					<p>Motyw tej strony został zaprojektowany i opracowany przez <a href="{{ .Site.Params.footer.copyrightURL | absURL }}"> {{ with .Site.Params.footer.copyright }} {{ . }} {{ end }} </a>. Copyright &copy; <script>
-						document.write(new Date().getFullYear())
-					</script>. Wszelkie prawa zastrzeżone.</p>
+					<p>{{ i18n "copyright" | markdownify }}</p>
 				</div>
 			</div>
 		</div>

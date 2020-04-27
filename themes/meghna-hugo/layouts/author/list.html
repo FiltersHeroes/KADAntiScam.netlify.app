@@ -3,70 +3,68 @@
 {{ partial "navigation.html" . }}
 
 <section class="section section-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="title text-center">
-                    <h2> {{ with i18n "aboutAuthor" }} {{ index (split . " ") 0 }} {{ end }}<span class="color"> {{ with i18n "aboutAuthor" }} {{ index (split . " ") 1 }} {{ end }} </span></h2>
-                    <div class="border-meghna"></div>
-                </div>
-                <div class="content text-center">
-                    {{ partial "author-figure" . }}
-                    <hr>
-                    {{ .Content }}
-                    <hr>
-                    <div class="list-group">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto">
+				<div class="title text-center">
+					<h2>{{ with i18n "aboutAuthor" }} {{ index (split . " ") 0 }} {{ end }}<span class="color">
+							{{ with i18n "aboutAuthor" }} {{ index (split . " ") 1 }} {{ end }} </span></h2>
+					<div class="border-meghna"></div>
+				</div>
+				<div class="content text-center">
+					<figure>
+						{{ if .Params.Image }}
+						<img class="rounded-circle img-fluid" src="{{.Params.Image | relURL }}">
+						{{else if .Params.Email}}
+						<img class="rounded-circle img-fluid"
+							src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon">
+						{{ end }}
+						<figcaption>
+							<h5 class="font-weight-bold">
+								{{ .Title }}
+							</h5>
+						</figcaption>
+					</figure>
+					<hr>
+					{{ .Content }}
+					<hr>
+					<ul class="list-inline">
                         {{ with .Params.github }}
-                        <div>
-                            <i class="tf-ion-social-github-outline mr-1"></i>
-                            <span>GitHub: <a href="https://github.com/{{.}}">github.com/{{.}}</a>
-                            </span>
-                        </div>
+						<li class="list-inline-item"><a class="simple-icon" href="https://github.com/{{.}}"><i class="ti-github"></i></a></li>
                         {{ end }}
 
                         {{ with .Params.facebook }}
-                        <div>
-                            <i class="tf-ion-social-facebook-outline mr-1"></i>
-                            <span>Facebook: <a href="https://facebook.com/{{.}}">facebook.com/{{.}}</a>
-                            </span>
-                        </div>
+                        <li class="list-inline-item"><a class="simple-icon" href="https://facebook.com/{{.}}"><i class="ti-facebook"></i></a></li>
                         {{ end }}
 
                         {{ with .Params.twitter }}
-                        <div>
-                            <i class="tf-ion-social-twitter-outline mr-1"></i>
-                            <span>Twitter: <a href="https://twitter.com/{{.}}">twitter.com/{{.}}</a>
-                            </span>
-                        </div>
+                        <li class="list-inline-item"><a class="simple-icon" href="https://twitter.com/{{.}}"><i class="ti-twitter"></i></a></li>
                         {{ end }}
 
                         {{ with .Params.instagram }}
-                        <div>
-                            <i class="tf-ion-social-instagram-outline mr-1"></i>
-                            <span>Instagram: <a href="https://instagram.com/{{.}}">instagram.com/{{.}}</a>
-                            </span>
-                        </div>
+                        <li class="list-inline-item"><a class="simple-icon" href="https://instagram.com/{{.}}"><i class="ti-instagram"></i></a></li>
                         {{ end }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title text-center">
-                        <h2>  {{ with i18n "authorsPosts" }} {{ index (split . " ") 0 }} {{ end }}<span class="color"> {{ with i18n "authorsPosts" }} {{ index (split . " ") 1 }} {{ end }}</h2>
-                            <div class="border-meghna"></div>
-                        </div>
-                    </div>
-                    {{ range .Data.Pages }}
-                    {{ .Render "article" }}
-                    {{ end }}
-                </div>
-            </div>
-        </div>
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="title text-center">
+					<h2>{{ with i18n "authorsPosts" }} {{ index (split . " ") 0 }} {{ end }}<span class="color">
+							{{ with i18n "authorsPosts" }} {{ index (split . " ") 1 }} {{ end }}</h2>
+					<div class="border-meghna"></div>
+				</div>
+			</div>
+			{{ range .Data.Pages }}
+			{{ .Render "article" }}
+			{{ end }}
+		</div>
+	</div>
 </section>
 {{ end }}

@@ -14,15 +14,20 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms">
+                <div class="col-lg-4 wow fadeInUp" data-wow-duration="500ms">
                     {{ with .Site.Data.recommended.title }} <h2> {{ . }} </h2> {{ end }}
                     {{ with .Site.Data.recommended.content }} <p> {{ . | markdownify}} </p> {{ end }}
                     {{ with .Site.Data.recommended.btnText }} {{ . | markdownify}} {{ end }}
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms">
+                <div class="col-lg-4 wow fadeInUp" data-wow-duration="500ms">
                     {{ with .Site.Data.recommended.title2 }} <h2> {{ . }} </h2> {{ end }}
                     {{ with .Site.Data.recommended.content2 }} <p> {{ . | markdownify}} </p> {{ end }}
                     {{ with .Site.Data.recommended.btnText2 }} {{ . | markdownify}} {{ end }}
+                </div>
+                <div class="col-lg-4 wow fadeInUp" data-wow-duration="500ms">
+                    {{ with .Site.Data.recommended.title3 }} <h2> {{ . }} </h2> {{ end }}
+                    {{ with .Site.Data.recommended.content3 }} <p> {{ . | markdownify}} </p> {{ end }}
+                    {{ with .Site.Data.recommended.btnText3 }} {{ . | markdownify}} {{ end }}
                 </div>
             </div>
         </div>

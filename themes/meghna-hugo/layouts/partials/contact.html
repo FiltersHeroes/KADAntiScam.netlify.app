@@ -31,54 +31,7 @@
             </div>
 
             {{"<!-- Contact Form -->" | safeHTML}}
-            <script>var submitted=false;</script>
-            <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){localStorage.setItem("submittedTime", new Date());}'></iframe>
-            <div class="contact-form col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                <h3>Zgłoś niebezpieczną stronę</h3>
-                <p>Przed zgłoszeniem <a href="javascript:checkAdblocker()">sprawdź</a>, czy na pewno KAD jest aktywny.</p>
-                <p>Twoje zgłoszenie zostanie przekazane do Google (<a href="https://policies.google.com/privacy?gl=US&amp;hl=pl">polityka prywatności Google</a>), a następnie opublikowane na GitHubie (<a href="https://help.github.com/articles/github-privacy-statement/">polityka prywatności GitHuba</a>).</p>
-            </br>
-            <form class="form-control-meghna" id="usrform" method="post" role="form" target="hidden_iframe" onsubmit="submitted=true;">
-
-                <div class="form-group">
-                    <!--Tytuł zgłoszenia-->
-                    <label for="title" class="font-weight-bold">Tytuł zgłoszenia</label>
-                    <input pattern=".{5,}" class="form-control form-control-lg" id="title" name="entry.1249625661" type="text" placeholder="example.com/Grupa Example" required="required"/>
-                </div>
-
-                <!--Link bezpośredni do strony zawierającej oszustwo-->
-                <div class="form-group">
-                    <label for="direct-link" class="font-weight-bold">Link bezpośredni do strony zawierającej oszustwo (opcjonalny)</label>
-                    <input id="direct-link" name="entry.1269269191" minlength="5" pattern=".{12,}" class="form-control" placeholder="http://www.strona.pl/zrobicwbalona" type="url"/>
-                </div>
-
-                <!--Dodatkowe informacje mogące mieć znaczenie-->
-                <div class="form-group">
-                    <label for="additional-info" class="font-weight-bold">Dodatkowe informacje mogące mieć znaczenie</label>
-                    <textarea id="additional-info" name="entry.1564927089" minlength="5" rows="3" data-min-rows="3" class="form-control" placeholder="Opis oszustwa, etapy odtworzenia problemu (co doprowadziło do błędu) albo twoja metoda rozwiązania problemu." required="required"></textarea>
-                </div>
-
-                <!--Adres e-mail-->
-                <div class="form-group">
-                    <label for="mail" class="font-weight-bold">Adres e-mail</label>
-                    <input class="form-control" id="mail" name="emailAddress" type="text" placeholder="example@gmail.com" aria-describedby="mailHelp" required="required" autocomplete="email">
-                    <small id="mailHelp" class="form-text text-muted">Twój adres e-mail zostanie udostępniony jedynie dla właścicieli repozytorium.</small>
-                </div>
-                <input name="e-mail" type="text" id="e-mail" />
-
-                <div class="form-group">
-                    <label class="font-weight-bold">Powiadomienie na e-maila</label>
-                    <div class="custom-control custom-checkbox">
-                        <input name="entry.1459225481" type="checkbox" class="custom-control-input" id="tak" value="Tak">
-                        <label class="custom-control-label" for="tak">Chcę otrzymać powiadomienie o wysłanym formularzu wraz z linkiem do statusu zgłoszenia</label>
-                    </div>
-                </div>
-
-                <div id="cf-submit">
-                    <input type="submit" class="btn btn-info" value="Zgłoś">
-                </div>
-
-            </form>
+            {{ readFile "contactForm.html" | safeHTML }}
         </div>
 
     </div>

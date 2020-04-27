@@ -48,3 +48,9 @@
   translation: Authors of posts on the blog
 - id: blogs
   translation: Blogs
+- id: share
+  translation: Share
+- id: copyright
+  translation: The theme of this page has been designed and developed by [Themefisher](https://themefisher.com/).
+- id: blogTitle
+  translation: Latest Post

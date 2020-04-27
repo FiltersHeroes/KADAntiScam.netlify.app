@@ -1,0 +1,9 @@
+banner:
+    enable: true
+    bgImage: "images/slider/hero-area.jpg"
+    title: "Zablokuj strony, które wyłudzają pieniądze i dane"
+    content: 'KAD to polskie filtry do uBlocka Origin i Adguarda, chroniące przed różnego rodzaju przekrętami i oszustwami,<p> takimi jak np. subskrypcje SMS, wirusy i fałszywe sklepy internetowe.<p class="pt-2">Ich instalacja ogranicza się do dwóch prostych kroków.</p><p class="pt-3">**Krok 1.** Zainstaluj rozszerzenie uBlock Origin.<p>Kliknij nazwę swojej przeglądarki poniżej i pobierz uBlock Origin (zalecane).</p><p><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="noopener" class="text-info">Google Chrome</a> | <a href="https://addons.mozilla.org/addon/ublock-origin/" target="_blank" rel="noopener" class="text-info">Mozilla Firefox</a> | <a href="https://addons.opera.com/extensions/details/ublock/" target="_blank" rel="noopener" class="text-info">Opera</a> | <a href="https://microsoftedge.microsoft.com/addons/detail/odfafepnkmbhccpbejgmiehpchacaeak" target="_blank" rel="noopener" class="text-info">Microsoft Edge</a> | <a href="#instructions" class="text-warning">Inna</a></p></p><p class="pt-3">**Krok 2.** Kliknij poniższy przycisk, aby subskrybować filtry KAD. <p>Jeżeli nie działa, to [**kliknij tutaj**]( https://github.com/PolishFiltersTeam/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.</p></p>'
+    btn: true
+    btnText: "Subskrybuj KAD"
+    btnURL: 'https://raw.githubusercontent.com/PolishFiltersTeam/KAD/master/KAD.txt'
+    btnTitle: 'KAD - Przekręty'

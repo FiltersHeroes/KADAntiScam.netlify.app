@@ -7,3 +7,6 @@ btnText: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com
 title2: Polski Antyirytujący Dodatek Specjalny
 content2: Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi. Więcej informacji na [github.com/PolishFiltersTeam/PolishAntiAnnoyingSpecialSupplement](https://github.com/PolishFiltersTeam/PolishAntiAnnoyingSpecialSupplement).
 btnText2: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishAntiAnnoyingSpecialSupplement%2Fmaster%2Fpolish_rss_filters.txt&amp;title=Polski%20Antyirytujący%20Dodatek%20Specjalny" class="btn btn-transparent">Subskrybuj Polski Antyirytujący Dodatek Specjalny</a>
+content3: Filtry blokujące pseudonaukę, dezinformację, nieprawdziwe informacje i kontrowersyjne strony (bez polityki i satyry).
+title3: KADfake - Kontrowersje
+btnText3: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKADfake.txt&amp;title=KADfake" class="btn btn-transparent">Subskrybuj KADfake - Kontrowersje</a>

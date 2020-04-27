@@ -4,6 +4,9 @@ DefaultContentLanguage = "pl"
 title = "KAD - stop przekrętom"
 theme = "meghna-hugo"
 enableEmoji = true
+enableGitInfo = true
+enableInlineShortcodes = true
+ignoreFiles = [ "contactForm.html" ]
 
 [taxonomies]
   author = "author"
@@ -14,35 +17,36 @@ enableEmoji = true
     blog ="/blog/:year/:month/::day/:filename/"
 
 # Menu
-[menu]
-    [[menu.nav]]
-    name = "Działanie"
-    URL = "action"
-    weight = 2
+[[menu.main]]
+name = "Działanie"
+URL = "action"
+weight = 2
+[[menu.main]]
+name = "Instrukcje"
+URL = "instructions"
+weight = 3
+[[menu.main]]
+name = "Inne polecane listy filtrów"
+URL = "recommended"
+weight = 4
+[[menu.main]]
+name = "Blog"
+URL = "blog"
+weight = 5
+[[menu.main]]
+name = "Informacje i kontakt"
+URL = "contact"
+weight = 6
 
-    [[menu.nav]]
-    name = "Instrukcje"
-    URL = "instructions"
-    weight = 3
-
-    [[menu.nav]]
-    name = "Inne polecane listy filtrów"
-    URL = "recommended"
-    weight = 4
-
-    [[menu.nav]]
-    name = "Blog"
-    URL = "blog"
-    weight = 5
-
-    [[menu.nav]]
-    name = "Informacje i kontakt"
-    URL = "contact"
-    weight = 6
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 # Site params
 [params]
-shortTitle = "KAD - stop przekrętom"
+shortTitle = "KAD - Przekręty"
+includes_dir = "homepage"
 
 home= "Start"
 logo = "images/logo.png"
@@ -51,25 +55,11 @@ description = "Filtry blokujące strony typu przekręt i phishing"
 author = "PolishFiltersTeam"
 google_site_verification = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"
 
-    # Banner Section
-    [params.banner]
-    enable = true
-    bgImage = "images/slider/hero-area.jpg"
-    icon = "tf-ion-play"
-    heading = "Zablokuj strony, które wyłudzają pieniądze i dane"
-    content= 'KAD to polskie filtry do uBlocka Origin, blokujące strony typu przekręt i phishing.<br>Instalacja ogranicza się do dwóch prostych kroków.<br><br>**Krok 1.** Zainstaluj rozszerzenie uBlock Origin.<br>Kliknij nazwę swojej przeglądarki poniżej i pobierz uBlock Origin (zalecane).<br><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm" target="_blank" rel="noopener" class="text-info">Google Chrome</a> | <a href="https://addons.mozilla.org/addon/ublock-origin/" target="_blank" rel="noopener" class="text-info">Mozilla Firefox</a> | <a href="https://addons.opera.com/extensions/details/ublock/" target="_blank" rel="noopener" class="text-info">Opera</a> | <a href="#instructions" class="text-warning">Inna</a><br><br>**Krok 2.** Kliknij poniższy przycisk, aby subskrybować filtry KAD. <br>Jeżeli nie działa, to [**kliknij tutaj**]( https://github.com/PolishFiltersTeam/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.'
-    btn = true
-    btnText="Subskrybuj KAD"
-    btnURL='abp:subscribe?location=https://raw.githubusercontent.com/PolishFiltersTeam/KAD/master/KAD.txt'
-
     # footer
     [params.footer]
-        copyright = "Themefisher"
-        copyrightURL = "http://www.themefisher.com"
-
         [[params.footer.socialIcon]]
         icon = "github"
-        url = "https://github.com/PolishFiltersTeam/KAD"
+        url = "https://github.com/PolishFiltersTeam/KADAntiScam.netlify.com"
 
         [[params.footer.socialIcon]]
         icon = "rss"
