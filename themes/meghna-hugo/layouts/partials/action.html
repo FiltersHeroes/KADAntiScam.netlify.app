@@ -12,7 +12,7 @@
             </div>
             {{"<!-- /section title -->" | safeHTML}}
             <div class="content text-center">
-                {{with .Site.Data.action.content}} {{ . | markdownify}} {{ end }}
+                {{ $.Page.RenderString .Site.Data.action.content }}
             </div>
         </div>
     </div>
