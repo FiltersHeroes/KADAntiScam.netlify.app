@@ -1,22 +1,3 @@
-/* ========================================================================= */
-/*	Animated section
-/* ========================================================================= */
-
-var wow = new WOW({
-	offset: 100, // distance to the element when triggering the animation (default is 0)
-	mobile: false // trigger animations on mobile devices (default is true)
-});
-
-//https://github.com/matthieua/WOW/issues/196#issuecomment-348734401
-var scrolled = false;
-$(window).on('scroll', function() {
-	if (!scrolled) {
-		scrolled = true;
-		wow.init();
-	}
-})
-
-
 // https://varvy.com/pagespeed/defer-images.html
 
 function init() {
@@ -74,7 +55,7 @@ function checkAdblocker(){
 	{
 		Swal.fire({
 			title: 'Dobrze, choć mogłoby być lepiej!',
-			type: 'warning',
+			icon: 'warning',
 			html: 'Prawdopodobnie masz aktywny AdBlock/AdBlock Plus z listą KAD. Zalecamy zamienić go na <a href="https://github.com/gorhill/uBlock#installation" target="_blank" rel="noopener">uBlock Origin</a>, by mieć lepszą ochronę przed przekrętami.'
 		  })
 	}
@@ -82,7 +63,7 @@ function checkAdblocker(){
 	{
 		Swal.fire({
 			title: 'Bardzo źle!',
-			type: 'error',
+			icon: 'error',
 			text: 'Nie masz aktywnej listy KAD 😞'
 		  })
 		  $("button.swal2-confirm").replaceWith('<a class="swal2-confirm swal2-styled" style="border-left-color: rgb(48, 133, 214); border-right-color: rgb(48, 133, 214);" onclick="Swal.close();" href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKAD.txt&amp;title=KAD%20-%20Przekr%C4%99ty">Subskrybuj KAD</a>');

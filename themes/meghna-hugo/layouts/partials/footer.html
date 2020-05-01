@@ -35,7 +35,6 @@
 {{ $util := resources.Get "/js/bootstrap/util.js" }}
 {{ $ss := resources.Get "/js//bootstrap/scrollspy.js" }}
 {{ $cp := resources.Get "/js//bootstrap/collapse.js" }}
-{{ $wow := resources.Get "/js/wow.js" }}
 {{ $script := resources.Get "js/script.js" }}
 {{ $sweets := resources.Get "/js/sweet-surprise.js" }}
 {{ $ready := resources.Get "/js/ready.js" }}
@@ -43,6 +42,6 @@
 {{ $easymde := resources.Get "/js/easymde.min.js" }}
 {{ $autosize := resources.Get "/js/autosize.min.js" }}
 {{ $trim := resources.Get "/js/trim.js" }}
-{{ $main_js := slice $jquery $sc $util $ss $cp $wow $sweets $ready $swal $autosize $script $trim | resources.Concat "/js/main.js" | minify | fingerprint }}
+{{ $main_js := slice $jquery $sc $util $ss $cp $sweets $ready $swal $autosize $script $trim | resources.Concat "/js/main.js" | minify | fingerprint }}
 
 <script defer type="text/javascript" src="{{ $main_js.Permalink | relURL }}" integrity="{{ $main_js.Data.Integrity }}"></script>

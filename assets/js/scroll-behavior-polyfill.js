@@ -1,6 +1,6 @@
 // https://www.jsdelivr.com/package/npm/scroll-behavior-polyfill?path=dist
 /*!
-	scroll-behavior-polyfill 2.0.11
+	scroll-behavior-polyfill 2.0.13
     license: MIT (https://github.com/wessberg/scroll-behavior-polyfill/blob/master/LICENSE.md)
     Copyright © 2019 Frederik Wessberg <frederikwessberg@hotmail.com>
 */
@@ -522,11 +522,11 @@
         }
         // Scroll based on the primitive values given as arguments
         if (!isScrollToOptions(optionsOrX)) {
-            return __assign({}, normalizeScrollCoordinates(optionsOrX, y), { behavior: "auto" });
+            return __assign(__assign({}, normalizeScrollCoordinates(optionsOrX, y)), { behavior: "auto" });
         }
         // Scroll based on the received options object
         else {
-            return __assign({}, normalizeScrollCoordinates(optionsOrX.left, optionsOrX.top), { behavior: optionsOrX.behavior == null ? "auto" : optionsOrX.behavior });
+            return __assign(__assign({}, normalizeScrollCoordinates(optionsOrX.left, optionsOrX.top)), { behavior: optionsOrX.behavior == null ? "auto" : optionsOrX.behavior });
         }
     }
 
@@ -677,6 +677,25 @@
     }
 
     /**
+     * Gets the origin of the given Location or HTMLAnchorElement if available in the runtime, and otherwise shims it. (it's a one-liner)
+     * @returns {string}
+     */
+    function getLocationOrigin(locationLike) {
+        if (locationLike === void 0) { locationLike = location; }
+        if ("origin" in locationLike && locationLike.origin != null) {
+            return locationLike.origin;
+        }
+        var port = locationLike.port != null && locationLike.port.length > 0 ? ":" + locationLike.port : "";
+        if (locationLike.protocol === "http:" && port === ":80") {
+            port = "";
+        }
+        else if (locationLike.protocol === "https:" && port === ":443") {
+            port = "";
+        }
+        return locationLike.protocol + "//" + locationLike.hostname + port;
+    }
+
+    /**
      * A Regular expression that matches id's of the form "#[digit]"
      * @type {RegExp}
      */
@@ -691,20 +710,21 @@
             // Only work with trusted events on HTMLAnchorElements
             if (!e.isTrusted || !(e.target instanceof HTMLAnchorElement))
                 return;
-            var hrefAttributeValue = e.target.getAttribute("href");
-            // Only work with HTMLAnchorElements that navigates to a specific ID
-            if (hrefAttributeValue == null || !hrefAttributeValue.startsWith("#")) {
+            var _a = e.target, pathname = _a.pathname, search = _a.search, hash = _a.hash;
+            var pointsToCurrentPage = getLocationOrigin(e.target) === getLocationOrigin(location) && pathname === location.pathname && search === location.search;
+            // Only work with HTMLAnchorElements that navigates to a specific ID on the current page
+            if (!pointsToCurrentPage || hash == null || hash.length < 1) {
                 return;
             }
             // Find the nearest root, whether it be a ShadowRoot or the document itself
             var root = findNearestRoot(e.target);
             // Attempt to match the selector from that root. querySelector' doesn't support IDs that start with a digit, so work around that limitation
-            var elementMatch = hrefAttributeValue.match(ID_WITH_LEADING_DIGIT_REGEXP) != null ? root.getElementById(hrefAttributeValue.slice(1)) : root.querySelector(hrefAttributeValue);
+            var elementMatch = hash.match(ID_WITH_LEADING_DIGIT_REGEXP) != null ? root.getElementById(hash.slice(1)) : root.querySelector(hash);
             // If no selector could be found, don't proceed
             if (elementMatch == null)
                 return;
             // Find the nearest ancestor that can be scrolled
-            var _a = __read(findNearestAncestorsWithScrollBehavior(elementMatch), 2), behavior = _a[1];
+            var _b = __read(findNearestAncestorsWithScrollBehavior(elementMatch), 2), behavior = _b[1];
             // If the behavior isn't smooth, don't proceed
             if (behavior !== "smooth")
                 return;
@@ -979,6 +999,10 @@
             }
             ancestorWithScroll.scrollTo(__assign({ behavior: behavior }, computeScrollIntoView(this, ancestorWithScroll, normalizedOptions)));
         };
+        // On IE11, HTMLElement has its own declaration of scrollIntoView and does not inherit this from the prototype chain, so we'll need to patch that one too.
+        if (HTMLElement.prototype.scrollIntoView != null && HTMLElement.prototype.scrollIntoView !== Element.prototype.scrollIntoView) {
+            HTMLElement.prototype.scrollIntoView = Element.prototype.scrollIntoView;
+        }
     }
 
     var ELEMENT_ORIGINAL_SCROLL_TOP_SET_DESCRIPTOR = UNSUPPORTED_ENVIRONMENT
