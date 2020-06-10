@@ -7,7 +7,7 @@ $(document).ready(function() {
         else if ("submittedTime" in localStorage &&
         new Date().getHours() == new Date(localStorage.getItem("submittedTime")).getHours() &&
         new Date().getDate() == new Date(localStorage.getItem("submittedTime")).getDate() &&
-        new Date().getDate() == new Date(localStorage.getItem("submittedTime")).getMonth() &&
+        new Date().getMonth() == new Date(localStorage.getItem("submittedTime")).getMonth() &&
         new Date().getFullYear() == new Date(localStorage.getItem("submittedTime")).getFullYear() &&
         new Date().getMinutes() - new Date(localStorage.getItem("submittedTime")).getMinutes() < 3) {
                 $('form').attr('action', '/');
