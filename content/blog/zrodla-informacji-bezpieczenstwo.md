@@ -1,8 +1,8 @@
 ---
 title: "Polecane źródła informacji na temat bezpieczeństwa w sieci"
-author: MajsterMechazod
-image: images/blog/thinking-icon-questions.jpg
 date: 2020-04-25T21:01:00+02:00
+author: Thuijoss
+image: images/blog/thinking-icon-questions.jpg
 ---
 
 Chcesz dowiedzieć się więcej jak skutecznie zwiększyć swoje bezpieczeństwo w cyberprzestrzeni? Możesz zapoznać się z poniższymi stronami, by poszerzyć swoją wiedzę.
