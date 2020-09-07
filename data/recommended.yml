@@ -2,11 +2,11 @@ enable : true
 heading : Inne polecane
 headingSpan : listy filtrów
 title : Polskie Filtry Elementów Irytujących
-content : Filtry ukrywające i blokujące wyskakujące okienka, widgety, newslettery, powiadomienia push, strzałki i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe są już w nich zawarte). Więcej informacji na [polishannoyancefilters.netlify.com](https://polishannoyancefilters.netlify.com/).
-btnText: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishAnnoyanceFilters%2Fmaster%2FPPB.txt&amp;title=Polskie%20Filtry%20Element%C3%B3w%20Irytuj%C4%85cych" class="btn btn-transparent">Subskrybuj Polskie Filtry Elementów Irytujących</a>
+content : Filtry ukrywające i blokujące wyskakujące okienka, widżety, newslettery, powiadomienia push, strzałki i inne drażniące elementy (Polskie Filtry RODO-Ciasteczkowe są już w nich zawarte). Więcej informacji na [polishannoyancefilters.netlify.app](https://polishannoyancefilters.netlify.app/).
+btnText: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishAnnoyanceFilters%2Fmaster%2FPPB.txt&amp;title=Polskie%20Filtry%20Element%C3%B3w%20Irytuj%C4%85cych" class="btn btn-transparent">Subskrybuj</a>
 title2: Polski Antyirytujący Dodatek Specjalny
 content2: Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi. Więcej informacji na [github.com/PolishFiltersTeam/PolishAntiAnnoyingSpecialSupplement](https://github.com/PolishFiltersTeam/PolishAntiAnnoyingSpecialSupplement).
-btnText2: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishAntiAnnoyingSpecialSupplement%2Fmaster%2Fpolish_rss_filters.txt&amp;title=Polski%20Antyirytujący%20Dodatek%20Specjalny" class="btn btn-transparent">Subskrybuj Polski Antyirytujący Dodatek Specjalny</a>
-content3: Filtry blokujące pseudonaukę, dezinformację, nieprawdziwe informacje i kontrowersyjne strony (bez polityki i satyry).
-title3: KADfake - Kontrowersje
-btnText3: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKADfake.txt&amp;title=KADfake" class="btn btn-transparent">Subskrybuj KADfake - Kontrowersje</a>
+btnText2: <a href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FPolishAntiAnnoyingSpecialSupplement%2Fmaster%2Fpolish_rss_filters.txt&amp;title=Polski%20Antyirytujący%20Dodatek%20Specjalny" class="btn btn-transparent">Subskrybuj</a>
+content3: Filtry ukrywające i blokujące elementy sieci społecznościowych, tj. widżety, wyskakujące okienka i inne elementy społecznościowe. Do ich poprawnego działania wymagana jest lista **Fanboy's Social**.
+title3: Polskie Filtry Społecznościowe
+btnText3: <a href="abp:subscribe?location=https%3a%2f%2fraw.githubusercontent.com%2fMajkiIT%2fpolish-ads-filter%2fmaster%2fadblock_social_filters%2fadblock_social_list.txt&amp;title=Polskie%20Filtry%20Spo%c5%82eczno%c5%9bciowe" class="btn btn-transparent">Subskrybuj</a>
