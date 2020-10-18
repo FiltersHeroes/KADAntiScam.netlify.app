@@ -56,7 +56,7 @@ function checkAdblocker(){
 		Swal.fire({
 			title: 'Źle!',
 			icon: 'warning',
-			html: 'Prawdopodobnie masz aktywny AdBlock/AdBlock Plus z listą KAD. Do poprawnego działania listy wymagane jest rozszerzenie <a href="https://github.com/gorhill/uBlock#installation" target="_blank" rel="noopener">uBlock Origin</a>, <a href="https://github.com/NanoAdblocker/NanoCore#install-links" target="_blank" rel="noopener">Nano Adblocker</a> lub <a href="https://github.com/AdguardTeam/AdguardBrowserExtension#installation" target="_blank" rel="noopener">AdGuard</a>.'
+			html: 'Prawdopodobnie masz aktywny AdBlock/AdBlock Plus z listą KAD. Do poprawnego działania listy wymagane jest rozszerzenie <a href="https://github.com/gorhill/uBlock#installation" target="_blank" rel="noopener">uBlock Origin</a> lub <a href="https://github.com/AdguardTeam/AdguardBrowserExtension#installation" target="_blank" rel="noopener">AdGuard</a>.'
 		  })
 	}
 	else
