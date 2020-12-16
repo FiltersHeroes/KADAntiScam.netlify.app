@@ -4,7 +4,7 @@ function createuBOModal(url) {
         Swal.fire({
             title: 'Ręczna subskrypcja listy filtrów',
             html:
-            '<p>Jeśli z jakiegoś powodu nie wyświetlił ci się komunikat z możliwością potwierdzenia subskrypcji, to w miejsce nr 3 wklej adres z listą filtrów.</p>' +'<input type="text" id="manualSubscribe" readonly="true" value="'+url+'"</input><button class="btn btn-transparent" style="margin-left: 10px;"   onclick="copyToClipBoard();" title="kopiuj link"><i class="ti-clipboard"></i></button><div class="mt-1"><img class="img-fluid" src="/images/uBO_add1.png" alt="ubo" title="klikamy w  przycisk ustawień"><img class="img-fluid" src="/images/uBO_add2.png" alt="ubo-settings" title="aktywujemy zakładkę listy filtrów, przewijamy stronę do końca i wklejamy link z listą do pola na dole, potem klikamy zastosuj"></div>',
+            '<p>Jeśli z jakiegoś powodu nie wyświetlił ci się komunikat z możliwością potwierdzenia subskrypcji, to w miejsce nr 3 wklej adres z listą filtrów.</p><input type="text" id="manualSubscribe" readonly="true" value="'+url+'"><button class="btn btn-transparent" style="margin-left: 10px;" onclick="copyToClipBoard();" title="kopiuj link"><i class="ti-clipboard"></i></button><div class="mt-1"><img class="img-fluid" src="/images/uBO_add1.png" alt="ubo" title="klikamy w przycisk ustawień"><img class="img-fluid" src="/images/uBO_add2.png" alt="ubo-settings" title="aktywujemy zakładkę listy filtrów, przewijamy stronę do końca i wklejamy link z listą do pola na dole, potem klikamy zastosuj"></div>',
             showCloseButton: true,
             showCancelButton: false,
             showDenyButton: true,
