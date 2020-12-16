@@ -153,3 +153,24 @@ div {
 .navbar-toggler[aria-expanded="true"]+.navbar-collapse {
   box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
 }
+
+
+.modal-vlg {
+  max-width: 80%;
+}
+
+input#manualSubscribe {
+  width: 70%;
+  background-color: transparent;
+  color: #ddd;
+  border: 1px solid rgba(236,239,241,.07);
+}
+
+.swal2-grow-row {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+ul {
+  list-style-position: outside;
+}

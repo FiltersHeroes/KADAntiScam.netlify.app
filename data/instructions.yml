@@ -1,15 +1,15 @@
 enable : true
 heading : Rozwiązywanie
 headingSpan : problemów
-content: Do poprawnego działania filtrów wymagane jest rozszerzenie **uBlock Origin** lub **AdGuard**, które blokuje reklamy i wspiera filtry zewnętrzne takie jak KAD.
+content: Do poprawnego działania filtrów wymagane jest rozszerzenie [**uBlock Origin**](https://github.com/gorhill/uBlock#installation) lub [**AdGuard**](https://adguard.com/pl/adguard-browser-extension/overview.html), które blokuje reklamy i wspiera filtry zewnętrzne takie jak KAD.
             <p><strong>Po pobraniu rozszerzenia</strong>, kliknij przycisk „<a href="#body">Subskrybuj KAD</a>” wyżej. Wyświetli się okienko z potwierdzeniem subskrypcji filtrów. Kliknij „OK”. Gotowe! KAD zablokuje niebezpieczną stronę, jeśli taką wykryje.</p>
-            <p><ul>Jeśli korzystasz z przeglądarki, która nie obsługuje **uBlocka Origin** lub **AdGuarda**, możesz:<li>zmienić swoją przeglądarkę na inną;</li>
+            Jeśli korzystasz z przeglądarki, która nie obsługuje **uBlocka Origin** lub **AdGuarda**, możesz:<ul><li>zmienić swoją przeglądarkę na inną;</li>
             <li>skorzystać z innego oprogramowania, takiego jak <a href="https://getadblock.com/" target="_blank" rel=”noopener”>Adblock</a> lub <a href="https://adblockplus.org/" target="_blank" rel=”noopener”>Adblock Plus</a> (niezalecane ze względu na brak w nich bezpośredniego blokowania stron);</li>
             <li>pobrać <a href="https://github.com/PolishFiltersTeam/KADhosts" target="_blank" rel=”noopener”>wersję hosts listy KAD</a> (dla zaawansowanych).</li>
-            </p></ul>
-            <p><ul>Niektóre DNS-y używają naszej listy **KADhosts** i można je alternatywnie używać (np. na urządzeniach mobilnych).
-            Są to między innymi:<li><a href="https://nextdns.io/" target="_blank" rel=”noopener”>nextdns.io</a> (zawiera bezpośrednio listę **KAD** w domyślnej konfiguracji)</li>
-            <li><a href="https://ahadns.com/" target="_blank" rel=”noopener”>ahadns.com</a> (bazuje na **oisd.nl**)</li>
-            <li><a href="https://dnscrypt.pl/" target="_blank" rel=”noopener”>dnscrypt.pl</a> (zawiera bezpośrednio listę **KAD**)</li>
-            </ul></p>
+            </ul>
+            Niektóre DNS-y używają naszej listy **KADhosts** i można je alternatywnie używać (np. na urządzeniach mobilnych).
+            Są to między innymi:<ul><li><a href="https://nextdns.io/" target="_blank" rel=”noopener”>nextdns.io</a> (zawiera bezpośrednio listę **KAD** w domyślnej konfiguracji);</li>
+            <li><a href="https://ahadns.com/" target="_blank" rel=”noopener”>ahadns.com</a> (bazuje na **oisd.nl**);</li>
+            <li><a href="https://dnscrypt.pl/" target="_blank" rel=”noopener”>dnscrypt.pl</a> (zawiera bezpośrednio listę **KAD**).</li>
+            </ul>
             <p><strong>Masz inne pytania lub problemy? Wejdź w zakładkę <a href="#contact">Informacje i kontakt</a>.</strong>
