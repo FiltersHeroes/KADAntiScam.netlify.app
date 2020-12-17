@@ -6,7 +6,6 @@ theme = "meghna-hugo"
 enableEmoji = true
 enableGitInfo = true
 enableInlineShortcodes = true
-ignoreFiles = [ "contactForm.html" ]
 
 [taxonomies]
   author = "author"
@@ -14,7 +13,7 @@ ignoreFiles = [ "contactForm.html" ]
   tag = "tags"
 
 [permalinks]
-    blog ="/blog/:year/:month/::day/:filename/"
+  blog ="/blog/:year/:month/::day/:filename/"
 
 # Menu
 [[menu.main]]
@@ -47,20 +46,25 @@ weight = 6
 [params]
 shortTitle = "KAD - Przekręty"
 includes_dir = "homepage"
-
-home= "Start"
+bgImage = "images/slider/hero-area.jpg"
+home = "Start"
 logo = "images/logo.png"
-# Meta data
 description = "Filtry blokujące strony typu przekręt i phishing"
 author = "PolishFiltersTeam"
 google_site_verification = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"
+blogEnabled = "true"
 
-    # footer
-    [params.footer]
-        [[params.footer.socialIcon]]
-        icon = "github"
-        url = "https://github.com/PolishFiltersTeam/KADAntiScam.netlify.com"
+  # Footer
+  [params.footer]
+    [[params.footer.socialIcon]]
+      icon = "github"
+      url = "https://github.com/PolishFiltersTeam/KADAntiScam.netlify.com"
 
-        [[params.footer.socialIcon]]
-        icon = "rss"
-        url = "/index.xml"
+    [[params.footer.socialIcon]]
+      icon = "rss"
+      url = "/index.xml"
+
+  # Staticman Comments
+  [params.staticmanComments]
+    notifications = "false"
+    api = "https://api.staticman.net/v3/entry/github/PolishFiltersTeam/KADAntiScam.netlify.com/master/comments"

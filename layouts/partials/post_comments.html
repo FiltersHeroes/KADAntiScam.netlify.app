@@ -1,4 +1,4 @@
-{{ if .Site.Data.blog.staticmanComments.enable }}
+{{ if .Site.Params.staticmanComments.api }}
 <section class="mt-4">
     <h3>{{ i18n "comments" }}</h3>
 
@@ -71,7 +71,7 @@
     <h3>{{ i18n "tellSomething" }}</h3>
     <script>var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){Swal.fire("{{ i18n "thanksForComment" }}!", "{{ i18n "commentSent" }} 😊", "success");}'></iframe>
-    <form class="form-control-meghna" method="POST" action="{{ .Site.Data.blog.staticmanComments.api }}" target="hidden_iframe" onsubmit="submitted=true;">
+    <form class="form-control-meghna" method="POST" action="{{ .Site.Params.staticmanComments.api }}" target="hidden_iframe" onsubmit="submitted=true;">
         <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
         <input type="hidden" name="options[origin]" value="{{ $.Permalink }}#comments">
         <input type="hidden" name="fields[reply_to]" value="">
@@ -83,7 +83,7 @@
         <div class="form-group">
             <label for="mail" class="font-weight-bold">Email</label>
             <input type="email" class="form-control" id="mail" name="fields[email]" type="text" required="required"/>
-            <small id="mailHelp" class="form-text text-muted">{{ if .Site.Data.blog.staticmanComments.notifications }} {{ i18n "emailUseGravatarNotifications"  | markdownify }} {{else}} {{ i18n "emailUseGravatar" | markdownify }} {{end}}</small>
+            <small id="mailHelp" class="form-text text-muted">{{ if .Site.Params.staticmanComments.notifications }} {{ i18n "emailUseGravatarNotifications"  | markdownify }} {{else}} {{ i18n "emailUseGravatar" | markdownify }} {{end}}</small>
         </div>
 
         <input name="e-mail" type="text" id="e-mail" autocomplete="off">
@@ -92,7 +92,7 @@
             <label for="message" class="font-weight-bold">{{ i18n "comment" }}</label>
             <textarea id="message" name="fields[message]" minlength="5" rows="3" data-min-rows="3" class="form-control" required="required" placeholder="{{ i18n "commentPlaceholder" }}"></textarea>
         </div>
-        {{ if .Site.Data.blog.staticmanComments.notifications }}
+        {{ if .Site.Params.staticmanComments.notifications }}
         <input type="hidden" name="options[parent]" value="{{ .File.BaseFileName }}">
         <div class="form-group">
             <div class="custom-control custom-checkbox">

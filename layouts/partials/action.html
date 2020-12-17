@@ -1,4 +1,3 @@
-{{ if .Site.Data.action.enable}}
 {{"<!-- Start action Section -->" | safeHTML}}
 <section class="bg-one action section section-bg" id="action">
     <div class="container">
@@ -6,16 +5,19 @@
             <div class="col-lg-12">
                 {{"<!-- section title -->" | safeHTML}}
                 <div class="title text-center">
-                    <h2>{{ .Site.Data.action.heading}} <span class="color">{{ .Site.Data.action.headingSpan}}</span> </h2>
+                    <h2>{{i18n "actionTitle"}}</h2>
                     <div class="border-meghna"></div>
                 </div>
             </div>
             {{"<!-- /section title -->" | safeHTML}}
+            {{ $headless := .Site.GetPage "/home" }}
+            {{ $reusablePages := $headless.Resources.Match "action.md" }}
             <div class="content text-center">
-                {{ $.Page.RenderString .Site.Data.action.content }}
+                {{ range $reusablePages }}
+                    {{ .Content}}
+                {{ end }}
             </div>
         </div>
     </div>
 </section>
 {{"<!-- /action -->" | safeHTML}}
-{{ end }}

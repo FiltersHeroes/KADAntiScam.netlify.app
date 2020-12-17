@@ -54,3 +54,9 @@
   translation: Motyw tej strony został zaprojektowany i opracowany przez [Themefisher](https://themefisher.com/).
 - id: blogTitle
   translation: Najnowsze wpisy
+- id: contactTitle
+  translation: Informacje i kontakt
+- id: actionTitle
+  translation: Działanie
+- id: instructionsTitle
+  translation: Rozwiązywanie problemów

@@ -1,0 +1,9 @@
+<div class="con-info clearfix">
+    <i class="{{ with .Get "icon"}}{{ .}}{{end}}"></i>
+    <span>{{ with .Get "info"}}{{ . | $.Page.RenderString }}{{end}}
+        {{with .Get "mail"}}
+        {{ $mail := replaceRE " at " "@" .}}
+        {{ $mail := replaceRE " dot " "." $mail}}
+        <a data-secret="{{ $mail | base64Encode}}" href="" onmouseover="this.href = 'mailto:' + atob(this.dataset.secret); this.textContent=atob(this.dataset.secret);">email</a>{{end}}
+    </span>
+</div>

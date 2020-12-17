@@ -1,0 +1,11 @@
+{{"<!-- Welcome Slider-->" | safeHTML}}
+<section class="hero-area" {{ with .Site.Params.bgImage }} style='background-image: url("{{ . | relURL }}");'{{end}}>
+    <div class="block">
+        {{ $headless := .Site.GetPage "/home" }}
+        {{ $reusablePages := $headless.Resources.Match "banner.md" }}
+        {{ range $reusablePages }}
+            {{ .Content}}
+        {{ end }}
+    </div>
+</section>
+{{"<!-- /Welcome Slider-->" | safeHTML}}
