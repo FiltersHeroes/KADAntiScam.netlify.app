@@ -5,7 +5,9 @@
             {{"<!-- section title -->" | safeHTML }}
             <div class="col-lg-12">
                 <div class="title text-center wow fadeIn" data-wow-duration="500ms">
-                    <h2>Inne polecane <span class="color">listy filtrów</span></h2>
+                    <h2>{{ with i18n "recommendedTitle" }}{{ index (split . " ") 0 | safeHTML }}{{ end }}
+                        <span class="color">{{ with i18n "recommendedTitle" }}{{ after (len (index (split . " ") 0)) . | safeHTML }}{{ end }}</span>
+                    </h2>
                     <div class="border-meghna"></div>
                 </div>
             </div>
