@@ -41,7 +41,7 @@
             <p class="post-comment-info">
                 <span class="post-comment-name">{{ .name }} </span>
                 <br>
-                <i><span class="tf-ion-forward"></span> <span>{{ ( $.Scratch.Get "parentName" ) }}</span></i>
+                <i><span class="ti-arrow-right"></span> <span>{{ ( $.Scratch.Get "parentName" ) }}</span></i>
                 <br>
                 <a href="#commentid-{{ ._id }}" title="{{ i18n "permalinkComment" }}">
                     <time class="post-time">{{ dateFormat "02.01.2006, 15:04" .date }}</time>
