@@ -1,12 +1,3 @@
-$enable-responsive-font-sizes: true;
-
-
-@import "bootstrap/bootstrap";
-@import "fonts";
-@import "themify-icons";
-@import "style";
-@import "sweetalert2";
-
 .hero-area .block h1, .title h2, .post-block .content h3 {
     text-transform: none;
 }
@@ -205,31 +196,3 @@ body {
 .post-time {
   color: #9ca5ac;
 }
-
-// RFS do zabawy dla @krystian3w
-// https://medium.com/@wanjarunkel/using-bootstraps-new-responsive-font-sizes-feature-57abacd595ac
-// https://getbootstrap.com/docs/5.0/getting-started/rfs/
-
-// body {
-//   @include font-size(1rem);
-// }
-
-// .btn-main {
-//   @include font-size(14px);
-// }
-
-// .title h2 {
-//   @include font-size(38px);
-// }
-
-// .hero-area .block h1 {
-//   @include font-size(90px);
-// }
-
-// .hero-area .block p {
-//   @include font-size(20px);
-// }
-
-// .hero-area .block .btn-transparent {
-//   @include font-size(18px);
-// }
