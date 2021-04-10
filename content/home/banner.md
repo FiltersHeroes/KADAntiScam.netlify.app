@@ -1,7 +1,7 @@
 # Zablokuj strony, które wyłudzają pieniądze i dane
-KAD to polskie filtry do uBlocka Origin i Adguarda, chroniące przed różnego rodzaju przekrętami i oszustwami,
+KAD to filtry do uBlocka Origin i Adguarda, chroniące przed różnymi zagrożeniami w polskiej sieci,
 
-takimi jak np. subskrypcje SMS, wirusy i fałszywe sklepy internetowe.
+takimi jak wirusy, fałszywe sklepy i subskrypcje SMS.
 
 {{< p "Ich instalacja ogranicza się do dwóch prostych kroków." "pt-2" >}}
 
