@@ -9,7 +9,7 @@ Jeśli korzystasz z przeglądarki, która nie obsługuje **uBlocka Origin** lub 
 
 Niektóre DNS-y używają naszej listy **KADhosts** i można je alternatywnie używać (np. na urządzeniach mobilnych). Są to między innymi:
 * [nextdns.io](https://nextdns.io/) (zawiera bezpośrednio listę **KAD** w domyślnej konfiguracji, opcjonalnie można włączyć „blokowanie nowo zarejestrowanych domen (NRD)” i listy blokowania reklam „CertyficateIT”),
-* [dnscrypt.pl](https://dnscrypt.pl/) (zawiera bezpośrednio listę **KAD**),
+<!-- * [dnscrypt.pl/ `dnscrypt.pl-armada`](https://dnscrypt.pl/) (zawiera bezpośrednio listę **KAD**), -->
 * [libredns.gr](https://libredns.gr/) (wersja z aktywnym adblockiem, bazuje na StevenBlack hosts),
 * [ahadns.com](https://ahadns.com/) (bazuje na **oisd.nl**),
 * [adhole.org](https://adhole.org/) (bazuje na **oisd.nl**).
