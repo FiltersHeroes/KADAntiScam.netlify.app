@@ -1,0 +1,50 @@
+{{"<!-- end Contact Area -->" | safeHTML}}
+<footer id="footer" class="bg-one">
+	<div class="container">
+		<div class="row wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-xl-12">
+
+				{{"<!-- Footer Social Links -->" | safeHTML}}
+				<div class="social-icon">
+					<ul class="list-inline">
+						{{ range .Site.Params.footer.socialIcon }}
+						<li class="list-inline-item {{.icon}}"><a href="{{ .url | safeURL }}"><i class="ti-{{ .icon }}"></i></a></li>
+						{{ end }}
+					</ul>
+				</div>
+
+				{{"<!-- copyright -->" | safeHTML}}
+				<div class="copyright text-center">
+					<ul class="list-inline">
+						<a href="https://www.netlify.com">
+							<img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
+						  </a>
+					</ul>
+					<br>
+
+					<p>{{ i18n "copyright" | markdownify }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+{{"<!-- /footer -->" | safeHTML}}
+
+{{"<!-- Essential Scripts -->" | safeHTML}}
+
+{{ $jquery:= resources.Get "/js/jquery.min.js" }}
+{{ $sc := resources.Get "/js/scroll-behavior-polyfill.js" }}
+{{ $util := resources.Get "/js/bootstrap/util.js" }}
+{{ $ss := resources.Get "/js//bootstrap/scrollspy.js" }}
+{{ $cp := resources.Get "/js//bootstrap/collapse.js" }}
+{{ $script := resources.Get "js/script.js" }}
+{{ $sweets := resources.Get "/js/sweet-surprise.js" }}
+{{ $ready := resources.Get "/js/ready.js" }}
+{{ $swal := resources.Get "/js/sweetalert2.min.js" }}
+{{ $easymde := resources.Get "/js/easymde.min.js" }}
+{{ $autosize := resources.Get "/js/autosize.min.js" }}
+{{ $trim := resources.Get "/js/trim.js" }}
+{{ $fl :=resources.Get "/js/add-uBO-FL.js" }}
+{{ $main_js := slice $jquery $sc $util $ss $cp $sweets $ready $swal $autosize $script $trim $fl | resources.Concat "/js/main.js" | minify | fingerprint }}
+
+<script defer type="text/javascript" src="{{ $main_js.Permalink | relURL }}" integrity="{{ $main_js.Data.Integrity }}"></script>
