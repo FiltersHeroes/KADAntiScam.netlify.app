@@ -139,7 +139,14 @@ $(document).ready(function() {
         'zesrywać', 'zesrywający', 'zjebać', 'zjebac', 'zjebał', 'zjebal',
         'zjebała', 'zjebala', 'zjebana', 'zjebią', 'zjebali', 'zjeby', 'dupę'];
 
-        let txtInput = document.querySelector('#additionalInfo textarea').value;
+        let txtInput;
+        if($('form').attr('id') == "usrform") {
+            txtInput = document.querySelector('#additionalInfo textarea').value;
+        }
+        else {
+            txtInput = document.querySelector("form #message").value;
+        }
+
         let error = 0;
         for (let i = 0; i < badWords.length; i++) {
             var badWord = badWords[i];
@@ -148,11 +155,19 @@ $(document).ready(function() {
             }
         }
 
-        document.querySelector('#additionalInfo textarea').value = txtInput.replace(new RegExp(badWords.join("|"), "gi"), "[beep]");
+        txtInput.value = txtInput.replace(new RegExp(badWords.join("|"), "gi"), "[beep]");
+
+        let txtSubmit;
+        if($('form').attr('id') == "usrform") {
+            txtSubmit = "Zgłoszenie zostało wysłane na GitHuba.";
+        }
+        else {
+            txtSubmit = "Twój komentarz został przesłany i zostanie opublikowany po zatwierdzeniu.";
+        }
 
         let banEnd;
         if ($('input[type="text"]#e-mail').val().length > 0 || document.cookie.indexOf('ban=') !== -1) {
-            $('#usrform').attr('action', '/');
+            $('form').attr('action', '/');
             return false;
         }
         else if ("submittedTime" in localStorage &&
@@ -161,27 +176,34 @@ $(document).ready(function() {
         new Date().getMonth() == new Date(localStorage.getItem("submittedTime")).getMonth() &&
         new Date().getFullYear() == new Date(localStorage.getItem("submittedTime")).getFullYear() &&
         new Date().getMinutes() - new Date(localStorage.getItem("submittedTime")).getMinutes() < 3) {
-                $('#usrform').attr('action', '/');
-                Swal.fire("Zbyt często wysyłasz zgłoszenia!", "Musisz odczekać co najmniej 3 minuty przed wysłaniem kolejnego zgłoszenia 😞", "error");
+                $('form').attr('action', '/');
+                var elementName;
+                if($('form').attr('id') == "usrform") {
+                    elementName = "zgłoszenia";
+                }
+                else {
+                    elementName = "komentarze"
+                }
+                Swal.fire("Zbyt często wysyłasz "+ elementName+ " !", "Musisz odczekać co najmniej 3 minuty przed wysłaniem kolejnych 😞", "error");
                 return false;
         }
         else if (error == 1) {
-            Swal.fire({title: "Zgłoszenie zostało wysłane na GitHuba!", text: "Wpisałeś wulgaryzm 😞", icon: "warning", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){document.getElementById("usrform").reset();location.reload();}})
+            Swal.fire({title: "Sukces 😊", text: txtSubmit + " Jednakże nieładnie z twojej strony, że wpisałeś wulgaryzm 😞", icon: "warning", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
         }
         else if (error == 2) {
-            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na 2 dni 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){document.getElementById("usrform").reset();location.reload();}})
+            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na 2 dni 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
             banEnd = new Date(new Date().getTime() + 24 * 2 * 60 * 60 * 1000);
             document.cookie = "ban=1;"+"expires=" + banEnd + ";SameSite=Strict;";
             localStorage.setItem("banEnd", banEnd.toLocaleDateString("pl"));
         }
         else if (error > 2) {
-            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na tydzień 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){document.getElementById("usrform").reset();location.reload();}})
+            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na tydzień 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
             banEnd = new Date(new Date().getTime() + 24 * 7 * 60 * 60 * 1000);
             document.cookie = "ban=1;"+"expires=" + banEnd + ";SameSite=Strict;";
             localStorage.setItem("banEnd", banEnd.toLocaleDateString("pl"));
         }
         else {
-            Swal.fire({title: "Zgłoszenie zostało wysłane na GitHuba!", text: "Dziękujemy za wypełnienie formularza 😊", icon: "success", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){document.getElementById("usrform").reset();location.reload();}})
+            Swal.fire({title: "Sukces 😊", text: txtSubmit, icon: "success", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
         }
     });
 });

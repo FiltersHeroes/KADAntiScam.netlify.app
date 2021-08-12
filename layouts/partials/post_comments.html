@@ -70,8 +70,8 @@
 <section id="staticman-form">
     <h3>{{ i18n "tellSomething" }}</h3>
     <script>var submitted=false;</script>
-    <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){Swal.fire("{{ i18n "thanksForComment" }}!", "{{ i18n "commentSent" }} 😊", "success");}'></iframe>
-    <form class="form-control-meghna" method="POST" action="{{ .Site.Params.staticmanComments.api }}" target="hidden_iframe" onsubmit="submitted=true;">
+    <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){localStorage.setItem("submittedTime", new Date());}'></iframe>
+    <form class="form-control-meghna" id="commentsform" method="POST" action="{{ .Site.Params.staticmanComments.api }}" target="hidden_iframe" onsubmit="submitted=true;">
         <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
         <input type="hidden" name="options[origin]" value="{{ $.Permalink }}#comments">
         <input type="hidden" name="fields[reply_to]" value="">

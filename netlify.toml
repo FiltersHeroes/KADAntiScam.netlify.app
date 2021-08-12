@@ -2,7 +2,7 @@
   command = "hugo --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.82.0"
+  HUGO_VERSION = "0.86.1"
 
 [context.deploy-preview]
   command = "hugo -b $DEPLOY_PRIME_URL"
