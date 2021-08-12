@@ -65,13 +65,21 @@
     {{ if eq ($.Scratch.Get "hasComments") 0 }}
     <p>{{ i18n "noComments" }}</p>
     {{ end }}
+    <noscript>
+        <div class="pb-5">
+            <h2>Do pełnej funkcjonalności strony potrzebujesz włączonej obsługi skryptów. Tu znajdziesz
+                <a href="https://www.enable-javascript.com/pl/" target="_blank" rel="noopener">
+                    instrukcje, które pozwolą Ci włączyć skrypty w Twojej przeglądarce</a>.
+            </h2>
+        </div>
+    </noscript>
 </section>
 <div class="clearfix"></div>
 <section id="staticman-form">
     <h3>{{ i18n "tellSomething" }}</h3>
     <script>var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" onload='if(submitted){localStorage.setItem("submittedTime", new Date());}'></iframe>
-    <form class="form-control-meghna" id="commentsform" method="POST" action="{{ .Site.Params.staticmanComments.api }}" target="hidden_iframe" onsubmit="submitted=true;">
+    <form class="form-control-meghna" id="commentsform" method="POST" data-action="{{ .Site.Params.staticmanComments.api }}" target="hidden_iframe" onsubmit="submitted=true;">
         <input type="hidden" name="options[slug]" value="{{ .File.BaseFileName }}">
         <input type="hidden" name="options[origin]" value="{{ $.Permalink }}#comments">
         <input type="hidden" name="fields[reply_to]" value="">
