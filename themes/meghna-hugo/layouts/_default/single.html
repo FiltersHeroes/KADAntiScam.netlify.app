@@ -10,8 +10,8 @@
                 <ul class="list-inline mb-50">
                     <li class="list-inline-item"><a href="/author/{{ urlize .Params.author}}">{{ .Params.author }}</a></li>
                     <li class="list-inline-item">
-                        {{ if .Date}}{{ index $.Site.Data.calendar.weekdays .Date.Weekday }}, {{ .Date.Day }} {{ index $.Site.Data.calendar.months .Date.Month }}, {{ .Date.Year }}
-                        {{else}}{{ index $.Site.Data.calendar.weekdays .GitInfo.AuthorDate.Weekday }}, {{ .GitInfo.AuthorDate.Day }} {{ index $.Site.Data.calendar.months .GitInfo.AuthorDate.Month }}, {{ .GitInfo.AuthorDate.Year }}{{end}} </li>
+                        {{ if .Date}}{{ dateFormat "Monday, 2 Jan, 2006" .Date }}
+                        {{else}}{{ dateFormat "Monday, 2 Jan, 2006" .GitInfo.AuthorDate }}{{end}} </li>
                 </ul>
                 <img class="img-fluid mb-50" src="{{ .Params.image | absURL }}" alt="blog-image">
             </div>
