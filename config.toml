@@ -50,7 +50,7 @@ bgImage = "images/slider/hero-area.jpg"
 home = "Start"
 logo = "images/logo.png"
 description = "Filtry blokujące strony typu przekręt i phishing"
-author = "PolishFiltersTeam"
+author = "FiltersHeroes"
 google_site_verification = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"
 blogEnabled = "true"
 
@@ -58,7 +58,7 @@ blogEnabled = "true"
   [params.footer]
     [[params.footer.socialIcon]]
       icon = "github"
-      url = "https://github.com/PolishFiltersTeam/KADAntiScam.netlify.com"
+      url = "https://github.com/FiltersHeroes/KADAntiScam.netlify.com"
 
     [[params.footer.socialIcon]]
       icon = "rss"
@@ -67,4 +67,4 @@ blogEnabled = "true"
   # Staticman Comments
   [params.staticmanComments]
     notifications = "false"
-    api = "https://api.staticman.net/v3/entry/github/PolishFiltersTeam/KADAntiScam.netlify.com/master/comments"
+    api = "https://api.staticman.net/v3/entry/github/FiltersHeroes/KADAntiScam.netlify.com/master/comments"

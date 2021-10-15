@@ -5,7 +5,7 @@ Do poprawnego działania filtrów wymagane jest rozszerzenie [uBlock Origin](htt
 Jeśli korzystasz z przeglądarki, która nie obsługuje **uBlocka Origin** lub **AdGuarda**, możesz:
 * zmienić swoją przeglądarkę na inną;
 * skorzystać z innego oprogramowania, takiego jak [AdBlock](https://getadblock.com/) lub [Adblock Plus](https://adblockplus.org/) (niezalecane ze względu na brak w nich bezpośredniego blokowania stron);
-* pobrać [wersję hosts listy KAD](https://github.com/PolishFiltersTeam/KADhosts) (dla zaawansowanych).
+* pobrać [wersję hosts listy KAD](https://github.com/FiltersHeroes/KADhosts) (dla zaawansowanych).
 
 Niektóre DNS-y używają naszej listy **KADhosts** i można je alternatywnie używać (np. na urządzeniach mobilnych). Są to między innymi:
 * [nextdns.io](https://nextdns.io/) (zawiera bezpośrednio listę **KAD** w domyślnej konfiguracji, opcjonalnie można włączyć „blokowanie nowo zarejestrowanych domen (NRD)” i listy blokowania reklam „CertyficateIT”),<!-- * [dnscrypt.pl/ `dnscrypt.pl-armada`](https://dnscrypt.pl/) (zawiera listę **KAD** w wersji `dnscrypt.pl-armada`), -->
