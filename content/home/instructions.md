@@ -7,8 +7,8 @@ Jeśli korzystasz z przeglądarki, która nie obsługuje **uBlocka Origin** lub 
 * skorzystać z innego oprogramowania, takiego jak [AdBlock](https://getadblock.com/) lub [Adblock Plus](https://adblockplus.org/) (niezalecane ze względu na brak w nich bezpośredniego blokowania stron);
 * pobrać [wersję hosts listy KAD](https://github.com/FiltersHeroes/KADhosts) (dla zaawansowanych).
 
-Niektóre DNS-y używają naszej listy **KADhosts** i można je alternatywnie używać (np. na urządzeniach mobilnych). Są to między innymi:
-* [nextdns.io](https://nextdns.io/) (zawiera bezpośrednio listę **KAD** w domyślnej konfiguracji - [StevenBlack hosts](https://github.com/StevenBlack/hosts), opcjonalnie można włączyć „blokowanie nowo zarejestrowanych domen (NRD)”),<!-- * [dnscrypt.pl/ `dnscrypt.pl-armada`](https://dnscrypt.pl/) (zawiera listę **KAD** w wersji `dnscrypt.pl-armada`), -->
+Niektóre DNS-y używają naszych list **KAD** w formacie hosts oraz domenowym i można je alternatywnie używać (np. na urządzeniach mobilnych). Są to między innymi:
+* [nextdns.io](https://nextdns.io/) (zawiera bezpośrednio listę **KADomeny** w domyślnej konfiguracji, opcjonalnie można włączyć „blokowanie nowo zarejestrowanych domen (NRD)”),<!-- * [dnscrypt.pl/ `dnscrypt.pl-armada`](https://dnscrypt.pl/) (zawiera listę **KAD** w wersji `dnscrypt.pl-armada`), -->
 * [libredns.gr](https://libredns.gr/) (wersja z aktywnym adblockiem, bazuje na [StevenBlack hosts](https://github.com/StevenBlack/hosts).<!-- * [ahadns.com](https://ahadns.com/) (bazuje na **oisd.nl**),* [adhole.org](https://adhole.org/) (bazuje na **oisd.nl**). -->
 
 **Masz inne pytania lub problemy? Wejdź w zakładkę [Informacje i kontakt](#contact).**

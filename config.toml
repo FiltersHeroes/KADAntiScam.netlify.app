@@ -58,7 +58,7 @@ blogEnabled = "true"
   [params.footer]
     [[params.footer.socialIcon]]
       icon = "github"
-      url = "https://github.com/FiltersHeroes/KADAntiScam.netlify.com"
+      url = "https://github.com/FiltersHeroes/KADAntiScam.netlify.app"
 
     [[params.footer.socialIcon]]
       icon = "rss"
@@ -67,4 +67,4 @@ blogEnabled = "true"
   # Staticman Comments
   [params.staticmanComments]
     notifications = "false"
-    api = "https://api.staticman.net/v3/entry/github/FiltersHeroes/KADAntiScam.netlify.com/master/comments"
+    api = "https://api.staticman.net/v3/entry/github/FiltersHeroes/KADAntiScam.netlify.app/master/comments"
