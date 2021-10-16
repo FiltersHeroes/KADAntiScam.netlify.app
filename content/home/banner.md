@@ -17,6 +17,6 @@ Kliknij nazwę swojej przeglądarki poniżej i pobierz uBlock Origin (zalecane).
 
 {{< p "**Krok 2.** Kliknij poniższy przycisk, aby subskrybować filtry KAD." "pt-3" >}}
 
-Jeżeli nie działa, to [**kliknij tutaj**]( https://github.com/PolishFiltersTeam/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.
+Jeżeli nie działa, to [**kliknij tutaj**]( https://github.com/FiltersHeroes/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.
 
-{{< a "Subskrybuj KAD" "abp:subscribe?location=https://raw.githubusercontent.com/PolishFiltersTeam/KAD/master/KAD.txt&title=KAD - Przekręty" "btn btn-transparent" >}}
+{{< a "Subskrybuj KAD" "abp:subscribe?location=https://raw.githubusercontent.com/FiltersHeroes/KAD/master/KAD.txt&title=KAD - Przekręty" "btn btn-transparent" >}}
