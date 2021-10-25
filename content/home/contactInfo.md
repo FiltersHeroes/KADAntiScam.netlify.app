@@ -8,7 +8,7 @@ Strony phishing są przesyłane do: Netcraft, Google Safebrowsing, Phishtank, ES
 
 {{< contact icon="ti-email" info="Email:" mail="polishjarvis at gmail dot com">}}
 {{< contact icon="ti-github" info="GitHub: [github.com/FiltersHeroes/KAD/issues](https://github.com/FiltersHeroes/KAD/issues)">}}
-Pishing monża zgłaszać również na: [https://incydent.cert.pl/domena#!/lang=pl](https://incydent.cert.pl/domena#!/lang=pl)
+Phishing monża zgłaszać również na: [https://incydent.cert.pl/domena#!/lang=pl](https://incydent.cert.pl/domena#!/lang=pl)
 
 albo możesz poprostu wypełnić formularz dostępny obok.
 
