@@ -1,5 +1,5 @@
 ---
 name: Thuijoss (MajsterMechazod)
-image: https://avatars0.githubusercontent.com/u/60334861?s=64
+image: https://i.imgur.com/E7ZuZbX.png
 ---
 Użytkownik KADa - polskich filtrów do uBlocka Origin i AdGuadra, blokujących strony typu przekręt.
