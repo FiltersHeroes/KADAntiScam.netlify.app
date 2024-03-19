@@ -1,0 +1,62 @@
+{{ define "main" }}
+{{ $taxonomy := "authors" }}
+{{- $page :=  site.GetPage $taxonomy }}
+{{- $background := "" -}}
+{{- $wrapper :=  "p-4 px-xxl-0 pb-5" -}}
+{{- $class := "border-0 card-zoom" -}}
+{{- $title := (i18n "authorsOfPosts") -}}
+
+{{- $partial := "" -}}
+{{ $list := .Data.Pages }}
+
+{{- $breakpoint := partial "utilities/GetBreakpoint.html" -}}
+{{- $colGrid := "" -}}
+{{- $gutter := "" | default 4 -}}
+{{- $cols :=  "" | default "3" -}}
+{{- $responsive :=  true -}}
+
+{{- if eq $cols "1" }}{{ $colGrid = "row-cols-1" -}}
+{{- else if eq $cols "2" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-1 row-cols-%s-2" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-2" }}{{ end -}}
+{{- else if eq $cols "3" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-2 row-cols-%s-3" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-3" }}{{ end -}}
+{{- else if eq $cols "4" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-2 row-cols-%s-4" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-4" }}{{ end -}}
+{{- else if eq $cols "5" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-3 row-cols-%s-5" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-5" }}{{ end -}}
+{{ end -}}
+
+<div class="container-xxl p-4 px-xxl-0">
+    {{ if and (not $page.IsHome) site.Params.navigation.breadcrumb }}
+    <div>{{ partial "assets/breadcrumb.html" (dict "page" $page) }}</div>
+    {{ end -}}
+    <div class="row row-cols-1 row-cols-{{ $breakpoint.current }}-2">
+        <div class="col-12 col-{{ $breakpoint.current }}-9">
+            <div class="row row-cols-1 row-cols-{{ $breakpoint.current }}-2">
+                <div class="col-12 col-{{ $breakpoint.current }}-9">
+                    {{ with $title }}<p id="{{ anchorize . }}" class="display-4 mt-5">{{ . }}</p>{{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/*  {{- partial "assets/section-header.html" (dict  "title" $title) -}}  */}}
+</div>
+<div class="container-fluid {{ with $background }} bg-{{ . }}{{ end }} p-0">
+    {{- $wrapper := "" | default "p-0" -}}
+    <div class="container-fluid {{ $wrapper }}">
+        <div class="container-xxl {{ $wrapper }}">
+            <div class="container-fluid {{ $wrapper }}">
+                <div class="row {{ $colGrid }} g-{{ $gutter }}">
+                    {{ range .Data.Pages }}
+                    <div class="col">
+                        {{- partial "assets/card.html" (dict 
+                        "path" (.Permalink | relURL )
+                        "title" (.Params.name)
+                        "description" (.Summary)
+                        "class" $class
+                        ) -}}
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid flex-fill"></div>
+{{ end }}

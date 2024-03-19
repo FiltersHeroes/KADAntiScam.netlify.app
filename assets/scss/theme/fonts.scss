@@ -1,0 +1,61 @@
+/*!
+* Copyright (c) 2016-2020 The Inter Project Authors.
+* "Inter" is trademark of Rasmus Andersson.
+* https://github.com/rsms/inter
+* This Font Software is licensed under the SIL Open Font License, Version 1.1.
+* This license is copied below, and is also available with a FAQ at:
+* http://scripts.sil.org/OFL
+*/
+
+/* inter-200 - latin_latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/inter-v13-latin_latin-ext-200.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/inter-v13-latin_latin-ext-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/inter-v13-latin_latin-ext-200.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    url('../fonts/inter-v13-latin_latin-ext-200.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+    url('../fonts/inter-v13-latin_latin-ext-200.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+    url('../fonts/inter-v13-latin_latin-ext-200.svg#Inter') format('svg'); /* Legacy iOS */
+}
+/* inter-300 - latin_latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/inter-v13-latin_latin-ext-300.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/inter-v13-latin_latin-ext-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/inter-v13-latin_latin-ext-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    url('../fonts/inter-v13-latin_latin-ext-300.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+    url('../fonts/inter-v13-latin_latin-ext-300.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+    url('../fonts/inter-v13-latin_latin-ext-300.svg#Inter') format('svg'); /* Legacy iOS */
+}
+/* inter-regular - latin_latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/inter-v13-latin_latin-ext-regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/inter-v13-latin_latin-ext-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/inter-v13-latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    url('../fonts/inter-v13-latin_latin-ext-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+    url('../fonts/inter-v13-latin_latin-ext-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+    url('../fonts/inter-v13-latin_latin-ext-regular.svg#Inter') format('svg'); /* Legacy iOS */
+}
+/* inter-600 - latin_latin-ext */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/inter-v13-latin_latin-ext-600.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/inter-v13-latin_latin-ext-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/inter-v13-latin_latin-ext-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    url('../fonts/inter-v13-latin_latin-ext-600.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+    url('../fonts/inter-v13-latin_latin-ext-600.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+    url('../fonts/inter-v13-latin_latin-ext-600.svg#Inter') format('svg'); /* Legacy iOS */
+}

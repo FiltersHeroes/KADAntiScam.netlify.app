@@ -1,0 +1,5 @@
+<div class="col-md">{{ .Inner | safeHTML | .Page.RenderString }}
+{{ with .Scratch.Get "inner" }}
+{{ . | safeHTML }}
+{{ end }}
+</div>

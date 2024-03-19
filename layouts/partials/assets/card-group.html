@@ -1,0 +1,132 @@
+<!-- 
+    Copyright © 2024 The Hinode Team / Mark Dumay. All rights reserved.
+    Use of this source code is governed by The MIT License (MIT) that can be found in the LICENSE file.
+    Visit gethinode.com/license for more details.
+-->
+
+<!-- Validate arguments -->
+{{ if partial "utilities/IsInvalidArgs.html" (dict "structure" "card-group" "child" "card" "args" .) }}
+    {{- errorf "partial [assets/card-group.html] - Invalid arguments" -}}
+{{ end }}
+
+<!-- Initialize arguments and default values -->
+{{- $page := .page -}}
+{{- $breakpoint := partial "utilities/GetBreakpoint.html" -}}
+{{ $pages := .list }}
+{{ $cards := .cards }}
+{{- $paginate := .paginate | default false -}}
+{{- $moreURL := .href -}}
+{{- $moreTitle := .hrefTitle -}}
+{{- $gutter := .gutter | default 4 -}}
+{{- $separator := .separator | default false -}}
+{{- $class := .class -}}
+{{- $color := .color -}}
+{{- $padding := .padding -}}
+{{- $header := .header -}}
+{{- $footer := .footer -}}
+{{- $orientation := .orientation -}}
+{{- $ratio := .ratio -}}
+{{- $wrapper := .wrapper | default "p-0" -}}
+{{- $style := .style -}}
+{{- $align := .align -}}
+{{- $subtle := .subtle }}
+{{- $loading := .loading -}}
+{{- $button := .button -}}
+{{- $buttonLabel := .buttonLabel -}}
+{{- $hook := .hook | default "assets/card.html" }}
+
+<!-- Override arguments -->
+{{ $isPages := in (slice "page.Pages" "resource.Resources") (printf "%T" $pages) }}
+{{ $paginator := "" }}
+{{ if and $isPages $paginate }}
+    {{ $paginator = $page.Paginate $pages }}
+    {{ $pages = first $paginator.PageSize (after (mul (sub $paginator.PageNumber 1) $paginator.PageSize) $pages) }}
+{{ end }}
+
+{{ $list := slice }}
+{{ if $isPages }}
+    {{ range $index, $element := $pages }}
+        {{ $params := dict }}
+        <!-- regular page -->
+        {{- if and $element.RelPermalink $element.File -}}
+            {{- $params = merge $params (dict "path" $element.File.Path) -}}
+        <!-- headless page -->
+        {{- else -}}
+            {{- $thumbnail := (or (and (reflect.IsMap $element.Params.Thumbnail) $element.Params.Thumbnail.url) $element.Params.Thumbnail) -}}
+            {{- $params = merge $params (dict
+                "href" $element.RelPermalink
+                "description" (partial "utilities/GetDescription.html" (dict "page" $element "raw" true))
+                "thumbnail" $thumbnail
+                "icon" $element.Params.icon
+            ) -}}
+        {{- end -}}
+
+        {{- $list = $list | append $params }}
+    {{ end }}
+{{ else if $pages }}
+    {{ $list = $list | append $pages }}
+{{ end }}
+
+{{- $count := len $list -}}
+{{- $max := $count -}}
+{{- $max = math.Min (.max | default $count) $count -}}
+{{- $responsive := .responsive | default true -}}
+{{- $cols := string .cols | default "3" -}}
+
+{{- $colGrid := "" -}}
+{{- if eq $cols "1" }}{{ $colGrid = "row-cols-1" -}}
+{{- else if eq $cols "2" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-1 row-cols-%s-2" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-2" }}{{ end -}}
+{{- else if eq $cols "3" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-2 row-cols-%s-3" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-3" }}{{ end -}}
+{{- else if eq $cols "4" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-2 row-cols-%s-4" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-4" }}{{ end -}}
+{{- else if eq $cols "5" }}{{ if $responsive }}{{ $colGrid = printf "row-cols-1 row-cols-%s-3 row-cols-%s-5" $breakpoint.prev $breakpoint.current }}{{ else }}{{ $colGrid = "row-cols-5" }}{{ end -}}
+{{ end -}}
+
+{{- if not $paginate -}}
+    {{- $list = first $max $list -}}
+{{- end -}}
+
+{{- if and (eq $cols "1") (eq $orientation "horizontal") }}{{ $orientation = "horizontal-sm" }}{{ end -}}
+
+<!-- Main code -->
+<div class="container-fluid {{ $wrapper }}">
+    <div class="row {{ $colGrid }} g-{{ $gutter }}">
+        {{ range $index, $element := $list }}
+            {{- $params := (dict
+                "class" (printf "h-100 %s" $class)
+                "color" $color
+                "footer" $footer
+                "header" $header
+                "loading" $loading
+                "orientation" $orientation
+                "padding" $padding
+                "ratio" $ratio
+                "subtle" $subtle
+                "style" $style
+                "align" $align
+                "button" $button
+                "buttonLabel" $buttonLabel
+            ) -}}
+            {{- $params = merge $params $element }}
+
+            <div class="col">
+                {{- partial $hook $params -}}
+            </div>
+            {{- if and (lt $index (sub $max 1)) $separator -}}
+                <div class="col d-block d-sm-none">
+                    <hr>
+                </div>
+            {{- end -}}
+        {{- end -}}
+        {{if $cards }}{{- print $cards | safeHTML }}{{ end }}
+    </div>
+
+    {{ if $paginate }}
+        {{- if gt $paginator.TotalPages 1 -}}
+            <div class="pt-3">{{ partial "assets/pagination.html" (dict "page" $page "format" "terse") }}</div>
+        {{- end -}} 
+    {{ else }}
+        {{ if and (gt $count $max) $moreTitle }}
+            <a class="btn btn-outline-primary mt-4" href="{{ $moreURL| safeURL }}" role="button">{{ $moreTitle }}</a>
+        {{ end }}
+    {{ end }}
+</div> 

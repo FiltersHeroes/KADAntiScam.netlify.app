@@ -1,0 +1,16 @@
+[[main]]
+  name = "Tags"
+  pageRef = "/tags/"
+  weight = 40
+
+[[social]]
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/FiltersHeroes/KADAntiScam.netlify.app"
+  weight = 20
+
+[[social]]
+  name = "RSS"
+  pre = "fas fa-rss"
+  url = "/index.xml"
+  weight = 30

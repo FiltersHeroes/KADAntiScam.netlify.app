@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{- partial "homeReusablePages" (dict 
+"page" .
+"reusableDir" "top") 
+-}}
+{{- $sections := $.Scratch.Get "sections" -}}
+{{/* Display generated sections */}}
+{{ range $sections }}
+    {{ .content | safeHTML }}
+{{ end }}
+{{- partial "contact.html" 
+(dict 
+"page" .
+) 
+}}
+{{ end }}

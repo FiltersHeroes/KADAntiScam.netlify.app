@@ -2,7 +2,19 @@
   command = "hugo --minify"
 
 [build.environment]
-  HUGO_VERSION = "0.87.0"
+  HUGO_VERSION = "0.124.0"
+  GO_VERSION = "1.22.x"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
   command = "hugo -b $DEPLOY_PRIME_URL"
+
+# [[plugins]]
+#     package = "@gethinode/netlify-plugin-dartsass"
+
+[[plugins]]
+    package = "netlify-plugin-hugo-cache-resources"
+	[plugins.inputs]
+	# Relative path to source directory in case you use Hugo's "--s" option
+	# srcdir = ""

@@ -1,0 +1,108 @@
+<!-- TODO: replace scratch with dict -->
+
+<!-- Adapted from doks -->
+{{ with .Title -}}
+    {{ $.Scratch.Set "title" . -}}
+{{ else -}}
+    {{ $.Scratch.Set "title" .Site.Title -}}
+{{ end -}}
+
+{{ $description := or (partial "utilities/GetDescription.html" (dict "page" .)) .Site.Params.main.description }}
+{{ if gt (strings.RuneCount $description) 150 }}
+    {{ $description = print (substr $description 0 150) "..." }}
+{{ end }}
+{{ $.Scratch.Set "description" $description -}}
+
+{{- $thumbnail := (or (and (reflect.IsMap .Params.Thumbnail) .Params.Thumbnail.url) .Params.Thumbnail) -}}
+{{ with $thumbnail -}}
+{{- $res := partial "utilities/GetImage.html" (dict "url" .) -}}
+{{- $img := "" -}}
+{{ with $res }}{{ $img = $res.resource }}{{ end }}
+{{ with $img -}}
+        {{ $dim := "1280x640" -}}
+        {{ $scaled := (.Fill (printf "%s jpg" $dim)) -}}
+        {{- $scaled = $scaled | resources.Copy (replace $img.RelPermalink ".jpg" (printf "-%s.jpg" $dim)) -}}
+        {{ $.Scratch.Set "thumbnail" ($scaled.Permalink | absURL) -}}
+    {{ end -}}
+{{ else -}}
+    {{ with .Site.Params.schema.image.url -}}    
+        {{ $.Scratch.Set "thumbnail" (. | absURL) -}}
+    {{ else -}}
+        {{ $images := $.Resources.ByType "image" -}}
+        {{ $featured := $images.GetMatch "*feature*" -}}
+        {{ if not $featured -}}
+            {{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" -}}
+        {{ end -}}
+        {{ with $featured -}}
+            {{ $.Scratch.Set "thumbnail" $featured.Permalink -}}
+        {{ else -}}
+            {{ with $.Site.Params.opengraph.images -}}
+                {{ $.Scratch.Set "thumbnail" (index . 0 | absURL) -}}
+            {{ end -}}
+        {{ end -}}
+    {{ end -}}
+{{ end -}}
+
+
+{{ if eq .Kind "404" -}}
+    <meta name="robots" content="noindex, follow">
+{{ else }}
+  {{ with .Params.robots -}}
+    <meta name="robots" content="{{ . }}">
+  {{ else -}}
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  {{ end -}}
+{{ end -}}
+
+{{ if .Site.Params.webmaster_verifications }}
+{{ if .Site.Params.webmaster_verifications.google }}
+<meta name="google-site-verification" content="{{ .Site.Params.webmaster_verifications.google }}" />
+{{ end }}
+
+{{ if .Site.Params.webmaster_verifications.bing }}
+<meta name="msvalidate.01" content="{{ .Site.Params.webmaster_verifications.bing }}" />
+{{ end }}
+
+{{ if .Site.Params.webmaster_verifications.alexa }}
+<meta name="alexaVerifyID" content="{{ .Site.Params.webmaster_verifications.alexa }}" />
+{{ end }}
+
+{{ if .Site.Params.webmaster_verifications.yandex }}
+<meta name="yandex-verification" content="{{ .Site.Params.webmaster_verifications.yandex }}" />
+{{ end }}
+
+{{ if .Site.Params.webmaster_verifications.baidu }}
+<meta name="baidu-site-verification" content="{{ .Site.Params.webmaster_verifications.baidu }}" />
+{{ end }}
+{{ end }}
+
+    {{ if .IsHome -}}
+        <title>{{ .Site.Title }} {{ if .Site.Params.head.tagline }} {{ .Site.Params.main.separator }} {{ .Site.Params.head.tagline }}{{ end }}</title>
+    {{ else -}}
+        <title>{{ .Site.Title }} {{ .Site.Params.main.separator }} {{ .Title }}</title>
+    {{ end -}}
+
+    <meta name="description" content="{{ $.Scratch.Get "description" }}">
+
+{{ if $.Scratch.Get "paginator" }}
+    <link rel="canonical" href="{{ .Paginator.URL | absURL }}">
+    {{ if .Paginator.HasPrev -}}
+        <link rel="prev" href="{{ .Paginator.Prev.URL | absURL }}">
+    {{ end -}}
+    {{ if .Paginator.HasNext -}}
+        <link rel="next" href="{{ .Paginator.Next.URL | absURL }}">
+    {{ end -}}
+{{ else -}}
+    <link rel="canonical" href="{{ .Permalink }}">
+{{ end -}}
+
+{{ partial "head/opengraph.html" . }}
+{{ partial "head/twitter_cards.html" . }}
+
+{{ range .AlternativeOutputFormats -}}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+{{ end -}}
+
+{{ partial "head/structured-data.html" . }}

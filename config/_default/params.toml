@@ -1,0 +1,188 @@
+[main]
+    separator = "-"
+    description = "KAD to filtry do uBlocka Origin i Adguarda, chroniące przed różnymi zagrożeniami w polskiej sieci, takimi jak wirusy, fałszywe sklepy i subskrypcje SMS."
+    enableDarkMode = true
+    modes = ["light", "dark"]
+    canonifyAssetsURLs = true
+    footerBelowFold = false
+    loading = "lazy"
+    breakpoint = "md"
+    [main.externalLinks]
+        cue = false
+        tab = true
+
+[modules]
+    core = ["bootstrap", "flexsearch", "fontawesome"]
+    # optional = ["leaflet", "katex", "lottie"]
+    excludeSCSS = ["bootstrap"]
+    disableTemplate = ["katex"]
+    [modules.katex]
+        state = "defer"
+    [modules.flexsearch]
+        frontmatter = false
+        filter = ""
+    [modules.fontawesome]
+        inline = true
+        debug = true
+        skipMissing = false
+
+[debugging]
+    showJS = false
+    showSCSS = false
+    purgeHTMLComments = true # prevents a Goldmark warning when processing HTML comments (as used by markdownlint)
+
+[home]
+    sections = ["blog", "authors"]
+    fullCover = false
+    centerHeadline = true
+    style = ""
+    heroBanner = "/images/slider/hero-area.jpg"
+    [home.feature]
+        orientation = "horizontal"
+        color = ""
+        width = 6
+        align = "start"
+
+[navigation]
+    anchor = false
+    logo = "images/logo.png"
+    color = "body"
+    fixed = true
+    overlay = false
+    overlayMode = "dark"
+    horizontal = false
+    offset = "5.5rem"
+    search = true
+    searchModal = false
+    breadcrumb = true
+    toc = true
+    sidebar = true
+    size = "md"
+
+[messages]
+    placement = "bottom-right"
+
+[sharing]
+    enabled = true
+    sort = "weight"
+    reverse = false
+    webshare = true
+
+[[sharing.providers]]
+    name = "Reddit"
+    url = "https://reddit.com/submit/?url={url}&amp;resubmit=true&amp;title={title}"
+    icon = "fab reddit"
+    weight = 1
+
+[[sharing.providers]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/sharing/share-offsite/?url={url}"
+    icon = "fab linkedin"
+    weight = 10
+
+[[sharing.providers]]
+    name = "Twitter"
+    url = "https://twitter.com/home?status={url}"
+    icon = "fab x-twitter"
+    weight = 20
+
+[[sharing.providers]]
+    name = "Facebook"
+    url = "https://www.facebook.com/sharer.php?u={url}"
+    icon = "fab facebook"
+    weight = 30
+
+[[sharing.providers]]
+    name = "WhatsApp"
+    url = "whatsapp://send?text={title}%20{url}"
+    icon = "fab whatsapp"
+    weight = 40
+
+[[sharing.providers]]
+    name = "email"
+    url = "{url}"
+    icon = "fas link"
+    weight = 50
+    clipboard = true
+
+[sections]
+    [sections.authors]
+        title = "Authors"
+        sort = "date"
+        reverse = true
+        cols = 3
+        color = ""
+        padding = "0"
+        header = "full"
+        footer = "none"
+        orientation = "stacked"
+        style = "border-0 card-zoom card-body-margin"
+        layout = "card"
+        homepage = 3
+        separator = true
+    [sections.blog]
+        title = "Blog"
+        sort = "date"
+        reverse = true
+        cols = 3
+        color = ""
+        padding = "0"
+        header = "full"
+        footer = "none"
+        orientation = "stacked"
+        style = "border-0 card-zoom card-body-margin"
+        layout = "card"
+        homepage = 3
+        separator = true
+
+[favicon]
+    logo = "images/stop-256x256.png"
+    sizes = [16, 32, 48]
+
+# toml-docs-start theme-colors
+[style]
+    primary = "#d43900"
+    secondary = "#6c757d"
+    success = "#198754"
+    info = "#0dcaf0"
+    warning = "#ffc107"
+    danger = "#dc3545"
+    light = "#f8f9fa"
+    dark = "#212529"
+    themeOpacity = "10"
+    darkModeShade = "20%"
+    darkModeTint = "40%"
+    themeFont = "Inter"
+    # themeFontPath = "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&display=swap" # external path
+    themeFontPath = "/fonts" # local path
+    themeFontPreload = "/fonts/inter-v13-latin_latin-ext-regular.woff2"
+    purge = false # TODO: fix purge setting of example site
+# toml-docs-end theme-colors
+
+[schema]
+    type = "Organization"
+    name = "Filters Heroes"
+    locale = "pl"
+    github = "https://github.com/FiltersHeroes"
+    section = "blog"
+    [author]
+        name = "Filters Heroes"
+
+[opengraph]
+    images = ["images/logo.png"]
+    locale = "pl"
+
+[links]
+    # bs_badge_heading = "https://getbootstrap.com/docs/5.3/components/badge/#headings"
+    # hinode_docs = "https://gethinode.com"
+    # hugo_imaging = "https://gohugo.io/content-management/image-processing/#imaging-configuration"
+    # mozilla_image = "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
+    # observatory = "https://observatory.mozilla.org/analyze/demo.gethinode.com"
+    # pagespeed = "https://pagespeed.web.dev/report?url=https%3A%2F%2Fdemo.gethinode.com%2F"
+    # hinode = "https://gethinode.com"
+[staticmanComments]
+    notifications = "false"
+    api = "https://api.staticman.net/v3/entry/github/FiltersHeroes/KADAntiScam.netlify.app/master/comments"
+
+[webmaster_verifications]
+    google = "fNut01rhp845fu903ZfwVGKe-vWAz-IecDu7MHZ0bLw"

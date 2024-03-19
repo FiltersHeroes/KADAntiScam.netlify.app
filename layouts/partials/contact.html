@@ -1,45 +1,22 @@
-{{"<!-- Start Contact -->" | safeHTML}}
-<section id="contact" class="parallax-section section section-bg">
-    <div class="container">
-        <div class="row">
-
-            {{"<!-- section title -->" | safeHTML}}
-            <div class="col-lg-12">
-                <div class="title text-center wow fadeIn" data-wow-duration="500ms">
-                    <h2>{{ with i18n "contactTitle" }}{{ index (split . " ") 0 | safeHTML }}{{ end }}
-                        <span class="color">{{ with i18n "contactTitle" }}{{ after (len (index (split . " ") 0)) . | safeHTML }}{{ end }}</span>
-                    </h2>
-                    <div class="border-meghna"></div>
-                </div>
+{{- $page := .page -}}
+{{ $headless := $page.GetPage "./home" }}
+{{ $reusablePages := $headless.Resources.Match "contact/contactInfo.md" }}
+{{ range $reusablePages }}
+{{ $bgColor := "secondary" }}
+{{ $textAlign := .Params.textAlign }}
+<div class="container-fluid p-0 {{ with $bgColor }} bg-{{ . }} bg-opacity-{{ site.Params.style.themeOpacity | default "25" | safeHTML }}{{ end }}">
+    <div class="container-xxl p-4 px-xxl-0 {{ if site.Params.home.fullCover }} fullcover{{ end }} d-flex flex-column">
+        <div class="row justify-content-center flex-fill">
+            <h2 id="contact" class="border-bottom border-danger mb-3 text-center">{{ i18n "contactTitle" }}</h2>
+            <div class="col-12 col-md {{with $textAlign}}text-{{.}}{{end}}">
+                {{ .Content | safeHTML }}
             </div>
-            {{"<!-- /section title -->" | safeHTML}}
-
-            <noscript>
-                <div class="pb-5">
-                    <h2>Do pełnej funkcjonalności strony potrzebujesz włączonej obsługi skryptów. Tu znajdziesz
-                        <a href="https://www.enable-javascript.com/pl/" target="_blank" rel="noopener">
-                            instrukcje, które pozwolą Ci włączyć skrypty w Twojej przeglądarce</a>.
-                    </h2>
-                </div>
-            </noscript>
-
-            {{"<!-- Contact Info -->" | safeHTML}}
-            <div class="contact-info col-lg-6 wow fadeInUp" data-wow-duration="500ms">
-
-                {{ $headless := .Site.GetPage "/home" }}
-                {{ $reusablePages := $headless.Resources.Match "contactInfo.md" }}
-                {{ range $reusablePages }}
-                    {{ .Content}}
-                {{ end }}
+            <div class="col-12 col-md {{with $textAlign}}text-{{.}}{{end}}">
+                {{ readFile "home/contact/contactForm.html" | safeHTML }}
             </div>
-
-            {{"<!-- Contact Form -->" | safeHTML}}
-            {{ readFile "home/contactForm.html" | safeHTML }}
         </div>
-
     </div>
 </div>
 <div id="kadetect"></div>
 <div id="kadguard"></div>
-</section>
-{{"<!-- /contact -->" | safeHTML}}
+{{ end }}

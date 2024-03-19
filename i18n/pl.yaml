@@ -20,10 +20,8 @@
   translation: Twój komentarz został przesłany i zostanie opublikowany po zatwierdzeniu
 - id: nickname
   translation: Pseudonim
-- id: comment
-  translation: Komentarz
 - id: commentPlaceholder
-  translation: Nie krępuj się używać Markdown.
+  translation: Nie krępuj się używać **Markdown**.
 - id: commentNotify
   translation: Powiadom mnie o nowych komentarzach do tego wpisu
 - id: addComment
@@ -32,8 +30,6 @@
   translation: Czytaj więcej
 - id: viewAllPost
   translation: Wyświetl wszystkie wpisy
-- id: share
-  translation: Podziel się
 - id: aboutAuthor
   translation: O autorze
 - id: contact
@@ -48,10 +44,6 @@
   translation: Autorzy wpisów na blogu
 - id: blogs
   translation: Blog
-- id: share
-  translation: Podziel się
-- id: copyright
-  translation: Motyw tej strony został zaprojektowany i opracowany przez [Themefisher](https://themefisher.com/).
 - id: blogTitle
   translation: Najnowsze wpisy
 - id: contactTitle
@@ -62,3 +54,167 @@
   translation: Rozwiązywanie problemów
 - id: recommendedTitle
   translation: Inne polecane listy filtrów
+
+# Single pages
+- id: postedOnDate
+  translation: "Opublikowano {{ . }}"
+- id: lastModified
+  translation: "Ostatnia modyfikacja dnia {{ . }}"
+- id: read
+  translation: "czytania"
+- id: minutesShort
+  translation: "min"
+- id: words
+  translation: "słów"
+- id: photoFull
+  translation: "Photo by %s on %s"
+- id: photoShort
+  translation: "Photo by {{ . }}"
+- id: photoOn
+  translation: "on"
+- id: draft
+  translation: "Draft"
+
+# List pages
+- id: article
+  translation: "Artykuł"
+- id: articles
+  translation: "Artykuły"
+- id: more
+  translation: "Więcej {{ . }}"
+- id: emptyList
+  translation: "Brak artykułów"
+- id: emptyTags
+  translation: "Brak tagów"
+
+# Languages
+- id: lang_de
+  translation: "German"
+- id: lang_en
+  translation: "Angielski"
+- id: lang_nl
+  translation: "Dutch"
+- id: lang_fr
+  translation: "French"
+
+# Sharing
+- id: shareLink
+  translation: "Udostępnij przez {{ . }}"
+- id: shareSystem
+  translation: "system"
+- id: copyToClipboard
+  translation: "skopiuj do schowka"
+- id: copiedToClipboard
+  translation: "skopiowany do schowka"
+- id: link
+  translation: "Link"
+- id: code
+  translation: "Kod"
+- id: download
+  translation: "Download article"
+
+# Pagination
+- id: paginationNav
+  translation: "Page navigation"
+- id: paginationPrevious
+  translation: "Poprzednia strona"
+- id: paginationNext
+  translation: "Następna strona"
+- id: paginationFirst
+  translation: "Pierwsza strona"
+- id: paginationLast
+  translation: "Ostatnia strona"
+
+# Navigation
+- id: colorMode
+  translation: "Tryb koloru"
+- id: colorLight
+  translation: "Jasny"
+- id: colorDark
+  translation: "Ciemny"
+- id: colorAuto
+  translation: "Automatyczny"
+- id: toggleMainNav
+  translation: "Przełącz główną nawigację"
+- id: home
+  translation: "Strona główna"
+- id: languageSwitcherLabel
+  translation: "Język"
+- id: close
+  translation: "Zamknij"
+
+# Table of contents
+- id: toc
+  translation: "Na tej stronie"
+- id: seeAlso
+  translation: "Zobacz również"
+- id: sectionMenu
+  translation: "Select a topic"
+
+# Sidebar
+- id: toggleSidebar
+  translation: "Przełącz nawigację na pasku bocznym"
+
+# Feature
+- id: addedFeature
+  translation: "Added in {{ . }}"
+- id: deprecatedFeature
+  translation: "Deprecated in {{ . }}"
+
+# Versioning
+- id: latest
+  translation: "latest"
+- id: allVersions
+  translation: "All versions"
+- id: newerVersionAlert
+  translation: "There is a newer version of {{ . }}!"
+
+# 404 page
+- id: pageNotFound
+  translation: "Strona, której szukasz nie istnieje albo wystąpił inny błąd. Spróbuj wrócić do naszej {{ . }}."
+- id: pageNotFoundTitle
+  translation: "Nie znaleziono strony"
+- id: pageNotFoundHome
+  translation: "strony głównej"
+
+# Footer
+- id: copyright
+  translation: "Copyright"
+- id: rights
+  translation: "Wszelkie prawa zastrzeżone"
+- id: poweredBy
+  translation: "Strona oparta o motyw {{ . }}."
+
+# Comments
+- id: show
+  translation: "Pokaż"
+- id: comments
+  translation: "Komentarze" 
+
+# Arguments
+- id: name
+  translation: "Name"
+- id: type
+  translation: "Type"
+- id: required 
+  translation: "Required"
+- id: default
+  translation: "Default"
+- id: comment
+  translation: Komentarz
+- id: supportedValues
+  translation: "Supported values"
+
+# Search
+- id: ui_search
+  translation: "Przeszukaj tę stronę"
+- id: ui_no_results
+  translation: "Brak wyników dla"
+
+
+- id: preview
+  translation: "Podgląd"
+- id: subscribe
+  translation: "Subskrybuj"
+- id: contactTitle
+  translation: Informacje i kontakt

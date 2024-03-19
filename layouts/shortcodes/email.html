@@ -1,0 +1,6 @@
+<span>
+    {{with .Get 0}}
+    {{ $mail := replaceRE " at " "@" .}}
+    {{ $mail := replaceRE " dot " "." $mail}}
+    <a data-secret="{{ $mail | base64Encode}}" href="" onmouseover="this.href = 'mailto:' + atob(this.dataset.secret); this.textContent=atob(this.dataset.secret);">email</a>{{end}}
+</span> 

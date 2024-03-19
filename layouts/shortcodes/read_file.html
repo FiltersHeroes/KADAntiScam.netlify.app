@@ -1,0 +1,4 @@
+{{ readFile (.Get 0) | safeHTML }} 
+{{ with .Scratch.Get "inner" }}
+{{ . | safeHTML }}
+{{ end }}

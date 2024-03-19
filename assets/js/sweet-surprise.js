@@ -1,4 +1,4 @@
-$(document).ready(function() {
+window.addEventListener('load', function () {
     if (document.cookie.indexOf('ban=') !== -1) {
         Swal.fire({
             title: 'Wyrok administratora',
@@ -8,11 +8,11 @@ $(document).ready(function() {
                 ", więc nie możesz wypełniać formularzy 😞. Do końca odsiadki proponuję zagrać np. w " +
                 '<a href="https://store.steampowered.com/app/1048540/Kao_the_Kangaroo_Round_2_2003_rerelease/">Kangurka Kao</a> lub ' +
                 '<a href="https://thewitcher.com/pl/witcher3">Wiedźmina 3</a>.',
-          })
+          });
         document.querySelector("form").remove();
     }
 
-    $('form').submit(function() {
+    document.querySelector("form").addEventListener("submit", function() {
         // Thanks for http://marcinmazurek.com.pl/polskie-wulgaryzmy
         let badWords = ['chuj', 'chuja', 'chujek', 'chuju', 'chujem', 'chujnia',
         'chujowy', 'chujowa', 'chujowe', 'cipa', 'cipę', 'cipe', 'cipą',
@@ -140,7 +140,7 @@ $(document).ready(function() {
         'zjebała', 'zjebala', 'zjebana', 'zjebią', 'zjebali', 'zjeby', 'dupę'];
 
         let txtInput;
-        if($('form').attr('id') == "usrform") {
+        if(document.querySelector("form").getAttribute('id') == "usrform") {
             txtInput = document.querySelector('#additionalInfo textarea').value;
         }
         else {
@@ -158,7 +158,7 @@ $(document).ready(function() {
         txtInput.value = txtInput.replace(new RegExp(badWords.join("|"), "gi"), "[beep]");
 
         let txtSubmit;
-        if($('form').attr('id') == "usrform") {
+        if(document.querySelector("form").getAttribute('id') == "usrform") {
             txtSubmit = "Zgłoszenie zostało wysłane na GitHuba.";
         }
         else {
@@ -166,8 +166,8 @@ $(document).ready(function() {
         }
 
         let banEnd;
-        if ($('input[type="text"]#e-mail').val().length > 0 || document.cookie.indexOf('ban=') !== -1) {
-            $('form').attr('action', '/');
+        if (document.querySelector('input[type="text"]#e-mail').value.length > 0 || document.cookie.indexOf('ban=') !== -1) {
+            document.querySelector("form").setAttribute('action', '/');
             return false;
         }
         else if ("submittedTime" in localStorage &&
@@ -176,9 +176,9 @@ $(document).ready(function() {
         new Date().getMonth() == new Date(localStorage.getItem("submittedTime")).getMonth() &&
         new Date().getFullYear() == new Date(localStorage.getItem("submittedTime")).getFullYear() &&
         new Date().getMinutes() - new Date(localStorage.getItem("submittedTime")).getMinutes() < 3) {
-                $('form').attr('action', '/');
+                document.querySelector("form").attr('action', '/');
                 var elementName;
-                if($('form').attr('id') == "usrform") {
+                if(document.querySelector("form").attr('id') == "usrform") {
                     elementName = "zgłoszenia";
                 }
                 else {

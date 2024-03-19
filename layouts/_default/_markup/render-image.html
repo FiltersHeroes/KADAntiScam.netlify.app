@@ -1,0 +1,6 @@
+<img src="{{ .Destination | safeURL }}"
+  {{- with .Text }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  class="img-fluid"
+>
+{{- /* chomp trailing newline */ -}}

@@ -1,17 +1,3 @@
-// https://varvy.com/pagespeed/defer-images.html
-
-function init() {
-	var imgDefer = document.getElementsByTagName('img');
-	for (var i=0; i<imgDefer.length; i++) {
-		if(imgDefer[i].getAttribute('data-src')) {
-			imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
-		} } }
-		window.onload = init;
-
-		function changeValue(elementName, newValue){
-			document.getElementsByName(elementName)[0].value=newValue;
-		};
-
 // EasyMDE - Markdown editor
 // var easyMDE = new EasyMDE({
 // 	autoDownloadFontAwesome: false,
@@ -62,10 +48,19 @@ function checkAdblocker(){
 	else
 	{
 		Swal.fire({
-			title: 'Bardzo źle!',
-			icon: 'error',
-			text: 'Nie masz aktywnej listy KAD 😞'
-		  })
-		  $("button.swal2-confirm").replaceWith('<a class="swal2-confirm swal2-styled" style="border-left-color: rgb(48, 133, 214); border-right-color: rgb(48, 133, 214);" onclick="Swal.close();" href="abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKAD.txt&amp;title=KAD%20-%20Przekr%C4%99ty">Subskrybuj KAD</a>');
+			title: "Bardzo źle!",
+			icon: "error",
+			text: 'Nie masz aktywnej listy KAD 😞',
+			confirmButtonText: "Subskrybuj KAD",
+		  });
+		  var swalConfirm = document.querySelector("button.swal2-confirm");
+		  var aTag = document.createElement('a');
+		  aTag.innerText = swalConfirm.innerText;
+		  aTag.classList = swalConfirm.classList;
+		  aTag.classList.add("btn", "btn-primary");
+		  aTag.style = swalConfirm.style;
+		  aTag.href = "abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKAD.txt&amp;title=KAD%20-%20Przekr%C4%99ty";
+		  aTag.onclick = function() { Swal.close(); };
+		  swalConfirm.parentNode.replaceChild(aTag, swalConfirm);
 	}
 }

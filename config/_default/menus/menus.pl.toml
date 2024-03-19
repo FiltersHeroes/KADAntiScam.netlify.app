@@ -1,0 +1,51 @@
+[[main]]
+  name = "Start"
+  pageRef = "#kad-banner"
+  weight = 1
+
+[[main]]
+  name = "Działanie"
+  pageRef = "#action"
+  weight = 2
+
+[[main]]
+  name = "Problemy"
+  pageRef = "#problems"
+  weight = 3
+
+[[main]]
+  name = "Hosts"
+  pageRef = "#hosts"
+  weight = 4
+
+[[main]]
+  name = "Polecane"
+  pageRef = "#recommended"
+  weight = 5
+
+[[main]]
+  name = "Informacje i kontakt"
+  pageRef = "#contact"
+  weight = 10
+
+[[main]]
+  name = "Blog"
+  pageRef = "#blog"
+  weight = 6
+
+# [[main]]
+#   name = "Tagi"
+#   pageRef = "/tags/"
+#   weight = 40
+
+[[social]]
+  name = "GitHub"
+  pre = "fab fa-github"
+  url = "https://github.com/FiltersHeroes/KADAntiScam.netlify.app"
+  weight = 20
+
+[[social]]
+  name = "RSS"
+  pre = "fas fa-rss"
+  url = "/index.xml"
+  weight = 30
