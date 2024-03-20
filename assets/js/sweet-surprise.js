@@ -1,4 +1,8 @@
 window.addEventListener('load', function () {
+    var form = document.querySelector("#usrform");
+    if (!form) {
+        form = document.querySelector("#commentsform");
+    }
     if (document.cookie.indexOf('ban=') !== -1) {
         Swal.fire({
             title: 'Wyrok administratora',
@@ -9,10 +13,10 @@ window.addEventListener('load', function () {
                 '<a href="https://store.steampowered.com/app/1048540/Kao_the_Kangaroo_Round_2_2003_rerelease/">Kangurka Kao</a> lub ' +
                 '<a href="https://thewitcher.com/pl/witcher3">Wiedźmina 3</a>.',
           });
-        document.querySelector("form").remove();
+          form.remove();
     }
 
-    document.querySelector("form").addEventListener("submit", function() {
+    form.addEventListener("submit", function() {
         // Thanks for http://marcinmazurek.com.pl/polskie-wulgaryzmy
         let badWords = ['chuj', 'chuja', 'chujek', 'chuju', 'chujem', 'chujnia',
         'chujowy', 'chujowa', 'chujowe', 'cipa', 'cipę', 'cipe', 'cipą',
@@ -140,11 +144,11 @@ window.addEventListener('load', function () {
         'zjebała', 'zjebala', 'zjebana', 'zjebią', 'zjebali', 'zjeby', 'dupę'];
 
         let txtInput;
-        if(document.querySelector("form").getAttribute('id') == "usrform") {
+        if(document.querySelector("#usrform")) {
             txtInput = document.querySelector('#additionalInfo textarea').value;
         }
         else {
-            txtInput = document.querySelector("form #message").value;
+            txtInput = document.querySelector("#commentsform #message").value;
         }
 
         let error = 0;
@@ -158,7 +162,7 @@ window.addEventListener('load', function () {
         txtInput.value = txtInput.replace(new RegExp(badWords.join("|"), "gi"), "[beep]");
 
         let txtSubmit;
-        if(document.querySelector("form").getAttribute('id') == "usrform") {
+        if(document.querySelector("#usrform")) {
             txtSubmit = "Zgłoszenie zostało wysłane na GitHuba.";
         }
         else {
@@ -167,7 +171,7 @@ window.addEventListener('load', function () {
 
         let banEnd;
         if (document.querySelector('input[type="text"]#e-mail').value.length > 0 || document.cookie.indexOf('ban=') !== -1) {
-            document.querySelector("form").setAttribute('action', '/');
+            form.setAttribute('action', '/');
             return false;
         }
         else if ("submittedTime" in localStorage &&
@@ -176,9 +180,9 @@ window.addEventListener('load', function () {
         new Date().getMonth() == new Date(localStorage.getItem("submittedTime")).getMonth() &&
         new Date().getFullYear() == new Date(localStorage.getItem("submittedTime")).getFullYear() &&
         new Date().getMinutes() - new Date(localStorage.getItem("submittedTime")).getMinutes() < 3) {
-                document.querySelector("form").attr('action', '/');
+                form.attr('action', '/');
                 var elementName;
-                if(document.querySelector("form").attr('id') == "usrform") {
+                if(document.querySelector("#usrform")) {
                     elementName = "zgłoszenia";
                 }
                 else {
@@ -188,22 +192,22 @@ window.addEventListener('load', function () {
                 return false;
         }
         else if (error == 1) {
-            Swal.fire({title: "Sukces 😊", text: txtSubmit + " Jednakże nieładnie z twojej strony, że wpisałeś wulgaryzm 😞", icon: "warning", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
+            Swal.fire({title: "Sukces 😊", text: txtSubmit + " Jednakże nieładnie z twojej strony, że wpisałeś wulgaryzm 😞", icon: "warning", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){form.reset();location.reload();}})
         }
         else if (error == 2) {
-            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na 2 dni 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
+            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na 2 dni 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){form.reset();location.reload();}})
             banEnd = new Date(new Date().getTime() + 24 * 2 * 60 * 60 * 1000);
             document.cookie = "ban=1;"+"expires=" + banEnd + ";SameSite=Strict;";
             localStorage.setItem("banEnd", banEnd.toLocaleDateString("pl"));
         }
         else if (error > 2) {
-            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na tydzień 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
+            Swal.fire({title: "Wyrok administratora", text: "Wpisałeś wulgaryzmy. Być może jesteś trollem albo miałeś zły dzień, ale to nie jest najlepsze wyjście z takiej sytuacji. W związku z czym, dostajesz bana na tydzień 😞", icon: "error", confirmButtonText: "OK"}).then((result)=>{if(result.value){form.reset();location.reload();}})
             banEnd = new Date(new Date().getTime() + 24 * 7 * 60 * 60 * 1000);
             document.cookie = "ban=1;"+"expires=" + banEnd + ";SameSite=Strict;";
             localStorage.setItem("banEnd", banEnd.toLocaleDateString("pl"));
         }
         else {
-            Swal.fire({title: "Sukces 😊", text: txtSubmit, icon: "success", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){document.querySelector("form").reset();location.reload();}})
+            Swal.fire({title: "Sukces 😊", text: txtSubmit, icon: "success", confirmButtonText: "Wypełnij nowy formularz"}).then((result)=>{if(result.value){form.reset();location.reload();}})
         }
     });
 });

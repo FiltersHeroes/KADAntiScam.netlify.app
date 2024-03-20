@@ -12,6 +12,6 @@ window.addEventListener('load', function () {
   var commentsForm = document.querySelector("#commentsform");
   if (commentsForm) {
     commentsForm.setAttribute('action', commentsForm.getAttribute("data-action"));
-    commentsForm.removeAttr("data-action");
+    commentsForm.removeAttribute("data-action");
   }
 }, false);
