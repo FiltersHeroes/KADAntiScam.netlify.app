@@ -3,4 +3,4 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3ef4ab9d-d4af-4006-a751-a517c50fdd33/deploy-status)](https://app.netlify.com/sites/kadantiscam/deploys)
 [![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=KADAntiScam.netlify.app)](https://kadantiscam.netlify.app/)
 
-Strona KADa
+Strona KAD-a
