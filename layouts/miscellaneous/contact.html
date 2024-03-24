@@ -1,7 +1,4 @@
-{{- $page := .page -}}
-{{ $headless := $page.GetPage "./home" }}
-{{ $reusablePages := $headless.Resources.Match "contact/contactInfo.md" }}
-{{ range $reusablePages }}
+{{ define "main" }}
 {{ $bgColor := "secondary" }}
 {{ $textAlign := .Params.textAlign }}
 <div class="container-fluid p-0 {{ with $bgColor }} bg-{{ . }} bg-opacity-{{ site.Params.style.themeOpacity | default "25" | safeHTML }}{{ end }}">
@@ -12,7 +9,7 @@
                 {{ .Content | safeHTML }}
             </div>
             <div class="col-12 col-md {{with $textAlign}}text-{{.}}{{end}}">
-                {{ readFile "home/contact/contactForm.html" | safeHTML }}
+                {{ readFile "contact/contactForm.html" | safeHTML }}
             </div>
         </div>
     </div>

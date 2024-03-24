@@ -3,6 +3,9 @@ window.addEventListener('load', function () {
     if (!form) {
         form = document.querySelector("#commentsform");
     }
+    if (!form) {
+        return;
+    }
     if (document.cookie.indexOf('ban=') !== -1) {
         Swal.fire({
             title: 'Wyrok administratora',

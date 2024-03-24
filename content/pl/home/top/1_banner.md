@@ -9,7 +9,7 @@ KAD to filtry, chroniące przed różnymi zagrożeniami w polskiej sieci, takimi
 
 Ich instalacja jest bardzo prosta i szybka.
 
-Jeżeli masz już zainstalowane rozszerzenie [uBlock Origin](https://github.com/gorhill/uBlock) albo [AdGuard](https://adguard.com/pl/welcome.html) dla swojej ulubionej przeglądarki, to wystarczy jedynie kliknąć poniższy przycisk. A jeżeli ta metoda nie zadziała, to możesz [**kliknąć tutaj**]( https://github.com/FiltersHeroes/KAD/wiki/Instalacja-manualna), by zrobić to ręcznie.
+Jeżeli masz już zainstalowane rozszerzenie [uBlock Origin](https://github.com/gorhill/uBlock) albo [AdGuard](https://adguard.com/pl/welcome.html) dla swojej ulubionej przeglądarki, to wystarczy jedynie kliknąć poniższy przycisk.
 
 
 Jednakże jeżeli twoja przeglądarka nie obsługuje takich rozszerzeń, to możesz skorzystać ze [specjalnej odmiany](#hosts "zalecane jedynie dla zaawansowanych użytkowników") (hosts, itd) listy filtrów dla innego oprogramowania.

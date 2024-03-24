@@ -1,7 +1,6 @@
 ---
-headless: true
-params:
-    color: "secondary"
+layout: contact
+type: miscellaneous
 ---
 ### Zgłoszenia
 
@@ -21,12 +20,3 @@ albo możesz poprostu wypełnić formularz dostępny obok.
 Jeśli sądzisz, że Twoja strona została dodana do tej listy bezpodstawnie, lub zmieniła swojego właściciela i/lub jej cel, to skontaktuj się bezpośrednio na e-mail.
 
 Proszę wziąć pod uwagę, iż emaile z próbami przekupienia będą ignorowane.
-
-## Licencje
-Licencja KAD: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-
-Licencja logo: [GPL](https://www.gnu.org/licenses/gpl-2.0.html), [MIT](https://opensource.org/licenses/MIT)
-
-Licencja czcionki Inter: [OFL](https://github.com/rsms/inter/blob/master/LICENSE.txt)
-
-Licencja motywu: [MIT](https://github.com/gethinode/hinode/blob/main/LICENSE) 

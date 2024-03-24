@@ -118,3 +118,6 @@
     </form>
 </div>
 {{ end }}
+{{ with .Site.Params.giscusComments }}
+{{ partial "giscus/script-with-options" . }}
+{{ end }}

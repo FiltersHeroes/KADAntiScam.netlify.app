@@ -59,7 +59,7 @@
 - id: postedOnDate
   translation: "Opublikowano {{ . }}"
 - id: lastModified
-  translation: "Ostatnia modyfikacja dnia {{ . }}"
+  translation: "Ostatnia modyfikacja {{ . }}"
 - id: read
   translation: "czytania"
 - id: minutesShort

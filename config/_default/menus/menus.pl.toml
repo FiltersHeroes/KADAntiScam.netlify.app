@@ -1,12 +1,7 @@
 [[main]]
-  name = "Start"
+  name = "Główna"
   pageRef = "#kad-banner"
   weight = 1
-
-[[main]]
-  name = "Działanie"
-  pageRef = "#action"
-  weight = 2
 
 [[main]]
   name = "Problemy"
@@ -19,13 +14,8 @@
   weight = 4
 
 [[main]]
-  name = "Polecane"
-  pageRef = "#recommended"
-  weight = 5
-
-[[main]]
-  name = "Informacje i kontakt"
-  pageRef = "#contact"
+  name = "Kontakt"
+  pageRef = "/contact"
   weight = 10
 
 [[main]]

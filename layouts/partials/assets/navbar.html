@@ -186,13 +186,13 @@
             <!-- Insert sidebar toggler when applicable -->
             <div class="d-flex align-items-center">
                 {{- if $page.Scratch.Get "sidebar" -}}
-                    <button class="navbar-toggler collapsed p-0 mx-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvass-sidebar" aria-controls="offcanvass-sidebar" aria-label="{{ T "toggleSidebar" }}">
-                        {{- partial "assets/icon.html" (dict "icon" "fas ellipsis fa-fw") -}}
+                    <button class="navbar-toggler collapsed p-0 mx-auto fw-30" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvass-sidebar" aria-controls="offcanvass-sidebar" aria-label="{{ T "toggleSidebar" }}">
+                    {{- partial "assets/icon.html" (dict "icon" "fas ellipsis fa-fw" "spacing" false) -}}
                     </button>
                 {{- else -}}
                     <!-- Insert invisible sidebar toggler to center logo correctly on smaller screens -->
-                    <button class="navbar-toggler collapsed p-0 mx-auto invisible" type="button">
-                        {{- partial "assets/icon.html" (dict "icon" "fas ellipsis fa-fw") -}}
+                    <button class="navbar-toggler collapsed p-0 mx-auto invisible fw-30" type="button">
+                        {{- partial "assets/icon.html" (dict "icon" "fas ellipsis fa-fw" "spacing" false) -}}
                     </button>
                 {{- end -}}
             </div>
@@ -206,6 +206,7 @@
                 {{- else if $logo -}}
                     {{ $width := partial "utilities/GetWidth.html" (dict "path" $logo "height" 30) }}
                     <img src="{{if $absoluteURL }}{{ absURL $logo }}{{ else }}{{ $logo }}{{ end }}" alt="{{ $title }} logo" height="30"{{ with $width }} width="{{ . }}"{{ end }}>
+                    <span>{{ $title }}</span>
                 {{- else -}}
                     <span class="fw-bold">{{ $title }}</span>
                 {{- end -}}
@@ -267,11 +268,11 @@
                             <ul class="dropdown-menu dropdown-menu-end ">
                                 {{- if $page.IsTranslated -}}
                                     {{- range $page.AllTranslations -}}
-                                        <li><button class="dropdown-item {{ if eq .Language.Lang $currentLang }}active{{ end }}" href="{{ .RelPermalink }}">{{ .Language.LanguageName  }}</button></li>
+                                        <li><a class="dropdown-item {{ if eq .Language.Lang $currentLang }}active{{ end }}" href="{{ .RelPermalink }}">{{ .Language.LanguageName  }}</a></li>
                                     {{- end -}}
                                 {{- else -}}
                                     {{- range site.Languages -}}
-                                        <li><button class="dropdown-item" href="/{{ .Lang }}">{{ default .Lang .LanguageName }}</button></li>
+                                        <li><a class="dropdown-item" href="/{{ .Lang }}">{{ default .Lang .LanguageName }}</a></li>
                                     {{- end -}}
                                 {{- end -}}
                             </ul>

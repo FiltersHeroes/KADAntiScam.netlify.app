@@ -59,7 +59,7 @@ function checkAdblocker(){
 		  aTag.classList = swalConfirm.classList;
 		  aTag.classList.add("btn", "btn-primary");
 		  aTag.style = swalConfirm.style;
-		  aTag.href = "abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FPolishFiltersTeam%2FKAD%2Fmaster%2FKAD.txt&amp;title=KAD%20-%20Przekr%C4%99ty";
+		  aTag.href = "abp:subscribe?location=https%3A%2F%2Fraw.githubusercontent.com%2FFiltersHeroes%2FKAD%2Fmaster%2FKAD.txt&amp;title=KAD%20-%20Przekr%C4%99ty";
 		  aTag.onclick = function() { Swal.close(); };
 		  swalConfirm.parentNode.replaceChild(aTag, swalConfirm);
 	}

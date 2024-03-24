@@ -1,7 +1,7 @@
 github.com/airbnb/lottie-web v5.12.2+incompatible h1:Ldogtlhiucf7mMsgisyxSBY0qunV44+lpa9Icy2KoQc=
 github.com/airbnb/lottie-web v5.12.2+incompatible/go.mod h1:nTss557UK9FGnp8QYlCMO29tjUHwbdAHG/DprbGfHGE=
-github.com/gethinode/hinode v0.23.2 h1:FTTadd/AvROtOwQ0h5NPR+Pc25gPvjlnXM5EdwUuuzk=
-github.com/gethinode/hinode v0.23.2/go.mod h1:jGj5lTBDHl5jRPP+8NEUgRN2xzlLkyy5hB8jVpMBU1w=
+github.com/gethinode/hinode v0.23.4 h1:+3G9qg0jjrRiPsR0U1UGSO9IgJWbmS3t1IbrbOlGQOo=
+github.com/gethinode/hinode v0.23.4/go.mod h1:jGj5lTBDHl5jRPP+8NEUgRN2xzlLkyy5hB8jVpMBU1w=
 github.com/gethinode/mod-bootstrap v1.2.5 h1:h6yAlkMZA34wJU3pLFpLxp1ynEBte/YTY4kGEQtMGPE=
 github.com/gethinode/mod-bootstrap v1.2.5/go.mod h1:CL9IDot6nbXIWJYE/KxfsTdYYEJIGL17BXbAYPn+wVQ=
 github.com/gethinode/mod-flexsearch v1.10.0 h1:ymlHu5G2635D/h2axG4jgpGS+Vvtzxg07SZX8pJOJSo=
@@ -18,6 +18,8 @@ github.com/gethinode/mod-utils v1.1.0 h1:a82h/DQTKc5hxf/ExDoZqJCJmVLT0dtyU8tf78y
 github.com/gethinode/mod-utils v1.1.0/go.mod h1:ONJm3pHCq7nvaPNjusLZNCeCbhOhSBH4HVKHwK1FdYE=
 github.com/gethinode/mod-utils/v2 v2.1.1 h1:aLBcS9Zbx+dqnu5oBsTM01AkkN5nwwifgbV4D0qiHnM=
 github.com/gethinode/mod-utils/v2 v2.1.1/go.mod h1:GTYeknoLujNjfDxI+V9Dcug26CYJSTJ0B/U2dagw9oY=
+github.com/hugomods/giscus v0.1.1 h1:Kb8137Cp2nQJPFb6e+CdXy8nyIAJ2dFIymG4bDdaXWI=
+github.com/hugomods/giscus v0.1.1/go.mod h1:tCRkqNi/sMsLh3kjDesXZNzf4R/w+b5oc5boS/l8Jtw=
 github.com/nextapps-de/flexsearch v0.0.0-20240110101704-4c3966709f85 h1:H6xa5YyCHr78M+qqCApM4Kvz/eMA7pfGskYmfkEBRCA=
 github.com/nextapps-de/flexsearch v0.0.0-20240110101704-4c3966709f85/go.mod h1:5GdMfPAXzbA2gXBqTjC6l27kioSYzHlqDMh0+wyx7sU=
 github.com/twbs/bootstrap v5.3.3+incompatible h1:goFoqinzdHfkeegpFP7pvhbd0g+A3O2hbU3XCjuNrEQ=

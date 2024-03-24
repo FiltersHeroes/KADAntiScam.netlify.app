@@ -8,9 +8,8 @@
 {{ range $sections }}
     {{ .content | safeHTML }}
 {{ end }}
-{{- partial "contact.html" 
-(dict 
+{{- partial "homeReusablePages" (dict 
 "page" .
-) 
-}}
+"reusableDir" "bottom") 
+-}}
 {{ end }}

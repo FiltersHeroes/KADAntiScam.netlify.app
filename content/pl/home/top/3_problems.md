@@ -10,4 +10,4 @@ Do poprawnego działania filtrów wymagane jest rozszerzenie [uBlock Origin](htt
 * zmienić swoją przeglądarkę na inną;
 * skorzystać ze [specjalnej odmiany](#hosts "zalecane jedynie dla zaawansowanych użytkowników") (hosts, itd) listy filtrów dla innego oprogramowania.
 
-**Masz inne pytania lub problemy? Wejdź w zakładkę [Informacje i kontakt](#contact).**
+**Masz inne pytania lub problemy? Wejdź w zakładkę [Kontakt](/contact).**

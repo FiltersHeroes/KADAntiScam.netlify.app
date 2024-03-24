@@ -5,7 +5,7 @@ function createuBOModal(url) {
         Swal.fire({
             title: 'Ręczna subskrypcja listy filtrów',
             html:
-            '<p>Jeśli z jakiegoś powodu nie wyświetlił ci się komunikat z możliwością potwierdzenia subskrypcji, to w miejsce nr 3 wklej adres z listą filtrów.</p>'+
+            '<p>Jeśli z jakiegoś powodu nie wyświetlił ci się komunikat z możliwością potwierdzenia subskrypcji, to kliknij ponownie przycisk "subskrybuj" prawym przyciskiem myszki i z menu kontekstowego wybierz <code>uBlock Origin => Subskrybuj listę filtrów</code> albo w miejsce nr 3 wklej adres z listą filtrów.</p>'+
             '<div class="d-flex">'+
             '<input type="text" id="manualSubscribe" class="form-control me-2" readonly="true" value="'+url+'"/>'+
             clipboardBtn+
