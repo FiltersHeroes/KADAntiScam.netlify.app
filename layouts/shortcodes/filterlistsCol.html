@@ -1,0 +1,64 @@
+<div class="row mb-4">
+    {{ $data := index .Site.Data .Site.Language.Lang }}
+    {{ $counter := 0 }}
+    {{ $translatableData := (.Get "translatableData")}}
+    {{ $nonTranslatableData := (.Get "data") }}
+    {{ range $filterlist := (index $data $translatableData).items }}
+    <div class="col-md">
+        <h3>{{$filterlist.title}}</h3>
+        <p>{{$filterlist.desc | markdownify }}</p>
+        {{ $fURL := index (index $.Site.Data $nonTranslatableData).items $counter}}
+        {{ $subLink := (print "abp:subscribe?location=" $fURL.subscribe "&amp;title=" $filterlist.title) | safeURL }}
+        {{ if not (findRE $fURL.adblocker "hosts|Ph|Dmq|FG" ) }}
+        {{ partial "assets/button.html" (dict 
+        "color" "primary"
+        "outline" true
+        "title" (i18n "subscribe")
+        "href" $subLink
+        "class" "me-1"
+        "icon" "fas file-import"
+        "order" "first")
+        }}
+        {{ end }}
+        {{ partial "assets/button.html" (dict 
+        "color" "info"
+        "outline" true
+        "title" (i18n "preview")
+        "href" $fURL.subscribe
+        "class" "me-1"
+        "icon" "fas eye"
+        "order" "first")
+        }}
+        {{ with $fURL.home }}
+        {{ partial "assets/button.html" (dict 
+        "color" "info"
+        "outline" true
+        "title" (i18n "home")
+        "href" (.)
+        "class" "me-1"
+        "icon" "fas house"
+        "order" "first")
+        }}
+        {{ end }}
+        {{ if $filterlist.requiredTitle}}
+        <p class="mt-2">{{ i18n "requiredColon" }}</p>
+        {{ range $index, $requiredLocation := split $fURL.requiredLocation ", " }}
+        {{ $requiredTitle := index (split $filterlist.requiredTitle ", ") $index }}
+        <ul>
+        {{ $requiredSubLink := (print "abp:subscribe?location=" $requiredLocation "&amp;title=" $requiredTitle) | safeURL }}
+        {{ partial "assets/button.html" (dict 
+        "color" "danger"
+        "outline" true
+        "title" $requiredTitle
+        "href" $requiredSubLink
+        "class" "me-1"
+        "icon" "fas file-import"
+        "order" "first")
+        }}
+        </ul>
+        {{ end }}
+        {{ end }}
+    </div>
+    {{ $counter = add $counter 1 }}
+    {{ end }}
+</div>

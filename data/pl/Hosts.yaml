@@ -1,0 +1,18 @@
+items:
+  - title: KADhosts
+    desc: >
+      Filtry do oprogramowania obsługującego składnię hosts, np. [Pi-hole](https://pi-hole.net/).
+
+  - title: KADhole
+    desc: >
+      Uzupelnienie KADhosts do [Pi-hole](https://pi-hole.net/).
+
+      W celu prawidłowego działania, nie ściągaj go samodzielnie, tylko pobierz [Instalator Regex Hosts do Pi-hole](https://raw.githubusercontent.com/FiltersHeroes/ScriptsPlayground/master/scripts/RLI_for_Pi-hole.py), a następnie uruchom go z wpisanym adresem do listy jako jego parametrem, czyli `sciezka_do_instalatora/RLI_for_Pi-hole.py https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhole.txt`. Aktualizacje również należy przeprowadzać podobnie. Oczywiście można dodać ten skrypt do crona, by były automatycznie pobierane i instalowane co jakiś czas.
+
+  - title: KADomains
+    desc: >
+      Filtry do [FortiGate](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/9463/threat-feeds).
+  
+  - title: KAD - Dnsmasq Edition (Beta)
+    desc: >
+      Filtry do [Dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html).

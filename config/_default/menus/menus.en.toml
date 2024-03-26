@@ -1,7 +1,17 @@
 [[main]]
-  name = "Tags"
-  pageRef = "/tags/"
-  weight = 40
+  name = "Home"
+  pageRef = "#kad-banner"
+  weight = 1
+
+[[main]]
+  name = "Problems"
+  pageRef = "#problems"
+  weight = 3
+
+[[main]]
+  name = "Hosts"
+  pageRef = "#hosts"
+  weight = 4
 
 [[social]]
   name = "GitHub"

@@ -218,3 +218,5 @@
   translation: "Subskrybuj"
 - id: contactTitle
   translation: Informacje i kontakt
+- id: requiredColon
+  translation: "Wymagane:"

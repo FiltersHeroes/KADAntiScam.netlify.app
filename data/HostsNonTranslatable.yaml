@@ -1,0 +1,12 @@
+items:
+  - adblocker: hosts
+    subscribe: https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt
+  
+  - adblocker: hosts
+    subscribe: https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhole.txt
+  
+  - adblocker: hosts
+    subscribe: https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADomains.txt
+
+  - adblocker: hosts
+    subscribe: https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADdnsmasq.txt

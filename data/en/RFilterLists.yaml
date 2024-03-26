@@ -1,0 +1,20 @@
+items:
+  - title: Polish Annoyance Filters
+    desc: >
+      Filters that hide and block pop-ups, widgets, newsletters, push
+      notifications, arrows and other irritating elements on Polish websites
+      (**Polish GDPR-Cookies Filters** are already included).
+    requiredTitle: EasyList - Cookie Notices
+
+  - title: Polish Social Filters
+    desc:
+      Filters that hide and block social network elements, i.e. widgets, pop-ups
+      and other social elements on Polish websites.
+    requiredTitle: Fanboy's Social Blocking List
+
+  - title: Polish Anti-Annoying Special Supplement
+    desc: >
+      Filters that hide and block RSS sections and leftovers from hidden
+      newsletters combined with social elements on Polish-language websites. 
+
+      It's supplement for **Polish Social Filters** and **Polish Annoyance Filters**. 

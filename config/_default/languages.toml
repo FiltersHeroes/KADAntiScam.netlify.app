@@ -3,7 +3,7 @@
 languageName = "English"
 contentDir = "content/en"
 weight = 1
-title = "KAD"
+title = "KAD - Scams"
 # toml-docs-end lang-main
 # toml-docs-start lang-param
 [en.params.head]

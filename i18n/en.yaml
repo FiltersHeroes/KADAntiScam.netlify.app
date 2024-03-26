@@ -154,3 +154,5 @@
   translation: "Subscribe"
 - id: contactTitle
   translation: Information and contact
+- id: requiredColon
+  translation: "Required:"

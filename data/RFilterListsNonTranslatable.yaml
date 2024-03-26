@@ -1,0 +1,14 @@
+items:
+  - adblocker: ABP
+    subscribe: https://raw.githubusercontent.com/FiltersHeroes/PolishAnnoyanceFilters/master/PPB.txt
+    home: https://polishannoyancefilters.netlify.app
+    requiredLocation: https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
+
+  - adblocker: ABP
+    subscribe: https://raw.githubusercontent.com/MajkiIT/polish-ads-filter/master/adblock_social_filters/adblock_social_list.txt
+    home: https://www.certyficate.it/
+    requiredLocation: https://easylist.to/easylist/fanboy-social.txt
+
+  - adblocker: ABP
+    subscribe: https://raw.githubusercontent.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement/master/polish_rss_filters.txt
+    home: https://github.com/FiltersHeroes/PolishAntiAnnoyingSpecialSupplement

@@ -16,4 +16,20 @@
 </div>
 <div id="kadetect"></div>
 <div id="kadguard"></div>
+
+{{ $autosize := resources.Get "js/contact/autosize.js" }}
+{{ $sweetSurprise := resources.Get "js/contact/sweet-surprise.js" }}
+{{ $main := resources.Get "js/contact/main.js" }}
+{{- $filename := "js/contact/contact.bundle.js" -}}
+{{- $bundle := slice $autosize $sweetSurprise $main | resources.Concat $filename }}
+{{- $js := $bundle | resources.ExecuteAsTemplate $filename . -}}
+{{- $state := "async" -}}
+{{- if gt (len $js.Content) 0 -}}
+    {{- if not hugo.IsProduction -}}
+        <script src="{{ $js.RelPermalink }}"{{ with $state }} {{ . | safeHTMLAttr }}{{ end }}></script>
+    {{ else -}}
+        {{ $js = $js | minify | fingerprint -}}
+        <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"{{ with $state}} {{ . | safeHTMLAttr }}{{ end }}></script>
+    {{ end -}}
+{{ end -}} 
 {{ end }}

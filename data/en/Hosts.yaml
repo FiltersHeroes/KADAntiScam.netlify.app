@@ -1,0 +1,18 @@
+items:
+  - title: KADhosts
+    desc: >
+      Filters for software that supports hosts syntax, e.g. [Pi-hole](https://pi-hole.net).
+
+  - title: KADhole
+    desc: >
+      KADhosts supplement for [Pi-hole](https://pi-hole.net/).
+
+      For proper operation, don't download it yourself, but download [Regex Hosts Installer for Pi-hole](https://raw.githubusercontent.com/FiltersHeroes/ScriptsPlayground/master/scripts/RLI_for_Pi-hole.py), and then run it with lists URL as its parameter, i.e. `path_to_installer/RLI_for_Pi-hole.py https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhole.txt`. Updates should also be performed similarly. You can of course add this script to cron for automatic updating from time to time.
+
+  - title: KADomains
+    desc: >
+      Filters for [FortiGate](https://docs.fortinet.com/document/fortigate/7.4.3/administration-guide/9463/threat-feeds).
+  
+  - title: KAD - Dnsmasq Edition (Beta)
+    desc: >
+      Filters for [Dnsmasq](https://thekelleys.org.uk/dnsmasq/doc.html).

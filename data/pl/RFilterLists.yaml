@@ -1,0 +1,14 @@
+items:
+  - title: "Polskie Filtry Elementów Irytujących"
+    desc: >
+      Filtry ukrywające i blokujące wyskakujące okienka, widżety, newslettery, powiadomienia push, strzałki i inne drażniące elementy (**Polskie Filtry RODO-Ciasteczkowe** są już w nich zawarte).
+    requiredTitle: "EasyList - Cookie Notices"
+
+  - title: "Polskie Filtry Społecznościowe"
+    desc: >
+      Filtry ukrywające i blokujące elementy sieci społecznościowych, tj. widżety, wyskakujące okienka i inne elementy społecznościowe.
+    requiredTitle: "Fanboy's Social Blocking List"
+
+  - title: "Polski Antyirytujący Dodatek Specjalny"
+    desc: >
+      Filtry blokujące i ukrywające elementy RSS oraz resztki po ukrytych newsletterach złączonych z elementami społecznościowymi. Stanowią one uzupełnienie **Polskich Filtrów Społecznościowych** i **Polskich Filtrów Elementów Irytujących**.

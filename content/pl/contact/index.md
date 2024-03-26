@@ -1,6 +1,7 @@
 ---
 layout: contact
 type: miscellaneous
+title: Kontakt
 ---
 ### Zgłoszenia
 
