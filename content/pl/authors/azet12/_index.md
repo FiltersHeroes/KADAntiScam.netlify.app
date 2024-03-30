@@ -1,5 +1,5 @@
 ---
-name: azet12
+title: azet12
 social:
     - icon: "fab fa-github"
       url: "https://github.com/azet12"

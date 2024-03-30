@@ -1,7 +1,8 @@
 ---
+thumbnail:
+    url: /images/slider/hero-area.jpg
 params:
-    color: "hero-area"
-    heroBanner: true
+    color: "primary"
     textAlign: center
 ---
 # Block websites that scam money and data {#kad-banner class="display-2 text-center fw-bold mb-3"}

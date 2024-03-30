@@ -1,6 +1,6 @@
 [[main]]
   name = "Home"
-  pageRef = "#kad-banner"
+  pageRef = "/"
   weight = 1
 
 [[main]]

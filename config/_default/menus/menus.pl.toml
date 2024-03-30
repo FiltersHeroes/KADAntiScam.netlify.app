@@ -1,6 +1,6 @@
 [[main]]
   name = "Główna"
-  pageRef = "#kad-banner"
+  pageRef = "/"
   weight = 1
 
 [[main]]
@@ -20,7 +20,7 @@
 
 [[main]]
   name = "Blog"
-  pageRef = "#blog"
+  pageRef = "/blog"
   weight = 6
 
 # [[main]]

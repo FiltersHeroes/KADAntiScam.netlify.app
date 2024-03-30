@@ -1,6 +1,0 @@
-{{- $includes_dir := (.Get "d") | default .Site.Params.includes_dir -}}
-{{- $include_file := printf "%s/%s" $includes_dir (.Get "f") -}}
-
-{{- with .Site.GetPage $include_file -}}
-  {{- .Content | markdownify -}}
-{{- end -}}
