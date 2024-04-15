@@ -1,2 +1,22 @@
 - id: contactTitle
   translation: Informacje i kontakt
+- id: reportTitle
+  translation: Tytuł zgłoszenia
+- id: directLinkScam
+  translation: Link bezpośredni do strony zawierającej oszustwo (opcjonalny)
+- id: directLinkScamPlaceholder
+  translation: http://www.strona.pl/zrobicwbalona
+- id: additionalInfoRelevant
+  translation: Dodatkowe informacje mogące mieć znaczenie
+- id: additionalInfoPlaceholder
+  translation: Opis oszustwa, etapy odtworzenia problemu (co doprowadziło do błędu) albo twoja metoda rozwiązania problemu."
+- id: emailAddress
+  translation: Adres e-mail
+- id: emailHelp
+  translation: Twój adres e-mail zostanie udostępniony jedynie dla właścicieli repozytorium.
+- id: emailNotification
+  translation: Powiadomienie na e-maila
+- id: emailNotificationWant
+  translation: Chcę otrzymać powiadomienie o wysłanym formularzu wraz z linkiem do statusu zgłoszenia<
+- id: report
+  translation: Zgłoś

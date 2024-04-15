@@ -13,6 +13,11 @@
   pageRef = "#hosts"
   weight = 4
 
+[[main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 10
+
 [[social]]
   name = "GitHub"
   pre = "fab fa-github"

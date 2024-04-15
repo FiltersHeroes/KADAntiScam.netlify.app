@@ -9,7 +9,8 @@
                 {{ .Content | safeHTML }}
             </div>
             <div class="col-12 col-md {{with $textAlign}}text-{{.}}{{end}}">
-                {{ readFile "contact/contactForm.html" | safeHTML }}
+                {{ readFile (printf "/content/%s/contact/contactForm.md" .Lang) | .RenderString }}
+                {{ partial "contactForm" }}
             </div>
         </div>
     </div>
@@ -18,10 +19,11 @@
 <div id="kadguard"></div>
 
 {{ $autosize := resources.Get "js/contact/autosize.js" }}
-{{ $sweetSurprise := resources.Get "js/contact/sweet-surprise.js" }}
+{{ $validator := resources.Get "js/contact/just-validate.production.min.js" }}
+{{ $incognito := resources.Get "js/contact/detectIncognito.min.js" }}
 {{ $main := resources.Get "js/contact/main.js" }}
 {{- $filename := "js/contact/contact.bundle.js" -}}
-{{- $bundle := slice $autosize $sweetSurprise $main | resources.Concat $filename }}
+{{- $bundle := slice $autosize $validator $incognito $main | resources.Concat $filename }}
 {{- $js := $bundle | resources.ExecuteAsTemplate $filename . -}}
 {{- $state := "async" -}}
 {{- if gt (len $js.Content) 0 -}}

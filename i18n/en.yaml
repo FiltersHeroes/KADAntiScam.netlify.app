@@ -1,2 +1,22 @@
 - id: contactTitle
   translation: Information and contact
+- id: reportTitle
+  translation: Report title
+- id: directLinkScam
+  translation: Direct link to the site containing scam (optional)
+- id: directLinkScamPlaceholder
+  translation: http://www.website.com/shaft-scam
+- id: additionalInfoRelevant
+  translation: Additional information that may be relevant
+- id: additionalInfoPlaceholder
+  translation: A description of the scam, steps to reproduce the problem (what led to the error) or your method of solving the problem.
+- id: emailAddress
+  translation: Email address
+- id: emailHelp
+  translation: Your email address will only be shared with repository owners.
+- id: emailNotification
+  translation: E-mail notification
+- id: emailNotificationWant
+  translation: I would like to receive notification about a submitted form with a link to the status of my report
+- id: report
+  translation: Report

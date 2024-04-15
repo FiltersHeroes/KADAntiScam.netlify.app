@@ -1,0 +1,39 @@
+<br/>
+<form id="usrform" method="post" role="form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSdHY8a2G3f9hLv-gar86DYdlf6gsnI6E10Vlh2x-IQpkOE25A/formResponse">
+    
+    <div class="mb-3">
+        <!--Tytuł zgłoszenia-->
+        <label for="title" class="fw-bold form-label">{{ i18n "reportTitle" }}</label>
+        <input pattern=".{5,}" class="form-control form-control-lg" id="title" name="entry.1249625661" type="text" placeholder="example.com/Group Example" required="required"/>
+    </div>
+    
+    <!--Link bezpośredni do strony zawierającej oszustwo-->
+    <div class="mb-3">
+        <label for="direct-link" class="fw-bold form-label">{{ i18n "directLinkScam" }}</label>
+        <input id="direct-link" name="entry.1269269191" minlength="12" pattern=".{12,}" class="form-control" placeholder='{{i18n "directLinkScamPlaceholder"}}' type="url"/>
+    </div>
+    
+    <!--Dodatkowe informacje mogące mieć znaczenie-->
+    <div class="mb-3" id="additionalInfo">
+        <label for="additional-info" class="fw-bold form-label">{{ i18n "additionalInfoRelevant" }}</label>
+        <textarea id="additional-info" name="entry.1564927089" minlength="5" rows="3" data-min-rows="3" class="form-control" placeholder='{{ i18n "additionalInfoPlaceholder"}}' required="required"></textarea>
+    </div>
+    
+    <!--Adres e-mail-->
+    <div class="mb-3">
+        <label for="mail" class="fw-bold form-label">{{ i18n "emailAddress" }}</label>
+        <input class="form-control" id="mail" name="emailAddress" type="text" placeholder="example@gmail.com" aria-describedby="mailHelp" required="required" autocomplete="email">
+        <small id="mailHelp" class="form-text text-muted">{{ i18n "emailHelp" }}</small>
+    </div>
+    <input name="e-mail" type="text" id="email" />
+    
+    <div class="mb-3">
+        <label class="fw-bold form-label">{{ i18n "emailNotification" }}</label>
+        <div class="form-check">
+            <input name="entry.1459225481" type="checkbox" class="form-check-input" id="tak" value="Tak">
+            <label class="form-check-label" for="tak">{{ i18n "emailNotificationWant" }}</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-info">{{ i18n "report" }}</button>
+    
+</form> 
