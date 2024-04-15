@@ -17,6 +17,6 @@
 - id: emailNotification
   translation: Powiadomienie na e-maila
 - id: emailNotificationWant
-  translation: Chcę otrzymać powiadomienie o wysłanym formularzu wraz z linkiem do statusu zgłoszenia<
+  translation: Chcę otrzymać powiadomienie o wysłanym formularzu wraz z linkiem do statusu zgłoszenia
 - id: report
   translation: Zgłoś

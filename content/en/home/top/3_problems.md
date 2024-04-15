@@ -11,4 +11,4 @@ params:
 * change to a different browser;
 * use [a special variation](#hosts "recommended only for advanced users") (hosts, etc) filterlist for other software.
 
-**Do you have other questions or problems? Go to [Contact](/contact) section.**
+**Do you have other questions or problems? Go to [Contact](contact) section.**
