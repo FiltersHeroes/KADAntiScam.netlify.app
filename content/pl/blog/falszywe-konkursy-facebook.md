@@ -18,7 +18,7 @@ Cyberprzestępcy zachęcają do polubienia, komentowania, udostępniania oraz ta
 
 Gdy post stanie się dość popularny, internetowi rabusie udostępniają „wyniki” loterii. W tym wpisie znajdują się zwykle 3, 4 lub więcej odnośników do profili „zwycięzców”, jednak jeden z nich jest **uszkodzony** i przekierowuje do profilu, na którym ktoś jest aktualnie zalogowany, więc… **każdy wygrał**.
 
-Zwycięzcy (czyli wszyscy, którzy przeczytają tę informację) są proszeni o odebranie nagrody na stronie zawartej we wpisie. Tutaj zaczyna się zbieranie żniw, gdyż tą stroną jest zwykle **przekręt SMS**. [Kliknij tutaj](/blog/2017/01/26/przekrety-sms-jak-nie-zostac-oszukanym-w-internecie/) i dowiedz się, jak działa.
+Zwycięzcy (czyli wszyscy, którzy przeczytają tę informację) są proszeni o odebranie nagrody na stronie zawartej we wpisie. Tutaj zaczyna się zbieranie żniw, gdyż tą stroną jest zwykle **przekręt SMS**. [Kliknij tutaj](/blog/przekrety-sms-jak-nie-zostac-oszukanym-w-internecie/) i dowiedz się, jak działa.
 
 W ten sposób nikt nie dostaje nagrody, a oszuści nieuczciwie zdobywają pieniądze użytkowników.
 

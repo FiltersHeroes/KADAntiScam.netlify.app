@@ -14,22 +14,28 @@
         transpiler = "libsass"
 
 [modules]
-    core = ["bootstrap", "flexsearch", "fontawesome", "ModsForHinode"]
-    excludeSCSS = ["bootstrap"]
-    disableTemplate = ["katex"]
+    [modules.bootstrap]
+        integration = "core"
+        excludeSCSS = true
     [modules.katex]
+        # integration = "core"
+        disableTemplate = true
         state = "defer"
     [modules.flexsearch]
+        integration = "core"
         frontmatter = false
         filter = ""
     [modules.fontawesome]
+        integration = "core"
         inline = true
         debug = true
         skipMissing = false
+    [modules.ModsForHinode]
+        integration = "core"
 
 [debugging]
     showJS = false
-    showSCSS = false
+    showSCSS = true
     purgeHTMLComments = true # prevents a Goldmark warning when processing HTML comments (as used by markdownlint)
 
 [home]

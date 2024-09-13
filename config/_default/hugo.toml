@@ -1,7 +1,6 @@
 resourcedir = '../resources/'
 title = "KAD - Przekręty"
 copyright = "Copyright © 2024 Filters Heroes."
-paginate = 9
 enableGitInfo = true
 
 # additional settings
@@ -10,6 +9,7 @@ canonifyURLs = false
 enableEmoji = true
 enableRobotsTXT = true
 enableInlineShortcodes = true
+summaryLength = 20
 
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
@@ -39,6 +39,9 @@ home = ["HTML", "RSS", "REDIR"]
 [taxonomies]
   tag = 'tags'
   author = 'authors'
+
+[pagination]
+  pagerSize = 9
 
 [privacy]
   [privacy.vimeo]
