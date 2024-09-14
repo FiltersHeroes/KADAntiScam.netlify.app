@@ -10,7 +10,7 @@ Help with improving the Polish KAD filterlist and the databases of other organis
 Phishing sites are submitted to: Netcraft, Google Safebrowsing, Phishtank, ESET, Symantec and Bitdefender. Some may also be reported directly to the administrator of the hosting where the scam is hosted for complete removal.
 
 {{< p "If you would like to help improve the list, you can report sites to the:" "pt-2" >}}
-{{< fas fa-envelope>}} Email: {{<email "polishjarvis at gmail dot com" >}}
+{{< fas fa-envelope>}} Email: {{<email "contact-project+filtersheroes-kad-support at incoming dot gitlab dot com" >}}
 
 {{< fab fa-github>}} GitHub: [github.com/FiltersHeroes/KAD/issues](https://github.com/FiltersHeroes/KAD/issues)
 

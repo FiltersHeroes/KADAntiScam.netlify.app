@@ -10,7 +10,7 @@ Pomóż ulepszać polskie filtry KAD oraz bazy innych organizacji i firm zajmuj�
 Strony phishing są przesyłane do: Netcraft, Google Safebrowsing, Phishtank, ESET, Symantec i Bitdefender. Niektóre mogą być też zgłaszane bezpośrednio do administratora hostingu, na którym znajduje się przekręt w celu ich kompletnego usunięcia.
 
 {{< p "Jeśli chcesz pomóc z usprawnianiem listy, to możesz zgłaszać strony na:" "pt-2" >}}
-{{< fas fa-envelope>}} Email: {{<email "polishjarvis at gmail dot com" >}}
+{{< fas fa-envelope>}} Email: {{<email "contact-project+filtersheroes-kad-support at incoming dot gitlab dot com" >}}
 
 {{< fab fa-github>}} GitHub: [github.com/FiltersHeroes/KAD/issues](https://github.com/FiltersHeroes/KAD/issues)
 

@@ -1,5 +1,5 @@
 <br/>
-<form id="usrform" method="post" role="form" data-src="https://docs.google.com/forms/d/e/1FAIpQLSdHY8a2G3f9hLv-gar86DYdlf6gsnI6E10Vlh2x-IQpkOE25A/formResponse">
+<form id="usrform" method="post" role="form" data-src="https://filtersheroes.pages.dev/api/create-issue">
     
     <div class="mb-3">
         <!--Tytuł zgłoszenia-->
@@ -19,21 +19,29 @@
         <textarea id="additional-info" name="entry.1564927089" minlength="5" rows="3" data-min-rows="3" class="form-control" placeholder='{{ i18n "additionalInfoPlaceholder"}}' required="required"></textarea>
     </div>
     
-    <!--Adres e-mail-->
+    <!--Pseudonim-->
     <div class="mb-3">
+       <label for="nickname" class="fw-bold form-label">{{ i18n "nickname"}}</label>
+       <input class="form-control" id="nickname" name="entry.770287256" type="text" placeholder="wesolyromek123" required="required" autocomplete="nickname">
+    </div>
+
+    <!--Adres e-mail-->
+    <div class="mb-3 d-none">
         <label for="mail" class="fw-bold form-label">{{ i18n "emailAddress" }}</label>
-        <input class="form-control" id="mail" name="emailAddress" type="text" placeholder="example@gmail.com" aria-describedby="mailHelp" required="required" autocomplete="email">
+        <input class="form-control" id="mail" name="emailAddress" type="text" placeholder="example@gmail.com" aria-describedby="mailHelp" autocomplete="email">
         <small id="mailHelp" class="form-text text-muted">{{ i18n "emailHelp" }}</small>
     </div>
     <input name="e-mail" type="text" id="email" />
     
-    <div class="mb-3">
+    <div class="mb-3 d-none">
         <label class="fw-bold form-label">{{ i18n "emailNotification" }}</label>
         <div class="form-check">
             <input name="entry.1459225481" type="checkbox" class="form-check-input" id="tak" value="Tak">
             <label class="form-check-label" for="tak">{{ i18n "emailNotificationWant" }}</label>
         </div>
     </div>
-    <button type="submit" class="btn btn-info">{{ i18n "report" }}</button>
-    
+    <div class="clearfix pt-2">
+        <button type="submit" class="btn btn-info float-end">{{ i18n "report" }}</button>
+    </div>
+
 </form> 

@@ -20,3 +20,5 @@
   translation: Chcę otrzymać powiadomienie o wysłanym formularzu wraz z linkiem do statusu zgłoszenia
 - id: report
   translation: Zgłoś
+- id: nickname
+  translation: Pseudonim

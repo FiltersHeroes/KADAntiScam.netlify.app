@@ -20,3 +20,5 @@
   translation: I would like to receive notification about a submitted form with a link to the status of my report
 - id: report
   translation: Report
+- id: nickname
+  translation: Nickname

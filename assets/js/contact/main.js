@@ -202,10 +202,10 @@ function submitForm(form) {
 
     txtInput.value = txtInput.replace(new RegExp(badWords.join("|"), "gi"), "[beep]");
 
-    let txtSubmit = "Zgłoszenie zostało wysłane na GitHuba.";
+    let txtSubmit = "Zgłoszenie zostało wysłane na ";
     var currentLang = document.documentElement.lang;
     if (currentLang != "pl") {
-        txtSubmit = "The report has been submitted to GitHub."
+        txtSubmit = "The report has been submitted to "
     }
 
     let banEnd;
@@ -250,35 +250,68 @@ function submitForm(form) {
         localStorage.setItem("banEnd", banEnd.toLocaleDateString("pl"));
     }
     else {
-        const formData = new FormData(form);
-        try {
-            var formURL = form.getAttribute("data-src");
-            fetch(formURL, {
-                mode: 'no-cors',
-                method: "POST",
-                body: formData,
-            }).then(function (response) {
-                if (response) {
+        // const formData = new FormData(form);
+        var form_issueTitle = document.querySelector("#usrform #title").value;
+        var form_directlink = document.querySelector("#usrform #direct-link").value;
+        var form_additionalInfo = document.querySelector("#usrform #additional-info").value;
+        var form_nickname = document.querySelector("#usrform #nickname").value;
+
+        var directLink_answer = "";
+        if (form_directlink != "") {
+            directLink_answer = "### Link bezpośredni do strony zawierającej oszustwo\n ```markdown\n" + form_directlink + "\n\n```\n\n";
+        }
+
+        var issueBody = directLink_answer + "### Dodatkowe informacje mogące mieć znaczenie\n" + form_additionalInfo + "\n" + "\n" + "---\n" + `Zgłoszenie opublikowane anonimowo przez użytkownika **${form_nickname}**`;
+
+        const formJsonData = {
+            "repo": "KAD",
+            "title": form_issueTitle,
+            "body": issueBody,
+        };
+
+        var formURL = form.getAttribute("data-src");
+        fetch(formURL, {
+            method: "POST",
+            body: JSON.stringify(formJsonData),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
+        })
+            .then((response) => response.text())
+            .then((text) => {
+                console.log(text);
+                if (text.includes("github.com")) {
+                    txtSubmit += `<a href="${text}" target="_blank" rel="noopener">${text}</a>.`
                     if (currentLang == "pl") {
-                        Swal.fire({ title: "Sukces 😊", text: txtSubmit, icon: "success", confirmButtonText: "Wypełnij nowy formularz" }).then((result) => { if (result.value) { form.reset(); location.reload(); } });
+                        Swal.fire({ title: "Sukces 😊", html: txtSubmit, icon: "success", confirmButtonText: "Wypełnij nowy formularz" }).then((result) => { if (result.value) { form.reset(); location.reload(); } });
                     }
                     else {
-                        Swal.fire({ title: "Success 😊", text: txtSubmit, icon: "success", confirmButtonText: "Fill in a new form" }).then((result) => { if (result.value) { form.reset(); location.reload(); } });
+                        Swal.fire({ title: "Success 😊", html: txtSubmit, icon: "success", confirmButtonText: "Fill in a new form" }).then((result) => { if (result.value) { form.reset(); location.reload(); } });
                     }
                     localStorage.setItem("submittedTime", new Date());
                 }
+                else {
+                    if (currentLang == "pl") {
+                        Swal.fire({ title: "Porażka 😔", text: "Wystąpił błąd w trakcie wysyłania formularza", icon: "error", confirmButtonText: "Spróbuj ponownie" })
+                            .then((result) => { if (result.value) { submitForm(form) } });
+                    }
+                    else {
+                        Swal.fire({ title: "Failure 😔", text: "An error occurred while submitting the form", icon: "error", confirmButtonText: "Try again" })
+                            .then((result) => { if (result.value) { submitForm(form) } });
+                    }
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+                if (currentLang == "pl") {
+                    Swal.fire({ title: "Porażka 😔", text: "Wystąpił błąd w trakcie wysyłania formularza", icon: "error", confirmButtonText: "Spróbuj ponownie" })
+                        .then((result) => { if (result.value) { submitForm(form) } });
+                }
+                else {
+                    Swal.fire({ title: "Failure 😔", text: "An error occurred while submitting the form", icon: "error", confirmButtonText: "Try again" })
+                        .then((result) => { if (result.value) { submitForm(form) } });
+                }
             });
-        } catch (e) {
-            if (currentLang == "pl") {
-                Swal.fire({ title: "Porażka 😔", text: "Wystąpił błąd w trakcie wysyłania formularza", icon: "error", confirmButtonText: "Spróbuj ponownie" })
-                    .then((result) => { if (result.value) { submitForm(form) } });
-            }
-            else {
-                Swal.fire({ title: "Failure 😔", text: "An error occurred while submitting the form", icon: "error", confirmButtonText: "Try again" })
-                    .then((result) => { if (result.value) { submitForm(form) } });
-            }
-            console.error(e);
-        }
     }
 }
 
@@ -479,13 +512,14 @@ window.addEventListener('load', function () {
             ]
         );
         validate.addField(
-            '#mail',
+            '#nickname',
             [
                 {
                     rule: 'required',
                 },
                 {
-                    rule: 'email',
+                    rule: 'minLength',
+                    value: 3,
                 },
             ]
         );
