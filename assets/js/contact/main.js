@@ -279,8 +279,7 @@ function submitForm(form) {
         })
             .then((response) => response.text())
             .then((text) => {
-                console.log(text);
-                if (text.includes("github.com")) {
+                if (text.includes("https://github.com")) {
                     txtSubmit += `<a href="${text}" target="_blank" rel="noopener">${text}</a>.`
                     if (currentLang == "pl") {
                         Swal.fire({ title: "Sukces 😊", html: txtSubmit, icon: "success", confirmButtonText: "Wypełnij nowy formularz" }).then((result) => { if (result.value) { form.reset(); location.reload(); } });
@@ -291,6 +290,7 @@ function submitForm(form) {
                     localStorage.setItem("submittedTime", new Date());
                 }
                 else {
+                    console.log(text);
                     if (currentLang == "pl") {
                         Swal.fire({ title: "Porażka 😔", text: "Wystąpił błąd w trakcie wysyłania formularza", icon: "error", confirmButtonText: "Spróbuj ponownie" })
                             .then((result) => { if (result.value) { submitForm(form) } });
