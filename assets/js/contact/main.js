@@ -202,10 +202,10 @@ function submitForm(form) {
 
     txtInput.value = txtInput.replace(new RegExp(badWords.join("|"), "gi"), "[beep]");
 
-    let txtSubmit = "Zgłoszenie zostało wysłane na ";
+    let txtSubmit = "Zgłoszenie zostało zamieszczone na ";
     var currentLang = document.documentElement.lang;
     if (currentLang != "pl") {
-        txtSubmit = "The report has been submitted to "
+        txtSubmit = "The report has been posted on "
     }
 
     let banEnd;
@@ -293,11 +293,11 @@ function submitForm(form) {
                     console.log(text);
                     if (currentLang == "pl") {
                         Swal.fire({ title: "Porażka 😔", text: "Wystąpił błąd w trakcie wysyłania formularza", icon: "error", confirmButtonText: "Spróbuj ponownie" })
-                            .then((result) => { if (result.value) { submitForm(form) } });
+                            .then((result) => { if (result.value) { submitForm(form); } });
                     }
                     else {
                         Swal.fire({ title: "Failure 😔", text: "An error occurred while submitting the form", icon: "error", confirmButtonText: "Try again" })
-                            .then((result) => { if (result.value) { submitForm(form) } });
+                            .then((result) => { if (result.value) { submitForm(form); } });
                     }
                 }
             })
@@ -305,11 +305,11 @@ function submitForm(form) {
                 console.error(error);
                 if (currentLang == "pl") {
                     Swal.fire({ title: "Porażka 😔", text: "Wystąpił błąd w trakcie wysyłania formularza", icon: "error", confirmButtonText: "Spróbuj ponownie" })
-                        .then((result) => { if (result.value) { submitForm(form) } });
+                        .then((result) => { if (result.value) { submitForm(form); } });
                 }
                 else {
                     Swal.fire({ title: "Failure 😔", text: "An error occurred while submitting the form", icon: "error", confirmButtonText: "Try again" })
-                        .then((result) => { if (result.value) { submitForm(form) } });
+                        .then((result) => { if (result.value) { submitForm(form); } });
                 }
             });
     }
