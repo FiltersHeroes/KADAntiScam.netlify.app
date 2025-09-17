@@ -3,7 +3,7 @@ headless: true
 params:
     color: ""
 ---
-## Inne odmiany listy {#hosts class="border-bottom border-info mb-3 text-center"}
+## Inne odmiany listy {#hosts class="border-bottom border-primary mb-3 text-center"}
 
 {{< filterlistsCol translatableData="Hosts" data="HostsNonTranslatable" >}}
 

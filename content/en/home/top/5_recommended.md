@@ -3,7 +3,7 @@ headless: true
 params:
     color: "secondary"
 ---
-## Other recommended filterlists {#recommended class="border-bottom border-info mb-3 text-center"}
+## Other recommended filterlists {#recommended class="border-bottom border-primary mb-3 text-center"}
 
 {{< filterlistsCol translatableData="RFilterLists" data="RFilterListsNonTranslatable" >}}
 

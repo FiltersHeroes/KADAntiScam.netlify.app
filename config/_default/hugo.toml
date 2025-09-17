@@ -48,7 +48,7 @@ home = ["HTML", "RSS", "REDIR"]
     disabled = false
     simple = true
 
-  [privacy.twitter]
+  [privacy.x]
     disabled = false
     enableDNT = true
     simple = true
@@ -64,7 +64,7 @@ home = ["HTML", "RSS", "REDIR"]
 [services]
   [services.instagram]
     disableInlineCSS = true
-  [services.twitter]
+  [services.x]
     disableInlineCSS = true
 
 [outputFormats]

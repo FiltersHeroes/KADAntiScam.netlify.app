@@ -3,7 +3,7 @@ headless: true
 params:
     color: ""
 ---
-## Licencje {#licenses class="display-6 border-bottom border-info mb-3 text-center"}
+## Licencje {#licenses class="display-6 border-bottom border-primary mb-3 text-center"}
 Lista KAD: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Logo: [GPL](https://www.gnu.org/licenses/gpl-2.0.html), [MIT](https://opensource.org/licenses/MIT)

@@ -3,7 +3,7 @@ headless: true
 params:
     color: "secondary"
 ---
-## Troubleshooting {#problems class="border-bottom border-info mb-3 text-center"}
+## Troubleshooting {#problems class="border-bottom border-primary mb-3 text-center"}
 
 [uBlock Origin](https://github.com/gorhill/uBlock#installation) or [AdGuard](https://adguard.com/adguard-browser-extension/overview.html) extension, which supports external filterlists and direct blocking of websites is required for KAD to function correctly.
 
