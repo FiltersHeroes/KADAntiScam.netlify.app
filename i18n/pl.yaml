@@ -9,7 +9,7 @@
 - id: additionalInfoRelevant
   translation: Dodatkowe informacje mogące mieć znaczenie
 - id: additionalInfoPlaceholder
-  translation: Opis oszustwa, etapy odtworzenia problemu (co doprowadziło do błędu) albo twoja metoda rozwiązania problemu."
+  translation: Opis oszustwa, etapy odtworzenia problemu (co doprowadziło do błędu) albo twoja metoda rozwiązania problemu.
 - id: emailAddress
   translation: Adres e-mail
 - id: emailHelp
