@@ -24,8 +24,10 @@
     [modules.bootstrap]
         integration = "core"
         excludeSCSS = true
+    [modules.GoogleAnalytics]
+        integration = "none"
     [modules.katex]
-        # integration = "core"
+        integration = "none"
         disableTemplate = true
         state = "defer"
     [modules.flexsearch]

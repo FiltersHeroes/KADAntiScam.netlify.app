@@ -44,6 +44,9 @@ home = ["HTML", "RSS", "REDIR"]
   pagerSize = 9
 
 [privacy]
+ [privacy.googleAnalytics]
+    disable = true
+
   [privacy.vimeo]
     disabled = false
     simple = true
